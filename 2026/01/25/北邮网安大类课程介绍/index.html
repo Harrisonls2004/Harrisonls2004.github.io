@@ -1,0 +1,495 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>北邮网安课程介绍（23级） | lhldudu's blog</title><meta name="author" content="Harrisonls2004"><meta name="copyright" content="Harrisonls2004"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言由于培养方案还在不断更改，每一届的同学所学课程的顺序，需要选修的课程都有可能发生变化，以下为2023级培养方案相关课程，内容仅供参考。 博客上的资料为百度网盘链接，相关资料也可以在github仓库里找到：https:&#x2F;&#x2F;github.com&#x2F;Harrisonls2004&#x2F;BUPT-SCSS-2023 Tip: 如果链接过期请使用各种方式联系，我会在收到邮件的第一时间更新! 百度网盘链接已更新至">
+<meta property="og:type" content="article">
+<meta property="og:title" content="北邮网安课程介绍（23级）">
+<meta property="og:url" content="https://harrisonls2004.github.io/2026/01/25/%E5%8C%97%E9%82%AE%E7%BD%91%E5%AE%89%E5%A4%A7%E7%B1%BB%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/index.html">
+<meta property="og:site_name" content="lhldudu&#39;s blog">
+<meta property="og:description" content="前言由于培养方案还在不断更改，每一届的同学所学课程的顺序，需要选修的课程都有可能发生变化，以下为2023级培养方案相关课程，内容仅供参考。 博客上的资料为百度网盘链接，相关资料也可以在github仓库里找到：https:&#x2F;&#x2F;github.com&#x2F;Harrisonls2004&#x2F;BUPT-SCSS-2023 Tip: 如果链接过期请使用各种方式联系，我会在收到邮件的第一时间更新! 百度网盘链接已更新至">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://harrisonls2004.github.io/img/buptnew.jpg">
+<meta property="article:published_time" content="2026-01-25T11:48:17.000Z">
+<meta property="article:modified_time" content="2026-01-30T15:03:13.220Z">
+<meta property="article:author" content="Harrisonls2004">
+<meta property="article:tag" content="北邮">
+<meta property="article:tag" content="网络空间安全">
+<meta property="article:tag" content="信息安全">
+<meta property="article:tag" content="课程介绍">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://harrisonls2004.github.io/img/buptnew.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "北邮网安课程介绍（23级）",
+  "url": "https://harrisonls2004.github.io/2026/01/25/%E5%8C%97%E9%82%AE%E7%BD%91%E5%AE%89%E5%A4%A7%E7%B1%BB%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/",
+  "image": "https://harrisonls2004.github.io/img/buptnew.jpg",
+  "datePublished": "2026-01-25T11:48:17.000Z",
+  "dateModified": "2026-01-30T15:03:13.220Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Harrisonls2004",
+      "url": "https://Harrisonls2004.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/logo.png"><link rel="canonical" href="https://harrisonls2004.github.io/2026/01/25/%E5%8C%97%E9%82%AE%E7%BD%91%E5%AE%89%E5%A4%A7%E7%B1%BB%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.4-b1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.7/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":true,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":100,"languages":{"author":"作者: Harrisonls2004","link":"链接: ","source":"来源: lhldudu's blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '北邮网安课程介绍（23级）',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/universe.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div class="bg-animation" id="web_bg" style="background-image: url(/img/bg.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 演唱会</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/buptnew.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/logo.png" alt="Logo"><span class="site-name">lhldudu's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">北邮网安课程介绍（23级）</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 演唱会</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">北邮网安课程介绍（23级）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-01-25T11:48:17.000Z" title="发表于 2026-01-25 19:48:17">2026-01-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-01-30T15:03:13.220Z" title="更新于 2026-01-30 23:03:13">2026-01-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93/">课程总结</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">11.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>34分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2026/01/25/%E5%8C%97%E9%82%AE%E7%BD%91%E5%AE%89%E5%A4%A7%E7%B1%BB%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/#post-comment"><span class="gitalk-comment-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>由于培养方案还在不断更改，每一届的同学所学课程的顺序，需要选修的课程都有可能发生变化，以下为2023级培养方案相关课程，内容仅供参考。</p>
+<p>博客上的资料为百度网盘链接，相关资料也可以在github仓库里找到：<a target="_blank" rel="noopener" href="https://github.com/Harrisonls2004/BUPT-SCSS-2023">https://github.com/Harrisonls2004/BUPT-SCSS-2023</a></p>
+<p><strong>Tip</strong>: 如果链接过期请使用各种方式联系，我会在收到邮件的第一时间更新!</p>
+<p>百度网盘链接已更新至每个科目后</p>
+<h2 id="BUPT-SCSS-2023相关资料汇总"><a href="#BUPT-SCSS-2023相关资料汇总" class="headerlink" title="BUPT-SCSS-2023相关资料汇总"></a>BUPT-SCSS-2023相关资料汇总</h2><p>按照学期先后顺序排序，英语课、体育课、公选课在大三下后面。</p>
+<h2 id="大一上"><a href="#大一上" class="headerlink" title="大一上"></a>大一上</h2><p>大一上的课比较少，难度也不是不大，多刷点题目基本就能拿高分。网安院分流只看第一学期成绩，只要不太差基本分流能随意选专业。</p>
+<h3 id="大学生心理健康"><a href="#大学生心理健康" class="headerlink" title="大学生心理健康"></a>大学生心理健康</h3><p>杜玉春上的。一共4次课，有签到考勤，结课作业是一篇1000字以上的论文，水课，90分左右。</p>
+<h3 id="计算导论与程序设计"><a href="#计算导论与程序设计" class="headerlink" title="计算导论与程序设计"></a>计算导论与程序设计</h3><p>邓小龙上的，讲的比较泛，课上学不到任何东西。</p>
+<p>我们当时每个月都有一次上机考试，考了三次。上机考题一般5到6题编程函数题。期末考试也是上机考试，期末不仅有5~6题机考类型的题目，还有填空选择题。</p>
+<p>平时会布置PTA习题，可以根据PTA习题考察点去复习。</p>
+<p>上机考试占比很大，想拿高分的同学一定不要松懈。上机考试题目有可能会从历年试题里面出，学弟学妹们可以去CSDN或者从别的渠道找找历年考试题练习。</p>
+<p>C语言推荐<strong>翁凯</strong>网课：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1csk1YkEes/?share_source=copy_web&vd_source=0cfbb11758fc5055bb1d48557ae8aa77">【翁凯C语言全集】浙大翁凯C语言入门到精通，c语言知识点全解析，c语言期末考试法宝100分！_哔哩哔哩_bilibili</a></p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1bWI-wnkS5a3CrwYh33JA2w?pwd=k68n">计导C语言</a></p>
+<h3 id="网络空间安全导论"><a href="#网络空间安全导论" class="headerlink" title="网络空间安全导论"></a>网络空间安全导论</h3><p>谷利泽上的，老师讲得还行，<strong>平时20期中20期末60。</strong></p>
+<p>当时只有谷老师有期中（随堂考试），但是24级开始全部都有期中考试了。考试很喜欢出历年原题，多写几套历年题容易考高分。</p>
+<p>这门课以背诵为主，主要为网络空间安全相关基础概念内容，不算难，但是需要记的东西比较多，重点看课件中<strong>小结</strong>的部分。</p>
+<p><strong>记得看概念名词英文缩写</strong>（当时我们考了10分，给个英文缩写，让你解释这个缩写的中文并写出缩写的全英文），当年学长没认真复习这个部分期考考了英文全称学长都不会~(⊙︿⊙)</p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/14xVR-DGc8J11lN36n98gog?pwd=11yq">网安导论</a></p>
+<h3 id="思想道德与法治"><a href="#思想道德与法治" class="headerlink" title="思想道德与法治"></a>思想道德与法治</h3><p>培养方案中共有思政、近代史、习概、马原、毛概五门思政课，四学期学完。</p>
+<p>老师是巩姗姗。分数构成为<strong>期中论文20平时30期末50</strong>，期末开卷考试（准备好书）。</p>
+<p>这门课由于开卷，期末笔试成绩基本无差距。（没必要平时花太多心思，期末考前看一遍目录知道章节即可）。</p>
+<p>主要拉开差距的是平时分，想拿90＋请多多举手发言回答问题让老师记住你。如果你们老师有举手登记名字习惯那更好，思政课一般回答三次就是满分。</p>
+<p>临近期末当时我们有课堂分享实践报告，课堂分享的同学都得到了平时分加分。</p>
+<h3 id="高等数学A-上"><a href="#高等数学A-上" class="headerlink" title="高等数学A(上)"></a>高等数学A(上)</h3><p>23级最后一年学高数，24级开始改成6学分数分了。难度应该会上升一点，但是学习方法是差不多的，可以参考参考。</p>
+<p>老师是刘晓楠，讲得还行。分数构成：<strong>平时20期中20期末60</strong>每周都会有课后作业，不定期有课堂点名和课堂派扫码签到，按时交作业按时上课就行。期末考试难度不算大，题型比较固定，多写几套历年试题很容易拿90+高分。</p>
+<p>平时有空建议去B站听宋浩老师的网课：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Eb411u7Fw/?share_source=copy_web&vd_source=0cfbb11758fc5055bb1d48557ae8aa77">《高等数学》同济版 2024年更新|宋浩老师_哔哩哔哩_bilibili</a></p>
+<p>北邮期末考试重点，卷王推荐：北邮李鹤老师习题课<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV14SAjesE6n/?share_source=copy_web">【邮理有李】2024级数分&#x2F;高数上期末复习_哔哩哔哩_bilibili</a></p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/11ILexi6vN4RQ-oDz4qUbPg?pwd=2twf">高数A上</a></p>
+<h3 id="线性代数"><a href="#线性代数" class="headerlink" title="线性代数"></a>线性代数</h3><p>我当时是胡越上的，老师水平很高，给分也很高。但是胡老师上课听的不是很懂，这门课基本都是个人自学。</p>
+<p>分数构成是<strong>平时30期末70</strong>，每周都会布置作业，由于没有期中考试，作业的正确率对平时分也有影响，想拿高分请认真完成每次作业。</p>
+<p>期末考试不算太难，题型也比较固定，<strong>速成很快</strong>。速成推荐：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Wa4y1R7NC/?share_source=copy_web&vd_source=0cfbb11758fc5055bb1d48557ae8aa77">【线性代数】7小时快速通关_哔哩哔哩_bilibili</a>。平时有空建议平时看宋浩的课程。</p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1fPyDDlh-ayAkIKKYfPrZSg?pwd=jfij">线性代数</a></p>
+<h3 id="形势与政策"><a href="#形势与政策" class="headerlink" title="形势与政策"></a>形势与政策</h3><p>前五学期每学期都有，最后都是交论文作业。得分都在90上下，不会很高。</p>
+<p>23级123学期是每学期有三周的线下课，都会签到。45学期是雨课堂线上课。</p>
+<h3 id="军事理论"><a href="#军事理论" class="headerlink" title="军事理论"></a>军事理论</h3><p>期末线上考试85%，有题库，全是原题。还有一篇论文作业15%。平时有签到但是我不太清楚有没有占比。</p>
+<h3 id="军事训练"><a href="#军事训练" class="headerlink" title="军事训练"></a>军事训练</h3><p>两周，没什么意外就在沙河，每一级时间都不固定，23级是大一结束的暑假，24级是大一上入学，25级据说是大一下5月。</p>
+<p>标兵一般有90+，正常都是85~90左右。评分一般是辅导员60分教官40分。</p>
+<h2 id="大一下"><a href="#大一下" class="headerlink" title="大一下"></a>大一下</h2><p>课程非常多，学分将近达到30，一周都是课，非常累，好好准备考试，能拉开很大差距。</p>
+<h3 id="数字逻辑与数字系统"><a href="#数字逻辑与数字系统" class="headerlink" title="数字逻辑与数字系统"></a>数字逻辑与数字系统</h3><p>张勖老师上的，讲得还行吧，每节课都有扫码签到（会计入平时分），但是老师给分不高。<strong>分数构成为平时10期中5实验25期末60</strong>。每次作业分数都影响平时分。第二周会布置了一个小组调研论文作业。</p>
+<p>只有张老师的班是有期中考试的（随堂），王春露老师的班没有。期中考的有点难。</p>
+<p>实验有验收。验收就是现场老师从8个实验中抽一个让你当场做一遍。验收完成了这项25分就能拿满。</p>
+<p>数电B站网课有很多，我当时混杂着听了几个，其实感觉不如自己看PPT。因为网课内容和课件有很大差距，有些东西的解释画图和北邮用的教材都不一样，建议备考复习以PPT和课本为主，网课仅供参考。期末考试我记得还涉及到了一些概念考察（好像这个考了25分左右），还有要作图的题。</p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1jkufvNzu960h5ko7Xekqjg?pwd=p7m3">数电</a></p>
+<h3 id="C-高级语言程序设计"><a href="#C-高级语言程序设计" class="headerlink" title="C++高级语言程序设计"></a>C++高级语言程序设计</h3><p>这三门课开始放在一起说吧，C++大一下，JAVA大二上，Python大二下。24级开始和编译原理一起四选一了，但是建议别选编译原理。25级开始三门编程课全为大一下开课，我只选了Python。</p>
+<p>C++这门课我没选，好像据说课程难度大，但是给分也还可以，学期中有小组作业，期末好像是手写代码。好像大作业做得好还有奖金。</p>
+<h3 id="JAVA高级语言程序设计"><a href="#JAVA高级语言程序设计" class="headerlink" title="JAVA高级语言程序设计"></a>JAVA高级语言程序设计</h3><p>JAVA老师是伍淳华，我去听了一节课有点困就退课了。听选的同学说有五次上机实验，有期末闭卷考试，难度不小。</p>
+<p><strong>22年期末</strong>：代码段分析题考设计面板中间有圆，可以改变圆的颜色，同时鼠标进入圆后改变颜色的代码实现；repaint（）引用的什么方法</p>
+<h3 id="Python高级语言程序设计"><a href="#Python高级语言程序设计" class="headerlink" title="Python高级语言程序设计"></a>Python高级语言程序设计</h3><p>老师是尚煜茗。这门课我当时是大二下学习。老师人很好，讲课感觉讲得也挺好的。有实验（大作业，2次，单人自己完成），平时作业（Python123平台，布置了四次）。<strong>期末60平时20两个大作业20。</strong>给分还行吧。</p>
+<p>第一个大作业是正则表达式数据提取，不难，大概在第四节课讲完第二个月这样布置。<br>第二个大作业是网络爬虫，是按照学号最后一位数抽取题目，我比较不幸抽到了最难的反爬机制比较恐怖的今日头条，而且第二个大作业时间有点不太友好，是期末周布置的，时间比较紧，但是还好只要做出来都是98或者100分。</p>
+<p>期末考试<strong>是20道填空10道判断5道大题</strong>，前两道大题是概念解释：第一题是参数传递的类型判断和举例，第二题是拷贝？有点忘了。后三道大题是手写代码：第一个是文件有关的？第二个是矩阵加法？第三个我有点忘了。手写代码比较折磨，不过还好，实在不会写至少写点东西上去，比如说中文？反正尽量别空着。</p>
+<p>在后续的各种代码应用中python是用到最多的。脚本啊大作业啊科研啊基本都是用python的，我建议都选一下python，就算学过也可以选选巩固一下。</p>
+<h3 id="网络空间安全导论实践"><a href="#网络空间安全导论实践" class="headerlink" title="网络空间安全导论实践"></a>网络空间安全导论实践</h3><p>王东滨上的，这课比较水，课上基本都是创新创业和一些网络安全法律，给分不是很高。</p>
+<p>这门选修平时会布置几个实验，会给你步骤，就按着做然后写报告即可。</p>
+<p>期末考核是个人大作业，自己从给定的题目里面选一个做，需要做PPT录视频最后课上5分钟展示，无期末考试。</p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1rE-jw9lo0QZ6xQ60q0iL3g?pwd=jjb5">网导实践</a></p>
+<h3 id="离散数学"><a href="#离散数学" class="headerlink" title="离散数学"></a>离散数学</h3><p>我当时是郝杰上的，老师人很好，给分很高（只要正常学基本都是90+）。这门课虽然是双语教学（考试全英文题目），但是真的不难。分数构成是<strong>平时30期中10期末60</strong></p>
+<p>平时作业的正确率会相应影响平时分，想拿高分的同学最高平时作业做全对。期中考试我们当时是十道大题，随堂的，考完过一周会发答题卡公布成绩。</p>
+<p>日常跟着老师学就可以了，考试前一定要把老师PPT中每道习题弄明白。我们当时期中期末都考了不少PPT中的原题。这门课由于期末考试难度不大（10道选择10道填空若干道大题？有点忘了），导致很多同学分数很高，提前交卷的同学也很多。</p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1fux5L5VRc1ho2x5Qi24Tkw?pwd=bnw8">离散数学</a></p>
+<h3 id="中国近现代史纲要"><a href="#中国近现代史纲要" class="headerlink" title="中国近现代史纲要"></a>中国近现代史纲要</h3><p>刘鑫（1-8周）、张飞雪（9-14周）上的，张老师有签到和随机点名。也是开卷考试，<strong>平时30展示20期末50。</strong>期中时候会有小组pre，平时分占比大，想拿高分建议平时多举手回答问题</p>
+<h3 id="习近平新时代中国特色社会主义思想概论"><a href="#习近平新时代中国特色社会主义思想概论" class="headerlink" title="习近平新时代中国特色社会主义思想概论"></a>习近平新时代中国特色社会主义思想概论</h3><p>和思政一样，也是巩姗姗老师上的。给分还行。成绩构成是<strong>平时20期中（好像是论文？反正不是考试）20实践20期末40（也是开卷）</strong>临近期末有政协提案和课程相关主题展示（展示是自愿的，有加分）。</p>
+<p><strong>注意听老师上课提到的考试要点</strong>，当时特意提到了<strong>新质生产力</strong>，但是书上没有这个内容，最后期末试卷考了一道10分大题。</p>
+<h3 id="高等数学A-下"><a href="#高等数学A-下" class="headerlink" title="高等数学A(下)"></a>高等数学A(下)</h3><p>高数的延续，好好学吧。</p>
+<p>换成了江彦老师，老师讲课是手写的，讲得挺好的，期末前还有专门的习题答疑课。</p>
+<p>平时分也是每节课的课后作业，占比和高数上一样，考核难度也不是很大。</p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1BQHiB0zawzNzMV45MOE4vQ?pwd=jnbq">高数A下</a></p>
+<h3 id="大学物理"><a href="#大学物理" class="headerlink" title="大学物理"></a>大学物理</h3><p>我们当时叫大物C，好像24级开始改成大物D了，本质一样的一学期4学分。</p>
+<p>刘尖斌上的，每节课都有扫码签到。分数构成<strong>平时30期中10期末60</strong>。期中我们当时是10道填空2道大题（每届都不一样，我们老师当时也没说改题型了，之前我们打听的消息都是4道大题）这门课内容多难度大，一个学期4学分学完上下两本书（部分内容不学，老师开学会给范围）</p>
+<p>大物前期都是力学电学，可以吃点老本比较简单，老师也讲得比较慢（考的也很基础）。但是到了后面学光学的时候没时间了，讲得很快（基本都是念PPT了），理解起来比较难（考的也很难）。</p>
+<p>大物速成困难，想拿高分的同学我建议一定要预习，甚至老师一开始讲力学的时候你得开始学光学了。而且这门课很吃平时的练习，平时的题目不能少。一定要把课本和课件的例题全部吃透，因为可能有原题！（据24级反馈期末考试课本原题非常多）</p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/163A0jajFD_b8h7-Y6fYRKQ?pwd=u9tw">大学物理</a></p>
+<h3 id="物理实验A"><a href="#物理实验A" class="headerlink" title="物理实验A"></a>物理实验A</h3><p>赵红梅上的，这课有点累，要写很多实验报告，需要上手操作。</p>
+<p>有几个实验是现场考核的，这几个实验的评分是按完成实验的先后顺序来评定的。</p>
+<p>考勤很严，不想做实验太累建议看实验视频预习（老师会发）。</p>
+<p>最终分数是等级呈现，但也是有分数对应的，95（优），85（良），75（中），65，59五种。</p>
+<h2 id="大二上"><a href="#大二上" class="headerlink" title="大二上"></a>大二上</h2><p>大二上课程不是很多，但是有些课程学分较大，要好好学。网安比较能拉开差距的就是大一下和大二上了，之后很难再拉开差距了。</p>
+<h3 id="网络空间安全认知实习"><a href="#网络空间安全认知实习" class="headerlink" title="网络空间安全认知实习"></a>网络空间安全认知实习</h3><p>小学期课程，据说24级改到大一下结束了。我们是苑洁上的，比较水。就是一个实验 + 网安相关调研报告。没什么难度。</p>
+<h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><p>武斌上的。分数构成没有说（可能也是平时40期末60？），平时有PTA作业，手写代码作业，无期中，只有期末考试。</p>
+<p>老师会进行报学号签到（签了四次，与平时分挂钩）</p>
+<p>考试考代码并不是很多（也就一个10分的代码设计大题，我们考的是线性表相同元素删除？反正很简单，没有给情景），平时也没有机考。期末会给复习范围课件，一定要对着范围然后找到相应PPT每个知识点复习。</p>
+<p>网课推荐：青岛大学王卓。<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1nJ411V7bd/?share_source=copy_web&vd_source=0cfbb11758fc5055bb1d48557ae8aa77">数据结构与算法基础（青岛大学-王卓）_哔哩哔哩_bilibili</a></p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1QJEjO-uKVApUMb5zBte7ow?pwd=kgj8">数据结构</a></p>
+<h3 id="计算机组成与系统结构"><a href="#计算机组成与系统结构" class="headerlink" title="计算机组成与系统结构"></a>计算机组成与系统结构</h3><p>这门课我觉得在所有课中最难了，非常让人头大，感觉很抽象，我是真没怎么学会。</p>
+<p>理论部分老师是李小勇、邱朋飞（实际上课），给分还行。分数构成：<strong>平时10期中10（期中考试开卷，一般只考大题）实验20期末60</strong></p>
+<p>理论部分：平时有作业（我们布置了两次，课上交），我们班无签到（吕老师的班签了一次）。</p>
+<p>如果想在北邮期末考试取得好成绩，可以听年级另外一位吕昕晨老师的网课，这个会比较贴合考题实际。如果时间不冲突，最好期末考试前最后一节课听听吕老师线下课，吕老师的课会透露一些出题方向（一般是他出题）。<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1rS4y1174U/?share_source=copy_web&vd_source=0cfbb11758fc5055bb1d48557ae8aa77">计算机组成与系统结构-第一讲_哔哩哔哩_bilibili</a></p>
+<p><strong>期中期末考试考原题的概率很大</strong>，当时期中考试第三道大题和22级考的一模一样。想办法找到历年真题也是获得好成绩的方法。</p>
+<p>实验部分：学期中有四周会上实验课（另外一个时间），实验课是苑洁老师上的。实验课使用实验箱。有四个实验，每个实验都要拍照，写实验报告。和数电一样，最后还需要验收，老师会从四个实验抽一个实验让你当场做。</p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/168ifvl1gKkz6a0fT5VdEUg?pwd=bkuf">计组</a></p>
+<h3 id="信息安全数学基础"><a href="#信息安全数学基础" class="headerlink" title="信息安全数学基础"></a>信息安全数学基础</h3><p>徐国胜上的，给分挺高。分数构成为<strong>平时40期末60</strong>，无期中。平时成绩主要是课堂练习（徐xgs才有，每次第三节课进行）和作业（正确率影响平时分的高低）</p>
+<p>这门课其实是上数论与近世代数。前半学期主要学数论，难度不是很大，一般理解起来不是很难，主要都是同余二次互反等计算。后半学期学近世代数，群环域，理解起来比较困难，也很抽象。</p>
+<p>由于近世代数部分在期中之后开始上，内容多时间紧，老师上课讲不来这么多，都是以念PPT为主。最后近世代数内容考的不是很深，大多数也是考群的相关证明（我们当时这部分证明题只考了一道：两个正规子群的交集是正规子群）还有一些概念（比如叫你解释一下什么是整环，什么是域）。</p>
+<p>信数期末考试会考15分概念解释，一定要牢记一些相关概念定义。一定要听复习课，老师当时提到的一些概念都考了。</p>
+<p>这门课还是很重要的，是离散数学进阶，也是之后现代密码学课程的基础。</p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1d_pTCL4wyp5V0hHUdr5NJA?pwd=x9an">信息安全数学基础</a></p>
+<h3 id="信息安全心理学-社会工程学"><a href="#信息安全心理学-社会工程学" class="headerlink" title="信息安全心理学&#x2F;社会工程学"></a>信息安全心理学&#x2F;社会工程学</h3><p>辛阳上的，这课我觉得挺有趣的，很有意思。分数构成为<strong>平时40期末大作业60</strong>，给分很高。</p>
+<p>平时多回答问题有加分，临近结课会安排课堂展示，我记得只要报名了就算没展示交了展示PPT也能加分。</p>
+<p>大作业也很水，就是叫你选一个黑客心理学的相关片段写论文介绍。</p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1t9PkgxFqgneKWS_QSx5pRQ?pwd=3wyx">社会工程学</a></p>
+<h3 id="马克思主义基本原理"><a href="#马克思主义基本原理" class="headerlink" title="马克思主义基本原理"></a>马克思主义基本原理</h3><p>杨艳萍老师上的，老师很温柔。分数构成是<strong>平时30期中20期末50</strong>，但是这门课是<strong>闭卷</strong>。</p>
+<p>平时成绩取决于考勤和课堂表现，杨老师每节课会随机点名考勤。平时成绩初始默认85分，回答一次问题加5分，回答三次即可拿平时分满分。回答问题后老师都会问学号记录。</p>
+<p>期中是随堂开卷，老师会给几个题目让你自选1~2个来写作文，不难。</p>
+<p>期末考试就是闭卷了，考哲学比较多（大题基本是哲学），背就完事了，不难的，能背完的。</p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1jxtKq-FZfhjLX7ZSpCZFeA?pwd=vkf0">马原</a></p>
+<h3 id="概率论与数理统计"><a href="#概率论与数理统计" class="headerlink" title="概率论与数理统计"></a>概率论与数理统计</h3><p>黎淑兰上的，给分不错。很多90+，不难。分数构成：<strong>平时20论文20（期中不考试，写一篇与概率统计相关的论文）期末60</strong>。考前多写几套练手就行，题型很固定。数理统计部分一些相关公式结论需要牢记。</p>
+<p>网课推荐：宋浩，框框老师，李天意</p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1P_TD8JoMnCkARWhJox_bVQ?pwd=teyn">概率统计</a></p>
+<h2 id="大二下"><a href="#大二下" class="headerlink" title="大二下"></a>大二下</h2><p>大二下专业课非常多，需要记忆的东西也很多，期末一堆考试。平时好好准备就行，期末就不会那么仓促。感觉大二下后期都在做实验。</p>
+<h3 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h3><p>老师是李灵慧。<strong>期末60，平时作业和两个实验35，期中5</strong>。期中之后开始扫码签到，每次三节课都会扫码签到，全部都签了才算。</p>
+<p>这门课考的深度确实不大，主要是要记的小概念非常多，小题拿分难（2分一题），大题主要都是计算题，不会像计网有概念解释。平时作业有对应的教材答案，很方便，直接参考就行。</p>
+<p>实验有两个：一个是调研国产操作系统，一个是三选一大实验（有两个难度比较小，建议选Openeuler，可以参考很多资料，你也可以选择那个难度最大的手搓一个操作系统），实验只要单人完成所有要求并提交报告就是满分。</p>
+<p>期中考试也是随堂，概念居多，不好拿分，大家当时分都不是很高。期末考试和期中考试题型差不多，题量略大于期中，会给小题大题范围，根据范围复习即可。我记得这门课一堆人提前交卷，难度应该不大，拿高分细致点吧。</p>
+<p>推荐网课、刷题：王道！这门课的考试选择题全部从王道题目里面出，想拿高分最好刷完。<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1YE411D7nH/?spm_id_from=333.337.search-card.all.click">王道计算机考研 操作系统_哔哩哔哩_bilibili</a></p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1CycbQAnxdDq5xqowsvaL7g?pwd=4q5d">操作系统</a></p>
+<h3 id="数据库技术与应用"><a href="#数据库技术与应用" class="headerlink" title="数据库技术与应用"></a>数据库技术与应用</h3><p>老师是肖达，<strong>平时成绩50（作业+实验），期末考试50</strong>。有实验，挺多的，课上课下都有。给分还行吧。</p>
+<p>平时多举手回答问题，或者报名讲作业题，都有额外加分。我们这届取消了期末额外的加分大实验，往年是有的，据说直接总分上加3~6分。</p>
+<p>这门课平时可以不听课，是可以速成的，但是建议期末前至少留有完整的两到三天速成。</p>
+<p>网课推荐：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Bq4y1Y7GC/?spm_id_from=333.337.search-card.all.click%EF%BC%88%E9%80%9F%E6%88%90%EF%BC%89">https://www.bilibili.com/video/BV1Bq4y1Y7GC/?spm_id_from&#x3D;333.337.search-card.all.click（速成）</a><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1p1NoeTE89/?spm_id_from=333.337.search-card.all.click%EF%BC%88%E7%B3%BB%E7%BB%9F%E6%80%A7%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%BD%91%E8%AF%BE%EF%BC%89">https://www.bilibili.com/video/BV1p1NoeTE89/?spm_id_from&#x3D;333.337.search-card.all.click（系统性学习的网课）</a></p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/15mbwgHSyJw2Rj6wa1GF5Qg?pwd=jmv6">数据库</a></p>
+<h3 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h3><p>老师是杨震。<strong>平时作业与实验45，期中考试5，期末考试50</strong>。</p>
+<p>杨老师上课讲的挺好的，最后一节课还会带着复习，里面有考试重点。</p>
+<p>平时作业每年基本一样，可以参考我们的思路，估计只会改一些数据。</p>
+<p>这门课有两个实验：实验1不难，速通很快。实验2是两人一组设计socket编程，会有验收，也不算难。</p>
+<p>期中考试随堂，10道大题，和往年期中考试题还有作业题很像。</p>
+<p>期末考试有些许难度，难点在于客观题（选择20道、判断10道、填空10道）考的知识点非常细，如果要拿高分一定要吃透PPT上每个内容，但是大题我感觉很简单，多刷点题很容易写出来（有问题可以多问老师，他很乐意解答的）</p>
+<p><strong>网课推荐中科大郑老师（和我们课件非常像，也是从上到下讲解）。</strong><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1JV411t7ow/?spm_id_from=333.337.search-card.all.click">中科大郑烇、杨坚全套《计算机网络（自顶向下方法 第7版，James F.Kurose，Keith W.Ross）》课程_哔哩哔哩_bilibili</a></p>
+<p><strong>王道的话可以参考，刷题可以用那个刷，但是王道是从下到上，和我们讲课顺序是反的。</strong></p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1kRqUvjmEySsy6HWtyBEhig?pwd=ads9">计网</a></p>
+<h3 id="汇编语言与逆向工程"><a href="#汇编语言与逆向工程" class="headerlink" title="汇编语言与逆向工程"></a>汇编语言与逆向工程</h3><p>这门课是网安的典型专业课，好好学，可以掌握一项技能。</p>
+<p>老师是付俊松。<strong>平时30</strong>（会随机点名上课回答问题，第七周上课最后全班点了一遍名），会布置三次逆向分析作业，不难。</p>
+<p><strong>期末70</strong>，机考，五道题，并手写实验报告。（信安老师要求是写电子版报告，网安付老师要求是手写）。期末考试难度不大，题型非常固定，写完往年题基本能做出四道题，最后一题会有难度（但是别空着，把过程写清楚可以拿一半分的）</p>
+<p>我觉得这门课的考试应对方法不是认真听付俊松讲课，而是考试前找一位网安的CTF大佬让他带着你做一遍历年的所有题目。</p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1JrneH-VOmlfECgiRjU7JwA?pwd=xnfp">逆向</a></p>
+<h3 id="现代密码学"><a href="#现代密码学" class="headerlink" title="现代密码学"></a>现代密码学</h3><p>老师是毕经国。<strong>平时作业20，课堂测验25，课堂考勤5，期末考试50</strong>，认真复习上90不难。平时上课会有签到和随机点名回答问题。</p>
+<p>这门课<strong>信安的郑老师和网安的毕老师上课内容差别很大，网安的同学想复习建议去听信安郑老师的网课</strong>，讲的比较好。</p>
+<p>毕老师上课讲的很多内容考试不考，如果期末复习参考范围建议去找信安课件，不过我这也有。</p>
+<p>我们这级密码学两个专业都取消期中考试了（每年情况都不同），往年一般是有的而且占比不少。我们课堂测验是开卷线上答题，基本大家都是满分。</p>
+<p>期末考试考的难度没有预想的大，内容比较浅，也是偏向基本概念和基本计算，但是题量很大。建议最后一节课去信安听郑老师的复习课（网安的毕老师不会讲重点和范围），最后一节课点的内容基本都考了。</p>
+<p><strong>郑老师网课链接</strong>：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1bi4y1k7ZC/?spm_id_from=333.337.search-card.all.click">现代密码学-第一周_哔哩哔哩_bilibili</a></p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1TOYBzdd6YmE0JjmhHcCseg?pwd=vg87">现代密码学</a></p>
+<h3 id="毛泽东思想和中国特色社会主义理论体系概论"><a href="#毛泽东思想和中国特色社会主义理论体系概论" class="headerlink" title="毛泽东思想和中国特色社会主义理论体系概论"></a>毛泽东思想和中国特色社会主义理论体系概论</h3><p>老师是曲伟杰，讲课非常好。</p>
+<p><strong>平时40</strong>：出勤4分，回答三次问题4分，小组课堂展示16分，随堂小测16分（其实我们当时就搞了一次，当考勤）</p>
+<p><strong>期中20</strong>（4到5人一组拍摄短视频。助教先在每个班的视频中筛出一半作为优胜小组，优胜小组此项至少获得19分并且视频在第七周进行课堂展示。未选上优胜小组此项分数在16到18分，第七周课上会选三个最佳作品获得此项满分20分）我们小组当时得了20分然后老师还让我们小组去参加了马院的微电影大赛。我感觉拍这个挺有意思的。</p>
+<p><strong>期末40</strong>（闭卷考试，会给大题范围，狠狠背就行了），相比马原很多都是背过的，不难，我留了10天左右背，背的考试全考了。</p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1Sz5SzfV4ncSsCOuCnIuBHw?pwd=d48y">毛概</a></p>
+<h3 id="数学建模与模拟"><a href="#数学建模与模拟" class="headerlink" title="数学建模与模拟"></a>数学建模与模拟</h3><p>23级培养方案是数学建模、组合数学、复变函数三门课三选一。据说24级开始没有数学建模课程了，组合数学和复变函数无学分要求。当时我们基本都选数学建模。其他两门课都是闭卷期末考试，难度不小，如果能不选就不要选。</p>
+<p>贺祖国老师上的，这门课是三选一数学课中唯一不用期末考试的，比较轻松，给分挺好，推荐选择这门课。</p>
+<p>期中有个北京市数学建模比赛，建议去参加，老师说去的能加分。</p>
+<p>期末是倒数第二节课发题目一周时间线下自己完成最后一节课上交。</p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/18-c-fs0ffldWO_QFsYb1YQ?pwd=kprk">数学建模</a></p>
+<h3 id="大型程序设计实践"><a href="#大型程序设计实践" class="headerlink" title="大型程序设计实践"></a>大型程序设计实践</h3><p>大二下结束的小学期，我们是昌硕上的。就是开发一个平台，当时两个选题，一个是安全通讯还有一个是失物招领。我们是5个人。周一早上讲要求周五验收汇报，给分都很高。</p>
+<h2 id="大三上"><a href="#大三上" class="headerlink" title="大三上"></a>大三上</h2><p>大三上极度痛苦，各种各样的课程实验基本没停过，从开学做到期末，事非常多。</p>
+<h3 id="编译原理与技术"><a href="#编译原理与技术" class="headerlink" title="编译原理与技术"></a>编译原理与技术</h3><p>老师是郭燕慧，23级应该是最后一年必修课了，24级开始好像改成和C++、JAVA、Python一起的四选一选修了，而且改到了大二下学期。如果学有余力的话可以选修，但是我建议还是别选了。</p>
+<p>这门课很硬核，又是一门双语重量级课程。每节课扫码签到。<strong>期末50，作业实验30（5次assignment+5次lab），项目project20（2次）。</strong>实验和project都有学长学姐的资料参考。</p>
+<p>期中有自愿小组汇报（当时信安是3人一组，网安是4人一组），汇报有额外3~5分加分，直接加到总分上，我们组加了4分。</p>
+<p>期末题量很大，23级有16页，8道概念题+5道计算题（作业类型）+1道设计题+1道开放题。虽然是开卷，但是难度非常大，根本写不完。我当时是全部写上了，有些不会的基本是随便写给老师捞。我这门课正好90，应对考试得对课本特别熟悉，把每个概念标清楚。建议作业题在考试前盖上答案全部自己重新写一遍，然后构思一下设计题和开放题的考法，用GPT预设一下可能要考的内容。</p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1zGO7YDlHpn6ruFF39jfx6Q?pwd=gvef">编译原理</a></p>
+<h3 id="网络空间安全治理"><a href="#网络空间安全治理" class="headerlink" title="网络空间安全治理"></a>网络空间安全治理</h3><p>这门课不好评价，纯看老师是谁。如果是邓小龙，那必然是灾难性的课程。如果是王小娟，那这课等同于大三下专业选修课的水课。</p>
+<p>24级开始改成大二下开课。<strong>这门课没有期末考试，只有期中考试且占比40分。剩下60分是大作业汇报+报告。</strong></p>
+<p>大作业选题范围：钓鱼邮件、前沿APT攻击方式、社交舆情热点分析、社工学热点（基于LLM的社交机器人、社交网络群体智能博弈-话术）、人工智能数据投毒和软件投毒、经典病毒复现+配合学院的靶场上课 &#x3D; 有考试 + 动手实验 + 汇报。</p>
+<p>期中考试（第12周左右）。这个不用准备，因为准备了也没用。我们当时说范围是课件1~3章，但是最后的题目和课件完全没有关系，所以建议不要浪费时间准备，准备和不准备考的都差不多。基本都会捞人，大概期中考试分数每个人都会在原始分上加10到20分。</p>
+<p>大作业汇报（包括汇报表现40% + 大作业报告20%）：大作业一组不超过3人，邓小龙安排小组汇报时间较晚，每年都无法在结课前完成汇报，我们当时还剩十几组没有汇报完，一般安排在期末最后一门考试结束后的某天去网安楼会议室和他汇报。相比另一位老师王小娟，邓小龙要求非常高，如果不做出完整的系统平台和丰富的可视化界面，可能得分不是很高，并且邓小龙需要提交代码+PPT+演示视频。如果你们老师是王小娟的话可能汇报一下治理相关的调研就行了，只需提交PPT+文档，基本都能很高分。</p>
+<p>以下原则仅限老师是邓小龙：组内的得分都不一样，每个人相差3~4分左右。汇报人和组长一般得分较高，但不是一定。原则上女生得分比男生高。</p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1ukBQATswLV4qbYybD4mC3A?pwd=3jki">治理</a></p>
+<h3 id="算法设计与分析"><a href="#算法设计与分析" class="headerlink" title="算法设计与分析"></a>算法设计与分析</h3><p>王东滨上的，<strong>作业和期末考试各占50%。</strong>不签到，但是课上有雨课堂扫码做题。</p>
+<p>作业占分挺大，四次作业，报告形式提交。</p>
+<p>期末考试不难，题型和往年一样。每个章节都会涉及考题。</p>
+<p>参考23级考题：前两题和历年题一样题型很简单，第三题考了线性的选择排序(p-r&lt;75那个，当时没写出来，那个代码在课件里面被挡住了)，第四题是动态规划最优子结构，第五题贪心算法分数背包，第六题回溯法N皇后。</p>
+<p>考题全是课件和课本上的例题！例题！因此把课件上每一个算法原理能说出来，代码能默写出来，复杂度能说出来就基本可以拿90+。因此区分度都在作业，作业的报告尽量写的多一点，详细一点，不要只写代码和结果，把分析也写上去。</p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1xnd3e4XyxJVn0oMuWBc8og?pwd=qgwu">算法</a></p>
+<h3 id="软件安全"><a href="#软件安全" class="headerlink" title="软件安全"></a>软件安全</h3><p>徐国胜老师上的，分数构成<strong>期末40平时30实验30</strong></p>
+<p>每节课都会有扫码签到，并且每节课都要写课堂练习并上传到云平台。</p>
+<p>开学第一节课会发共享文档组织同学自愿报名每节课的课堂演示实验，有平时分10分的加分，建议报名，保证平时分可以拿满。</p>
+<p>会布置4个实验，还要考华为初级证书，做两个开源贡献(OpenKylin和OpenHarmony)，事情非常多，开源贡献审核非常慢，拖到了期末考试完。</p>
+<p>期末考试大概有一半题目都是往年题原题。填空选择比较容易，大题有难度，大题都是给你一串代码问你漏洞，还有叫你设计漏洞程序写代码这种。最后一道12分题和某次实验很像。</p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1S5nHfRi5uYc76-ocrwZTDA?pwd=2rtw">软件安全</a></p>
+<h3 id="网络安全"><a href="#网络安全" class="headerlink" title="网络安全"></a>网络安全</h3><p>老师是郑康锋。<strong>期末60平时40</strong>。期中有3人小组15页调研报告作业，期末闭卷。</p>
+<p>有专门实验课，第六周开始的双周都在网安楼实验室上（共六个实验）。有些实验分成课上课下实验，课上部分需要下课前提交报告。</p>
+<p>会不定时一个个点名签到，点了两次，算入平时分。</p>
+<p>期末考试题目很多原题，背完基本能高分。</p>
+<p>2023级期末考试题目：（考试时间2025.12.30）</p>
+<p>填空题10道（很简单，我的终极预测资料里全都有，背了就能全对）</p>
+<p>选择题10道（也很基础，基本看了就会，有一道不属于PGP优点有点难度，全卷我就这个没复习到）</p>
+<p>简答题7道（误用和异常入侵检测内容及其优缺点、TearDrop、ARP欺骗（要画图）、IPSec的两个过程（不用具体，第一阶段第二阶段里面的大致流程）、PGP加密认证（要画图）、snort实验三条规则（要会写：LAND、TCP NULL、SQL）。还有一道忘记了反正不难资料都有。</p>
+<p>开放题1道：占18分，多写一点，不会也要编。考了APT攻击（第一问叫你说1~2个APT案例、第二问是APT频繁出现原因、第三问是应对方法措施）</p>
+<p>资料使用指南：</p>
+<p>网络安全期末复习pdf，第一轮复习的版本，涵盖较全面，有时间可以慢慢看。</p>
+<p>网络安全终极预测LHL，第二轮整理版本，筛选了一部分内容，常考的内容。</p>
+<p>网络安全真题回顾，全部真题，历年考过的。</p>
+<p>网络安全：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1dmPH0BUYzPXlpsz84LvdNw?pwd=4qti">网络安全</a></p>
+<h3 id="软件工程技术基础"><a href="#软件工程技术基础" class="headerlink" title="软件工程技术基础"></a>软件工程技术基础</h3><p>芦效峰上的，基本不签到可以不用听。</p>
+<p><strong>期末考试开卷40</strong>，很简单，带书就行。我们当时20选择5道判断5道简答，全是书上的都能找到。最后2道画图题是平时作业布置的原题，准备好就行。</p>
+<p><strong>期末大作业50</strong>（小米便签或者鸿蒙商城开发，3~4人一组，不交报告需要录个程序视频）。我们当时是4个人，做了非常多的功能，建议大家多加一点功能，这项就能拿满分。</p>
+<p>我们小组做的鸿蒙商城开发：<a target="_blank" rel="noopener" href="https://github.com/Harrisonls2004/WaterFlow">https://github.com/Harrisonls2004/WaterFlow</a></p>
+<p><strong>平时10</strong>（不签到但有次课写了一题课堂练习上交，课下有2次画图作业）</p>
+<p>这门课不难，给分非常高，大家都是接近满分。</p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1JOSf-D79V_Es4Ml4kWS9-A?pwd=rmu8">软件工程</a></p>
+<h3 id="大数据安全"><a href="#大数据安全" class="headerlink" title="大数据安全"></a>大数据安全</h3><p>石瑞生上的。<strong>考勤作业实验50分，期末开卷考试50分。</strong></p>
+<p>实验和作业都是5人一组（五次作业五次实验，小组每人完成1次作业1次实验）。最后5节是实验汇报课，每节课汇报一个实验。建议去汇报，得分应该比不汇报的高。实验尽量做的扩展性创新性多一点，老师很喜欢，毕竟期末考试开卷不难，很多往年题原题，因此拉开差距的都是平时分。</p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1CF6PI24QaiE0NyOEubrGRA?pwd=w8w7">大数据安全</a></p>
+<h3 id="Web开发技术基础"><a href="#Web开发技术基础" class="headerlink" title="Web开发技术基础"></a>Web开发技术基础</h3><p>我们当时是Web、可信还有第六学期两门课四选一。我第5学期只选了Web。</p>
+<p>孙岩炜老师上的。<strong>平时分60期末开卷40</strong>。有次老师记录了上课坐前三排同学的名单，每人平时分加了5分。</p>
+<p>两次调研论文作业，三次设计作业。</p>
+<p>23级期末考试可以使用电脑打开PDF（所以比较难），22级及其之前只能用纸质材料。</p>
+<p>虽然是开卷，但是期末有风险，选课请慎重！</p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1EP-ySYqvavZS0Uv6sJv2QA?pwd=64xq">Web</a></p>
+<h3 id="可信计算理论与技术"><a href="#可信计算理论与技术" class="headerlink" title="可信计算理论与技术"></a>可信计算理论与技术</h3><p>文献阅读作业30分，每人一份：选择课程相关的高水平论文进行评述。期末前提交，教师评分。</p>
+<p>课程实验报告20分，每人一份：随堂实验的报告(运行过程与结果截图)。课后或期末前提交，教师评分。</p>
+<p>小组课程项目50分，每组一份：分组完成一篇课程相关综述论文，并进行一次报告。论文期末提交(教师评分)，随堂报告(同学互评+教师评分)。评述对课程内容相关的高水平学术论文(可自选)。字数要求:1000字以上(Word五号字体1页)，中&#x2F;英文不限(不影响分数)。<br>基本内容要求：论文主要内容简介、论文的主要创新之处、论文对你的启发、论文的不足之处、论文可能的进一步工作等等。一定要有自己的见解，切忌只是单纯的翻译或转述论文。可以评述小组报告中的论文，但评述内容不能雷同!<br>AI工具:自己见解部分不能使用，其他部分使用必须明确标注(不能超过50%)</p>
+<p>授课韩老师备课认真负责。本课程有助于建立对安全体系的整体认知；同时结合相关前沿动态传授科研经验。</p>
+<p>以上是相关课程介绍，我没选，可能是早八原因吧。但是听说给分挺好的，学弟学妹可以考虑一下。</p>
+<h3 id="计算理论"><a href="#计算理论" class="headerlink" title="计算理论"></a>计算理论</h3><p>我们培养方案是计算理论、安全法、安全通论三选一。我选了计算理论。听说24级开始网安只有安全法。计算理论和安全通论只有信安能选。</p>
+<p>孙岩炜老师上的，是三选一中唯一一个不用pre的课程。</p>
+<p>如果有这门课可以选，推荐选择，给分非常高。大家都是接近满分。</p>
+<p>老师很好，上课也很认真，不签到，但是建议都去，去了可能会有加分。</p>
+<p><strong>平时60期末论文40。</strong>平时两次作业，计入分数，github有答案，一定要写对，占分。</p>
+<p>相关资料：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1E1Ew2SXjuJUGG-k4WG8ymA?pwd=ri2h">计算理论</a></p>
+<h3 id="网络安全法"><a href="#网络安全法" class="headerlink" title="网络安全法"></a>网络安全法</h3><p>没有选择，当时这课排在早八起不来，而且据说给分参差不齐。老师应该是谢永江。</p>
+<p>考勤、课堂发言20。</p>
+<p>课堂报告1次或读书报告2篇20。读书报告每篇2000到3000字。选择课堂报告此项直接满分。</p>
+<p>期末考试60。提交课程论文(5000字以上)。要有AI说明。</p>
+<h3 id="安全通论"><a href="#安全通论" class="headerlink" title="安全通论"></a>安全通论</h3><p>没有选择，这课当时也是早八，好像整个年级才选了18人。是王笑尘上的。</p>
+<p>考勤20: 随机考勤</p>
+<p>至少1次平时作业20: 自行调研相关文献，按内容要求撰写学习报告。</p>
+<p>期末PPT汇报 + 提交大论文60: 给出几个论文题目，学生任选其一或自行拟定开展研究和论述，课程最后进行PPT汇报，并将PPT和大论文(一般包括背景描述、模型构建、结果分析、总结、参考文献五部分)。</p>
+<h3 id="网络空间安全课程设计"><a href="#网络空间安全课程设计" class="headerlink" title="网络空间安全课程设计"></a>网络空间安全课程设计</h3><p>大三上的小学期。验收是崔宝江、苑洁老师一起考核，信安和网安一起合班。</p>
+<p>崔老师要求比较高，验收答辩可能会有拷打。</p>
+<p>题目有基础题（5人）、综合题（10人）、开放自选题（10人）。我们当时是8个人自选题，好好做就行，文档写多一点（当时有小组写了600页）。基本都是90+，因为难度较大，原则上不会给低于90分。</p>
+<h2 id="大三下"><a href="#大三下" class="headerlink" title="大三下"></a>大三下</h2><p>2026年6月更新。</p>
+<h2 id="英语课"><a href="#英语课" class="headerlink" title="英语课"></a>英语课</h2><p>23级是分了ABC班，不管哪个班大一大二4个学期每学期都有英语课。A班是综合4 + 公众英语 + 学术英语 + 八选一。B&#x2F;C班是综合2&#x2F;3 + 综合3&#x2F;4 + 英语听说2 + 九选一。24级开始好像只用上三个学期英语了，A班大一下就能选修英语课程。不过建议分班考试能考好点就好一点，尽量去A班，公众英语和学术英语这种英语选修课给分普遍比综合英语和进阶英语这种高，而且能提前考四级。</p>
+<p>英语选课建议参考老师，不要参考课程。每年各个课程老师都不一样，这里推荐张爱阳。</p>
+<h2 id="体育课"><a href="#体育课" class="headerlink" title="体育课"></a>体育课</h2><p>大一上是体育基础，考太极拳和3000米的。3000米比较折磨，我是刚刚达到毕业要求。所以这课我分数并不是很高。</p>
+<p>356学期是自选课程，我选了排球、网球、匹克球。排球是李k上的，给分不算高。网球是崔ty上的，当时下雪了，考核只有正反手各打5个，只技术评分，好的90+，就算再差也是8889左右不会很低。</p>
+<h2 id="公选课"><a href="#公选课" class="headerlink" title="公选课"></a>公选课</h2><p>公选课属于自行选修课程，最后不会算在取得保研资格排名中，但是对保外和出国有用，可以开包含公选课的成绩单用于外校夏令营和预推免。因此有保外或者出国打算的同学可以刷刷公选课提升教务系统上的排名。</p>
+<h3 id="智慧树"><a href="#智慧树" class="headerlink" title="智慧树"></a>智慧树</h3><p>智慧树非常好，都是网课，基本都是97+，很好通过。期末是在线考试选择题，可以在网上查到成套的往年题，一边考试一边借鉴就可。</p>
+<p>我大三之前每学期学校都会开差不多20门左右，可以随便选择。但是大三学年（2025秋季）开始学校出了新规，每学期只开3~4门，还需要抢名额，就比较难刷分了。</p>
+<h3 id="亲密关系心理学"><a href="#亲密关系心理学" class="headerlink" title="亲密关系心理学"></a>亲密关系心理学</h3><p>非常火爆。但是我感觉也就那样。后面我也没去听课。期末交论文，给分95左右，能抢到可以抢，水水学分。</p>
+<h3 id="跨文化沟通与商务礼仪"><a href="#跨文化沟通与商务礼仪" class="headerlink" title="跨文化沟通与商务礼仪"></a>跨文化沟通与商务礼仪</h3><p>大一上不太懂随便选的公选课。是郑春萍老师上的。事情有点多，会有签到，小组课堂汇报，期末录音作业。给分一般般。</p>
+<h3 id="流行音乐赏析"><a href="#流行音乐赏析" class="headerlink" title="流行音乐赏析"></a>流行音乐赏析</h3><p>大一上选的，事不多，偶尔签到。是马辉老师，好像她是校歌作曲人。最后一节课课上会全班一起录一个合唱视频。最后交一篇论文或者自己录一段唱歌视频即可。</p>
+<h3 id="显示技术的发展与游戏应用（双创）"><a href="#显示技术的发展与游戏应用（双创）" class="headerlink" title="显示技术的发展与游戏应用（双创）"></a>显示技术的发展与游戏应用（双创）</h3><p>一门关于显示技术的创新课，比较有意思，没有作业，没有考试，期末可以选择交论文，也可以选择相关话题最后一节课去汇报（汇报分会高一些）。用来水双创分还是可以的。</p>
+<hr>
+<h2 id="特别鸣谢"><a href="#特别鸣谢" class="headerlink" title="特别鸣谢"></a>特别鸣谢</h2><p>在最后，我想特别感谢以下几位学长，他们无私分享的资料为我提供了巨大的帮助：</p>
+<p>XF（2022级）：<a target="_blank" rel="noopener" href="https://github.com/77feng/bupt_scss_course">https://github.com/77feng/bupt_scss_course</a></p>
+<p>SQ（2022级）：<a target="_blank" rel="noopener" href="https://shenqi629.notion.site/">https://shenqi629.notion.site/</a></p>
+<p>ZYH（2021级）：<a target="_blank" rel="noopener" href="https://shuita2333.github.io/">https://shuita2333.github.io/</a></p>
+<p>WD（2021级）：<a target="_blank" rel="noopener" href="https://pewter-tarsier-5b9.notion.site/1d826533399b4e44a8a513ddd63e881a">https://pewter-tarsier-5b9.notion.site/1d826533399b4e44a8a513ddd63e881a</a></p>
+<p>HDW（2021级）：<a target="_blank" rel="noopener" href="https://github.com/fengchen555/BUPT-SCSS-learning-source">https://github.com/fengchen555/BUPT-SCSS-learning-source</a></p>
+<p>正是依靠这些前辈们整理的内容，我得以顺利度过学习中的许多难关，在此由衷感谢各位大佬们的付出。</p>
+<p>本文可以视作对往届资料的补充与更新，同时结合了我个人的学习笔记，希望能为大家提供更全面、更实用的参考，帮助大家在学习的道路上少走弯路。</p>
+<p>此外，2024级的同学们也可以关注同级同学 RCY 的最新资料仓库哦～</p>
+<p>RCY（2024级）：<a target="_blank" rel="noopener" href="https://github.com/cyruan815/BUPT_SCSS_2024">https://github.com/cyruan815/BUPT_SCSS_2024</a></p>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上就是北邮网安的主要课程介绍，希望对学弟学妹们有所帮助！</p>
+<p>祝大家学业顺利！科研顺利！每天开心！🎓</p>
+<p><em>本文内容基于个人经验整理，仅供参考。具体课程安排和考核方式以学校最新通知为准。</em></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://Harrisonls2004.github.io">Harrisonls2004</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://harrisonls2004.github.io/2026/01/25/%E5%8C%97%E9%82%AE%E7%BD%91%E5%AE%89%E5%A4%A7%E7%B1%BB%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/">https://harrisonls2004.github.io/2026/01/25/%E5%8C%97%E9%82%AE%E7%BD%91%E5%AE%89%E5%A4%A7%E7%B1%BB%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://Harrisonls2004.github.io" target="_blank">lhldudu's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%8C%97%E9%82%AE/">北邮</a><a class="post-meta__tags" href="/tags/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8/">网络空间安全</a><a class="post-meta__tags" href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/">信息安全</a><a class="post-meta__tags" href="/tags/%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/">课程介绍</a></div><div class="post-share"><div class="social-share" data-image="/img/buptnew.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/01/27/EvoCorps/" title="EvoCorps"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/logo1.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">EvoCorps</div></div><div class="info-2"><div class="info-item-1">相关仓库: https://github.com/ln2146/EvoCorps   EvoCorps  面向网络舆论去极化的进化式多智能体框架                            ⚡ 项目概述EvoCorps 是一个面向网络舆论去极化的进化式多智能体框架。它并非传统的舆情检测或事后治理工具，而是在模拟环境中将舆论干预建模为一个持续演化的社会博弈过程：系统在传播过程中进行过程内调节，降低情绪对立、抑制极端观点扩散，并提升整体讨论的理性程度。 在 EvoCorps 中，不同智能体分工协作，模拟现实中的多角色舆论参与者，协同完成舆论监测、局势建模、干预规划、基于事实的内容生...</div></div></div></a><a class="pagination-related" href="/2026/01/06/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8%E6%AF%94%E8%BE%83%E9%87%8D%E8%A6%81%E7%9A%84%E5%9C%B0%E6%96%B9/" title="软件安全期末复习"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/softsec.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">软件安全期末复习</div></div><div class="info-2"><div class="info-item-1">授课：徐国胜 考试必备：概念题&#x2F;简答题名词解释题1.整数回绕 整数在固定位宽（如32位无符号&#x2F;有符号）表示下进行运算，结果超过可表示范围时会回到起始处继续计数（模2^n）。 常见风险：长度计算、内存分配大小计算出错，导致分配偏小进而引发溢出&#x2F;越界写。 2.缓冲区溢出攻击 计算机向缓冲区内填充数据位数超过了缓冲区本身的容量，溢出的数据覆盖在合法数据上，淹没局部变量、淹没返回地址。 3.恶意软件 以危害系统、窃取信息、控制主机为目的的软件统称，如病毒、蠕虫、木马、勒索软件等。常通过漏洞、钓鱼、驱动&#x2F;浏览器组件等途径植入。 4.有效用户ID 在类Unix...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/05/25/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9FOpenEuler%E5%AE%9E%E9%AA%8C/" title="操作系统OpenEuler实验"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/os.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-25</div><div class="info-item-2">操作系统OpenEuler实验</div></div><div class="info-2"><div class="info-item-1">操作系统OpenEuler实验实验内容与环境实验内容完成openEuler操作系统的安装，完成内核更新，在此基础上，增加完成其他功能。本次实验已增添完成：内核模块编程、内存管理、内核时间管理。 实验环境虚拟机Vmware和openEuler操作系统。 实验过程openEuler操作系统安装1.下载OpenEular镜像   2.安装到虚拟机 （1）新建虚拟机               （2）进入虚拟机，开始安装  ①等待安装检查   ②进行语言设置：选择中文  ③进行软件选择：这里我们选择最小安装，附加选项为标准和开发工具   ④设置ROOT密码：12Lhl0408  ⑤创建用户：设置...</div></div></div></a><a class="pagination-related" href="/2025/10/29/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E4%BD%9C%E4%B8%9A3/" title="大数据安全作业3：FIFO协议"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/bdt.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-10-29</div><div class="info-item-2">大数据安全作业3：FIFO协议</div></div><div class="info-2"><div class="info-item-1">FIDO协议：为网站添加用户管理功能，支持FIDO2认证FIDO协议基础FIDO（Fast IDentity Online，快速在线身份认证）协议是一种开放标准，旨在实现更加安全、便捷的无密码身份验证机制，减少传统口令认证带来的风险，如密码泄露、重放攻击及钓鱼攻击等问题。该标准由FIDO联盟（FIDO Alliance） 推动，目前主要包括三种规范：FIDO UAF、FIDO U2F与FIDO2。FIDO UAF（Universal Authentication Framework） （1）FIDO UAF（通用认证框架） FIDO UAF支持用户通过设备上的本地生物识别技术（如指纹、人...</div></div></div></a><a class="pagination-related" href="/2025/10/30/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C3/" title="网络安全实验3：网络扫描"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/wlaq.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-10-30</div><div class="info-item-2">网络安全实验3：网络扫描</div></div><div class="info-2"><div class="info-item-1">网络扫描实验实验目的用Nmap对主机进行主机扫描、ping扫描、端口扫描、TCP connect扫描、操作系统识别、漏洞扫描等，获取尽可能全面的主机信息，抓包分析扫描原理； 实验环境（1） 扫描机：Kali，配置nmap工具； （2） 靶机：Windows XP； （3） 软件：Nmap、wireshark 实验过程与结果步骤一：查看主机信息1.在扫描机Kali中打开终端，输入“ifconfig”命令查看扫描机信息，如下图所示可知扫描机的ip地址为192.168.204.134。  2.在靶机windows XP中打开命令行，使用“ipconfig”命令查看靶机信息，如下图所示可知靶机的...</div></div></div></a><a class="pagination-related" href="/2025/11/27/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C5/" title="网络安全实验5：入侵检测"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/wlaq.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-27</div><div class="info-item-2">网络安全实验5：入侵检测</div></div><div class="info-2"><div class="info-item-1">入侵检测课堂实验实验目的1.在linux平台建立基于Snort的IDS。 2.在部署snort的本机建立规则，实现对dos攻击、nmap扫描和ssh连接的检测。 实验环境1.虚拟机：ubuntu、kali 2.工具：nmap、snort、hping3 实验过程与结果步骤一：课前准备1.安装snort 1sudo apt install -y snort  下载完成后，会提示进行相应配置，按要求配置即可 首先是输入CIDR格式的本地网段（例如我的主机ip是192.168.204.136，所以配置为192.168.0.0&#x2F;16）。其次是填写网卡位置，网卡位置可通过ifconfig指...</div></div></div></a><a class="pagination-related" href="/2025/12/09/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C6/" title="网络安全实验6：VPN"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/wlaq.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-12-09</div><div class="info-item-2">网络安全实验6：VPN</div></div><div class="info-2"><div class="info-item-1">VPN实验实验目的1.Windows IPSec配置 2.抓包分析IKE SA和IPSec SA建立过程 实验环境1.虚拟机：Windows XP*2 2.工具：wireshark 实验过程与结果步骤一：配置 Windows内置的IPSec安全策略 “Win+R”输入“secpol.msc”打开本地安全设置窗口，右键创建IP安全策略。    2.创建IP安全策略。一直点击下一步，勾选“激活默认相应规则”，并在默认响应规则身份验证方式中 设置预共享密钥为“123456”，点击下一步直至完成。   修改新建策略的属性，添加安全规则。不指定隧道终结点，适用于所有网络连接，使用“abcdef”作...</div></div></div></a><a class="pagination-related" href="/2025/11/28/%E4%BA%91%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8%E5%86%8D%E5%BA%A6%E4%BA%AE%E7%BA%A2%E7%81%AF/" title="云基础软件安全再度亮红灯"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/soft2.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-28</div><div class="info-item-2">云基础软件安全再度亮红灯</div></div><div class="info-2"><div class="info-item-1">软件安全资讯作业新闻链接https://www.theregister.com/2025/11/24/fluent_bit_cves 资讯描述Fluent Bit在本周被披露存在多项高危漏洞，引发了云平台、DevOps团队与企业安全部门的广泛关注。作为开源日志采集和转发工具，Fluent Bit在许多企业的云原生架构、Kubernetes集群、监控系统甚至AI训练平台中扮演着关键角色。然而，此次披露的漏洞涉及认证绕过、路径遍历和可能的远程代码执行，使攻击者能够通过构造恶意日志数据获得异常权限，进而影响系统行为。 研究人员指出，这些漏洞中有相当一部分利用门槛极低，只需要向暴露的Fluent...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Harrisonls2004</div><div class="author-info-description">尽人事 听天命</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/"><i class="fab fa-github"></i><span>关注我</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Harrisonls2004" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:lhldudu@bupt.edu.cn" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=1030824397" target="_blank" title="QQ"><i class="fab fa-qq" style="color: #12b7f5;"></i></a><a class="social-icon" href="/img/wx.jpg" target="_blank" title="微信"><i class="fab fa-weixin" style="color: #09b83e;"></i></a><a class="social-icon" href="https://www.douyin.com/user/MS4wLjABAAAAn_2JnST2JJZLzTBjHHu28he2MZut6di0JkJcxc0-_uA?from_tab_name=main" target="_blank" title="抖音"><i class="fab fa-tiktok" style="color: #000000;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客！分享技术与生活感悟。有问题可以私信联系我，我会定期更新哒~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BUPT-SCSS-2023%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99%E6%B1%87%E6%80%BB"><span class="toc-number">2.</span> <span class="toc-text">BUPT-SCSS-2023相关资料汇总</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E4%B8%80%E4%B8%8A"><span class="toc-number">3.</span> <span class="toc-text">大一上</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%BF%83%E7%90%86%E5%81%A5%E5%BA%B7"><span class="toc-number">3.1.</span> <span class="toc-text">大学生心理健康</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E5%AF%BC%E8%AE%BA%E4%B8%8E%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1"><span class="toc-number">3.2.</span> <span class="toc-text">计算导论与程序设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA"><span class="toc-number">3.3.</span> <span class="toc-text">网络空间安全导论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E6%83%B3%E9%81%93%E5%BE%B7%E4%B8%8E%E6%B3%95%E6%B2%BB"><span class="toc-number">3.4.</span> <span class="toc-text">思想道德与法治</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6A-%E4%B8%8A"><span class="toc-number">3.5.</span> <span class="toc-text">高等数学A(上)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0"><span class="toc-number">3.6.</span> <span class="toc-text">线性代数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%A2%E5%8A%BF%E4%B8%8E%E6%94%BF%E7%AD%96"><span class="toc-number">3.7.</span> <span class="toc-text">形势与政策</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%9B%E4%BA%8B%E7%90%86%E8%AE%BA"><span class="toc-number">3.8.</span> <span class="toc-text">军事理论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%9B%E4%BA%8B%E8%AE%AD%E7%BB%83"><span class="toc-number">3.9.</span> <span class="toc-text">军事训练</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E4%B8%80%E4%B8%8B"><span class="toc-number">4.</span> <span class="toc-text">大一下</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E4%B8%8E%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F"><span class="toc-number">4.1.</span> <span class="toc-text">数字逻辑与数字系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-%E9%AB%98%E7%BA%A7%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1"><span class="toc-number">4.2.</span> <span class="toc-text">C++高级语言程序设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JAVA%E9%AB%98%E7%BA%A7%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1"><span class="toc-number">4.3.</span> <span class="toc-text">JAVA高级语言程序设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Python%E9%AB%98%E7%BA%A7%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1"><span class="toc-number">4.4.</span> <span class="toc-text">Python高级语言程序设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E5%AE%9E%E8%B7%B5"><span class="toc-number">4.5.</span> <span class="toc-text">网络空间安全导论实践</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6"><span class="toc-number">4.6.</span> <span class="toc-text">离散数学</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E5%9B%BD%E8%BF%91%E7%8E%B0%E4%BB%A3%E5%8F%B2%E7%BA%B2%E8%A6%81"><span class="toc-number">4.7.</span> <span class="toc-text">中国近现代史纲要</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A0%E8%BF%91%E5%B9%B3%E6%96%B0%E6%97%B6%E4%BB%A3%E4%B8%AD%E5%9B%BD%E7%89%B9%E8%89%B2%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E6%80%9D%E6%83%B3%E6%A6%82%E8%AE%BA"><span class="toc-number">4.8.</span> <span class="toc-text">习近平新时代中国特色社会主义思想概论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6A-%E4%B8%8B"><span class="toc-number">4.9.</span> <span class="toc-text">高等数学A(下)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86"><span class="toc-number">4.10.</span> <span class="toc-text">大学物理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%AE%9E%E9%AA%8CA"><span class="toc-number">4.11.</span> <span class="toc-text">物理实验A</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E4%BA%8C%E4%B8%8A"><span class="toc-number">5.</span> <span class="toc-text">大二上</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8%E8%AE%A4%E7%9F%A5%E5%AE%9E%E4%B9%A0"><span class="toc-number">5.1.</span> <span class="toc-text">网络空间安全认知实习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-number">5.2.</span> <span class="toc-text">数据结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84"><span class="toc-number">5.3.</span> <span class="toc-text">计算机组成与系统结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="toc-number">5.4.</span> <span class="toc-text">信息安全数学基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%BF%83%E7%90%86%E5%AD%A6-%E7%A4%BE%E4%BC%9A%E5%B7%A5%E7%A8%8B%E5%AD%A6"><span class="toc-number">5.5.</span> <span class="toc-text">信息安全心理学&#x2F;社会工程学</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="toc-number">5.6.</span> <span class="toc-text">马克思主义基本原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1"><span class="toc-number">5.7.</span> <span class="toc-text">概率论与数理统计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E4%BA%8C%E4%B8%8B"><span class="toc-number">6.</span> <span class="toc-text">大二下</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-number">6.1.</span> <span class="toc-text">操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8"><span class="toc-number">6.2.</span> <span class="toc-text">数据库技术与应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="toc-number">6.3.</span> <span class="toc-text">计算机网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B8%8E%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B"><span class="toc-number">6.4.</span> <span class="toc-text">汇编语言与逆向工程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A6"><span class="toc-number">6.5.</span> <span class="toc-text">现代密码学</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AF%9B%E6%B3%BD%E4%B8%9C%E6%80%9D%E6%83%B3%E5%92%8C%E4%B8%AD%E5%9B%BD%E7%89%B9%E8%89%B2%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E7%90%86%E8%AE%BA%E4%BD%93%E7%B3%BB%E6%A6%82%E8%AE%BA"><span class="toc-number">6.6.</span> <span class="toc-text">毛泽东思想和中国特色社会主义理论体系概论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E4%B8%8E%E6%A8%A1%E6%8B%9F"><span class="toc-number">6.7.</span> <span class="toc-text">数学建模与模拟</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E5%9E%8B%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5"><span class="toc-number">6.8.</span> <span class="toc-text">大型程序设计实践</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E4%B8%89%E4%B8%8A"><span class="toc-number">7.</span> <span class="toc-text">大三上</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8A%80%E6%9C%AF"><span class="toc-number">7.1.</span> <span class="toc-text">编译原理与技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8%E6%B2%BB%E7%90%86"><span class="toc-number">7.2.</span> <span class="toc-text">网络空间安全治理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90"><span class="toc-number">7.3.</span> <span class="toc-text">算法设计与分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8"><span class="toc-number">7.4.</span> <span class="toc-text">软件安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8"><span class="toc-number">7.5.</span> <span class="toc-text">网络安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80"><span class="toc-number">7.6.</span> <span class="toc-text">软件工程技术基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8"><span class="toc-number">7.7.</span> <span class="toc-text">大数据安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80"><span class="toc-number">7.8.</span> <span class="toc-text">Web开发技术基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E4%BF%A1%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA%E4%B8%8E%E6%8A%80%E6%9C%AF"><span class="toc-number">7.9.</span> <span class="toc-text">可信计算理论与技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA"><span class="toc-number">7.10.</span> <span class="toc-text">计算理论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%B3%95"><span class="toc-number">7.11.</span> <span class="toc-text">网络安全法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E9%80%9A%E8%AE%BA"><span class="toc-number">7.12.</span> <span class="toc-text">安全通论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1"><span class="toc-number">7.13.</span> <span class="toc-text">网络空间安全课程设计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E4%B8%89%E4%B8%8B"><span class="toc-number">8.</span> <span class="toc-text">大三下</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8B%B1%E8%AF%AD%E8%AF%BE"><span class="toc-number">9.</span> <span class="toc-text">英语课</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%93%E8%82%B2%E8%AF%BE"><span class="toc-number">10.</span> <span class="toc-text">体育课</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AC%E9%80%89%E8%AF%BE"><span class="toc-number">11.</span> <span class="toc-text">公选课</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%99%BA%E6%85%A7%E6%A0%91"><span class="toc-number">11.1.</span> <span class="toc-text">智慧树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB%E5%BF%83%E7%90%86%E5%AD%A6"><span class="toc-number">11.2.</span> <span class="toc-text">亲密关系心理学</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%A8%E6%96%87%E5%8C%96%E6%B2%9F%E9%80%9A%E4%B8%8E%E5%95%86%E5%8A%A1%E7%A4%BC%E4%BB%AA"><span class="toc-number">11.3.</span> <span class="toc-text">跨文化沟通与商务礼仪</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E8%A1%8C%E9%9F%B3%E4%B9%90%E8%B5%8F%E6%9E%90"><span class="toc-number">11.4.</span> <span class="toc-text">流行音乐赏析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E6%8A%80%E6%9C%AF%E7%9A%84%E5%8F%91%E5%B1%95%E4%B8%8E%E6%B8%B8%E6%88%8F%E5%BA%94%E7%94%A8%EF%BC%88%E5%8F%8C%E5%88%9B%EF%BC%89"><span class="toc-number">11.5.</span> <span class="toc-text">显示技术的发展与游戏应用（双创）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E5%88%AB%E9%B8%A3%E8%B0%A2"><span class="toc-number">12.</span> <span class="toc-text">特别鸣谢</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">13.</span> <span class="toc-text">总结</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/01/27/EvoCorps/" title="EvoCorps"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/logo1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="EvoCorps"/></a><div class="content"><a class="title" href="/2026/01/27/EvoCorps/" title="EvoCorps">EvoCorps</a><time datetime="2026-01-27T05:00:00.000Z" title="发表于 2026-01-27 13:00:00">2026-01-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/25/%E5%8C%97%E9%82%AE%E7%BD%91%E5%AE%89%E5%A4%A7%E7%B1%BB%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/" title="北邮网安课程介绍（23级）"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/buptnew.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="北邮网安课程介绍（23级）"/></a><div class="content"><a class="title" href="/2026/01/25/%E5%8C%97%E9%82%AE%E7%BD%91%E5%AE%89%E5%A4%A7%E7%B1%BB%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/" title="北邮网安课程介绍（23级）">北邮网安课程介绍（23级）</a><time datetime="2026-01-25T11:48:17.000Z" title="发表于 2026-01-25 19:48:17">2026-01-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/06/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8%E6%AF%94%E8%BE%83%E9%87%8D%E8%A6%81%E7%9A%84%E5%9C%B0%E6%96%B9/" title="软件安全期末复习"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/softsec.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件安全期末复习"/></a><div class="content"><a class="title" href="/2026/01/06/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8%E6%AF%94%E8%BE%83%E9%87%8D%E8%A6%81%E7%9A%84%E5%9C%B0%E6%96%B9/" title="软件安全期末复习">软件安全期末复习</a><time datetime="2026-01-06T05:00:00.000Z" title="发表于 2026-01-06 13:00:00">2026-01-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/12/31/2025%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93%E4%B8%8B/" title="2025年度下半年总结"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/2025.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2025年度下半年总结"/></a><div class="content"><a class="title" href="/2025/12/31/2025%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93%E4%B8%8B/" title="2025年度下半年总结">2025年度下半年总结</a><time datetime="2025-12-31T07:00:00.000Z" title="发表于 2025-12-31 15:00:00">2025-12-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/12/31/2025%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93%E4%B8%8A/" title="2025年度上半年总结"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/2025.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2025年度上半年总结"/></a><div class="content"><a class="title" href="/2025/12/31/2025%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93%E4%B8%8A/" title="2025年度上半年总结">2025年度上半年总结</a><time datetime="2025-12-31T05:00:00.000Z" title="发表于 2025-12-31 13:00:00">2025-12-31</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Harrisonls2004</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4-b1</a></span></div><div class="footer_custom_text">尽人事 听天命</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4-b1"></script><script src="/js/main.js?v=5.5.4-b1"></script><script src="/js/tw_cn.js?v=5.5.4-b1"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.7/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"language":"zh-CN","perPage":10,"distractionFreeMode":false,"pagerDirection":"last","createIssueManually":false}
+
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  const initGitalk = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGitalk = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: 'Harrisonls2004.github.io',
+      owner: 'Harrisonls2004',
+      admin: ['Harrisonls2004'],
+      updateCountCallback: commentCount,
+      ...option,
+      id: isShuoshuo ? path : (option && option.id) || 'cea63a2422cedc66d6923b5515697481'
+    })
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async(el, path) => {
+    if (typeof Gitalk === 'function') initGitalk(el, path)
+    else {
+      await btf.getCSS('https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.css')
+      await btf.getScript('https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.js')
+      initGitalk(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Gitalk' === 'Gitalk'
+      ? window.shuoshuoComment = { loadComment: loadGitalk }
+      : window.loadOtherComment = loadGitalk
+    return
+  }
+
+  if ('Gitalk' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><script src="/js/click-heart.js"></script><script src="/js/sakura.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/metingjs/dist/Meting.min.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.4-b1"></script></div></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300,"hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacity":0.7},"log":false});</script></body></html>

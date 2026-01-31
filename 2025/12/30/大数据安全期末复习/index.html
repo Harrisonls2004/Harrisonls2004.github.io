@@ -1,0 +1,743 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>大数据安全期末复习 | lhldudu's blog</title><meta name="author" content="Harrisonls2004"><meta name="copyright" content="Harrisonls2004"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="授课：石瑞生 绪论什么是大数据？（P1）（1）多样性(variety)：数据类型复杂。大数据不仅有传统数据库管理的结构化数据，还有各种非结构化、半结构化数据。例如，网页、图片、视频，等等。对于非结构化、半结构化数据的处理，需要引入传统关系型数据库技术之外的新的数据处理技术。 （2）高速性(velocity)：不仅数据量大，而且数据产生的速度快，对数据的实时处理能力提出了非常高的要求。例如，微博数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大数据安全期末复习">
+<meta property="og:url" content="https://harrisonls2004.github.io/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/index.html">
+<meta property="og:site_name" content="lhldudu&#39;s blog">
+<meta property="og:description" content="授课：石瑞生 绪论什么是大数据？（P1）（1）多样性(variety)：数据类型复杂。大数据不仅有传统数据库管理的结构化数据，还有各种非结构化、半结构化数据。例如，网页、图片、视频，等等。对于非结构化、半结构化数据的处理，需要引入传统关系型数据库技术之外的新的数据处理技术。 （2）高速性(velocity)：不仅数据量大，而且数据产生的速度快，对数据的实时处理能力提出了非常高的要求。例如，微博数据">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://harrisonls2004.github.io/img/bdt.jpg">
+<meta property="article:published_time" content="2025-12-30T05:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-28T15:17:34.986Z">
+<meta property="article:author" content="Harrisonls2004">
+<meta property="article:tag" content="期末复习">
+<meta property="article:tag" content="大数据安全">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://harrisonls2004.github.io/img/bdt.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "大数据安全期末复习",
+  "url": "https://harrisonls2004.github.io/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/",
+  "image": "https://harrisonls2004.github.io/img/bdt.jpg",
+  "datePublished": "2025-12-30T05:00:00.000Z",
+  "dateModified": "2026-01-28T15:17:34.986Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Harrisonls2004",
+      "url": "https://Harrisonls2004.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/logo.png"><link rel="canonical" href="https://harrisonls2004.github.io/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.4-b1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.7/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":true,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":100,"languages":{"author":"作者: Harrisonls2004","link":"链接: ","source":"来源: lhldudu's blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '大数据安全期末复习',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/universe.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div class="bg-animation" id="web_bg" style="background-image: url(/img/bg.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 演唱会</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/bdt.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/logo.png" alt="Logo"><span class="site-name">lhldudu's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">大数据安全期末复习</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 演唱会</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">大数据安全期末复习</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-12-30T05:00:00.000Z" title="发表于 2025-12-30 13:00:00">2025-12-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-01-28T15:17:34.986Z" title="更新于 2026-01-28 23:17:34">2026-01-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93/">复习总结</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">28.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>85分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/#post-comment"><span class="gitalk-comment-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>授课：石瑞生</p>
+<h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><h2 id="什么是大数据？（P1）"><a href="#什么是大数据？（P1）" class="headerlink" title="什么是大数据？（P1）"></a>什么是大数据？（P1）</h2><p><strong>（1）多样性(variety)：数据类型复杂。</strong>大数据不仅有传统数据库管理的结构化数据，还有各种非结构化、半结构化数据。例如，网页、图片、视频，等等。对于非结构化、半结构化数据的处理，需要引入传统关系型数据库技术之外的新的数据处理技术。</p>
+<p><strong>（2）高速性(velocity)：不仅数据量大，而且数据产生的速度快，对数据的实时处理能力提出了非常高的要求。</strong>例如，微博数据，不仅数量大，而且时效性高。如果按照传统的搜索引擎的模式去处理，花上几天甚至几周时间去做数据采集、建立索引，这些数据由于对时效性要求高（例如，新闻事件，应急事件，等），传统的数据处理方法在这种场景下不再有效。</p>
+<p><strong>（3）大规模(volume)：数据量大。超出常规数据库工具的处理能力。例如，搜索引擎。</strong>最早的大数据服务系统就是搜索引擎系统，它需要采集互联网上所有的网页并为其建立索引、对全球几十亿用户提供实时的网页搜索服务。面对这么大规模的数据集，传统的信息技术无能为力。谷歌公司为了应对大数据的挑战，设计了MapReduce计算模式、GFS分布式文件系统、BigTable数据管理系统，成为云计算技术的先驱。</p>
+<p><strong>（4）Veracity准确性：数据质量参差不齐。</strong>网上的大量无标注数据、人为错误数据；物联网采集的正常数据中混杂着由于设备故障、环境原因、精度原因造成的错误数据。劣质信息的挑战，包括数据采集系统（例如，传感器网络）本身的质量问题，社交媒体上的谣言，电子商务网站上的水军，等等。</p>
+<p><strong>（5）提取价值（Value）：从数据中发现价值，在应用中创造价值。</strong>大数据，数量虽然大，然而价值密度不见得高。类似于长尾效应，需要有效的技术才能够从价值密度低的大量数据中，以可以接受的成本，创造出价值。而且，判断一个数据集是否有价值也是很困难的事情：今天也许认为没有价值的数据，将来也许会找到很大的价值。</p>
+<h2 id="什么是大数据安全？（P5）"><a href="#什么是大数据安全？（P5）" class="headerlink" title="什么是大数据安全？（P5）"></a>什么是大数据安全？（P5）</h2><p><strong>大数据安全是针对大数据服务系统，从系统架构与认证授权、计算与存储、算法设计与数据采集等多个角度来分析数据在采集与传输、存储与管理、流转与使用中的安全问题及解决方案。</strong></p>
+<p>涉及两个方面：<strong>大数据服务中安全问题，大数据技术在安全领域的应用（考过填空细节）。</strong></p>
+<h2 id="隐私权概念的发展经历了哪些主要变化？（课件，P6）"><a href="#隐私权概念的发展经历了哪些主要变化？（课件，P6）" class="headerlink" title="隐私权概念的发展经历了哪些主要变化？（课件，P6）"></a>隐私权概念的发展经历了哪些主要变化？（课件，P6）</h2><p>（1）起源：</p>
+<p>隐私权的概念在人类发展中的首次出现：1890年，隐私权概念的提出</p>
+<p>隐私权第一次写入法律：1902年，纽约，“面粉店与少妇”事件</p>
+<p>20世纪60-70年代：关于隐私权的法律在欧美国家得到了充分发展。1974年，水门事件导致尼克松总统辞职；1974年，《隐私法》。</p>
+<p>（2）发展：最早意义上的隐私权，<strong>集中在以住宅为代表的物理空间之上的</strong>。隐私权意味着一个人可以在自己的城堡中不受监督、不受干涉地发展自己的个性，决定自己的生活方式。随着技术的发展，隐私权的保护也在发生深刻的变化，其重心不断转移，<strong>经历了从住宅到人、再到信息的转变。</strong></p>
+<p><strong>隐私是个人、机构等实体不愿意被外部世界知晓的敏感信息。</strong>其实不仅仅是这些我们直接管理的数据，还有很多不为我们所控制的数据。<strong>各种元数据：</strong>从“窃听”变为“监视”；例如：通话记录，而不是通话内容；电子邮件的收发行为（谁在什么时间给谁发送了邮件），而不是电子邮件的内容。<strong>各种行为数据</strong>：从网络空间到物理空间</p>
+<h2 id="技术进步与隐私保护的关系（课件，P7）"><a href="#技术进步与隐私保护的关系（课件，P7）" class="headerlink" title="技术进步与隐私保护的关系（课件，P7）"></a>技术进步与隐私保护的关系（课件，P7）</h2><p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image.png" alt="image.png"></p>
+<p>互联网开启了人类隐私的潘多拉之盒；”全民公敌”讲国家侵害个人私隐的主题，是人人关心的题材；2013年的棱镜门，是全球网络安全的转折点。</p>
+<h2 id="为什么说斯诺登事件是全球网络安全的转折点？有哪几类可能侵犯大众隐私的敌手？（课件）"><a href="#为什么说斯诺登事件是全球网络安全的转折点？有哪几类可能侵犯大众隐私的敌手？（课件）" class="headerlink" title="为什么说斯诺登事件是全球网络安全的转折点？有哪几类可能侵犯大众隐私的敌手？（课件）"></a>为什么说斯诺登事件是全球网络安全的转折点？有哪几类可能侵犯大众隐私的敌手？（课件）</h2><p>（1）斯诺登泄密事件是整个互联网历史和治理辩论的<strong>分水岭</strong>，它较为<strong>彻底地击碎了自从互联网诞生以来许多神话，从根本上改变了全球公众此前对于互联网的认识。</strong>它首先表明，<strong>网络空间仍然可以是一种中心化的等级体制，美国国家安全局这种代表政府的国家权力与谷歌这种代表资本的经济权力可以巧妙结合、为祸世界。</strong>世界上最大的「老大哥」(Big Brother)和全球市值最高的互联网巨头可以互相喂食，像水蛭一样附着在信息技术食物链的最上层，从全球用户的有机体上汲取「营养」。斯诺登的揭露，Dual EC是NSA颠覆标准的系统努力的一部分。NSA向RSA支付了“1000万美元的交易，将[Dual EC]设置为BSafe软件中首选或默认的随机数生成方法。”</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%201.png" alt="image.png"></p>
+<p><strong>（2）侵犯隐私的敌手：</strong></p>
+<p><strong>政府：</strong>公共安全；国际政治。国家级敌手。2013年7月，斯诺登事件，美国的“棱镜计划”：数据与元数据</p>
+<p><strong>企业</strong>：经济利益。苹果，谷歌，BAT，等互联网公司</p>
+<p><strong>黑客及一些犯罪组织</strong>：黑产。勒索软件，电信诈骗，谣言攻击&#x2F;舆论战等。</p>
+<p>网络空间的黑色产业链。系统漏洞，被明码标价；入侵工具，像武器一样容易购买；水军，花钱就能够发起内容攻击。云计算技术，使得普通人的攻击能力日益增强，无须精通技术，也能发起网络攻击。</p>
+<h2 id="GDPR的要点（欧盟《通用数据保护条例》）（P11）"><a href="#GDPR的要点（欧盟《通用数据保护条例》）（P11）" class="headerlink" title="GDPR的要点（欧盟《通用数据保护条例》）（P11）"></a>GDPR的要点（欧盟《通用数据保护条例》）（P11）</h2><p>规定针对从欧盟公民处收集数据的企业：<strong>强制企业遵循Privacy by Design原则。</strong></p>
+<p><strong>数据转移权：</strong>该规定声明，<strong>用户可要求自己的个人数据畅通无阻地直接迁移至新的提供商，数据以机器可读的格式迁移。</strong>当用户不再使用该公司产品时，它们将会丢失大量数据。</p>
+<p><strong>被遗忘权：每个数据主体有权要求数据控制者删除个人数据。</strong>（2014年5月13日欧盟法院就“被遗忘权”（RTBF）一案作出裁定，判决谷歌应根据用户请求删除不充足的，无关紧要的，不相关的数据，以保证数据不出现在搜索结果中。–RTBF于2014年5月生效后便引发了有关搜索引擎运营商如何权衡并最终解决除名请求的重大问题。在大数据时代，加强对用户个人权利的尊重才是时势所趋的潮流。）</p>
+<p><strong>算法公平性：数据主体有权要求对算法自动决策给出解释。</strong>例如，如果贷款申请人被自动决策拒绝时，有权寻求解释。对于技术公司而言，这是对人工智能的严重限制，将大幅减缓AI技术的发展。</p>
+<p>对于欧盟公民来说，GDPR增加技术公司在收集用户数据时的责任，从而保护了公民权利。</p>
+<h2 id="在数据安全与隐私保护领域，我国相关的法律法规有哪些？（三驾马车，P15）"><a href="#在数据安全与隐私保护领域，我国相关的法律法规有哪些？（三驾马车，P15）" class="headerlink" title="在数据安全与隐私保护领域，我国相关的法律法规有哪些？（三驾马车，P15）"></a>在数据安全与隐私保护领域，我国相关的法律法规有哪些？（三驾马车，P15）</h2><p><strong>（1）《个人信息安全规范》</strong>：2018年1月，由全国信息安全标准化技术委员会组织制订的国家标准。尽管这是一部推荐性的国家标准，不具有强制力，但仍引起了学界与实务界的广泛关注。<strong>一是在《网络安全法》和“两高司法解释”的基础上，明确了个人信息处理活动中各项术语的定义，</strong>例如“个人信息控制者、收集、明示同意、用户画像、个人信息安全影响评估、删除、去标识化”等。<strong>二是对个人信息收集、保存、使用、转让和披露、通用安全各个环节，提出了非常明确具体的要求。</strong></p>
+<p><strong>（2）数据安全法：</strong>自2021年9月1日起施行。将个人、企业和公共机构的数据安全纳入保障体系，确立了对数据领域的全方位监管、治理和保护，<strong>既约束了数据的非法采集和滥用，又保护了数据提供方和民众的信息使用，推动以数据开放、数据保护、数据流动等为基础的数据规则进一步完善。</strong>《数据安全法》中给出了“数据安全”的定义，<strong>为“通过采取必要措施，确保数据处于有效保护和合法利用状态，以及具备保障持续安全状态的能力。</strong>数据处理”则定义为“包括收集、存储、使用、加工、传输、提供、公开等”7个环节。</p>
+<p><strong>（3）个人信息保护法</strong>。 定于2021年11月1日起正式施行。这是我国首部针对个人信息保护的专门性立法，也是网络安全法治建设的重要立法。<strong>2020年被称之为我国个人信息保护立法元年。</strong>规<strong>定个人信息是以电子或者其他方式记录的与已识别或者可识别的自然人有关的各种信息；</strong>个人信息的处理包括个人信息的收集、存储、使用、加工、传输、提供、公开等活动。确立了个人信息处理应遵循的原则，强调处理个人信息应当采用合法、正当的方式，具有明确、合理的目的，限于实现处理目的的最小范围，公开处理规则，保证信息准确，采取安全保护措施等，并将上述原则贯穿于个人信息处理的全过程、各环节。</p>
+<h2 id="我国的数据资源跨境流通政策（课件）"><a href="#我国的数据资源跨境流通政策（课件）" class="headerlink" title="我国的数据资源跨境流通政策（课件）"></a>我国的数据资源跨境流通政策（课件）</h2><p><strong>（1）数据资源开发利用和安全保护是数字经济时代的一个核心话题。</strong>数据资源，特别是关键基础设施领域中积累的数据资源，具有重大战略意义。因此，在数字经济时代，数据资源的跨境流通就成为了一个数字贸易中“压舱石”级别的话题。<strong>对于政府而言，数字经济时代的社会治理有了全新的范畴。</strong>数据资源作为一种战略资源，如何有效开发利用，如何防范风险，是需要政府不断探索的内容。</p>
+<p>（2）在跨境数字贸易当中，<strong>数据资源本地化</strong>以及<strong>数据资源跨境自由流通</strong>两种不同的政策曾经引发了广泛的辩论。在实践过程当中，选择了中间路线：<strong>在满足一定数据资源本地化要求以及审核的条件下，支持数据资源的跨境流通。</strong></p>
+<h2 id="隐私和安全之间的关系（习题）"><a href="#隐私和安全之间的关系（习题）" class="headerlink" title="隐私和安全之间的关系（习题）"></a>隐私和安全之间的关系（习题）</h2><p>安全：<strong>聚焦数据资产的保密性、完整性、可用性（CIA三要素），</strong>防范未授权访问、篡改或破坏。</p>
+<p>隐私：<strong>侧重个人对自身数据的控制权，</strong>确保个人身份、行为等敏感信息不被非法收集、使用或泄露，核心是个人自主性保护。</p>
+<p>安全能够保证信息的<strong>机密性</strong>，隐私则常常需要这种<strong>机密性</strong>。个人隐私的泄漏，可能会危害到个人数据安全。<strong>信息安全</strong>是聚焦于信息资产的安全工具和安全行为，<strong>隐私保护</strong>则是关注对<strong>个人信息的使用和保护。</strong></p>
+<h2 id="个人数据安全与个人隐私之间的关系，举例说明。（习题）"><a href="#个人数据安全与个人隐私之间的关系，举例说明。（习题）" class="headerlink" title="个人数据安全与个人隐私之间的关系，举例说明。（习题）"></a>个人数据安全与个人隐私之间的关系，举例说明。（习题）</h2><p><strong>（1）数据安全是隐私保护的基础：通过加密、访问控制等技术手段</strong>保障个人数据不被泄露或滥用</p>
+<p><strong>技术手段</strong>：<strong>加密技术</strong>、<strong>访问控制</strong>、<strong>网络安全防护</strong>等，都是为了筑起这道技术防线，防止数据被<strong>泄露、窃取、篡改或破坏</strong>。这些是隐私得以存在的基础设施。</p>
+<p><strong>（2）隐私是数据安全的最终目标之一：</strong>数据安全措施（如匿名化）需服务于隐私保护，但隐私还涉及法律合规（如知情同意）。数据只能用于收集时声明的特定目的。只收集与处理目的直接相关的最少数据。确保个人在充分知情的前提下自愿授权。在目的达成后，个人有权要求删除其数据。</p>
+<h2 id="个人隐私与国家安全之间的关系？为什么要保护个人隐私？（AI版答案）"><a href="#个人隐私与国家安全之间的关系？为什么要保护个人隐私？（AI版答案）" class="headerlink" title="个人隐私与国家安全之间的关系？为什么要保护个人隐私？（AI版答案）"></a>个人隐私与国家安全之间的关系？为什么要保护个人隐私？（AI版答案）</h2><p>（1）关系：个人隐私与国家安全之间是<strong>对立统一的辩证关系</strong>，需要在法治框架下寻求平衡。</p>
+<p><strong>对立&#x2F;冲突关系</strong>：国家为防范、侦查恐怖主义、间谍活动等重大威胁，有时需要依法对特定对象进行监控和数据调取，这必然在一定限度内克减个人隐私权。</p>
+<p><strong>统一&#x2F;依存关系</strong>：保护公民隐私是<strong>社会信任与稳定的基石</strong>，深厚的民众信任是国家长治久安的根本。防范<strong>大规模个人数据泄露</strong>（如全民生物信息）本身就是现代国家安全的重要内涵。</p>
+<p><strong>平衡原则</strong>：二者的平衡必须遵循<strong>比例原则</strong>，即国家干预隐私的措施必须<strong>目的正当、手段必要、有法律明确授权和司法监督</strong>，避免权力滥用。</p>
+<p>（2）为什么要保护：保护个人隐私具有多重根本性价值</p>
+<p><strong>维护人的尊严与自由</strong>：隐私是个人人格独立、思想自由和自主发展的基础。没有隐私，人将处于持续被审视的状态，丧失内心自由和探索勇气。</p>
+<p><strong>保障基本权利与民主社会</strong>：隐私是<strong>言论自由、结社自由</strong>等政治权利的前提。在无隐私的环境中，异见和批评会因恐惧而消亡，民主机制将失效。</p>
+<p><strong>构建社会信任</strong>：隐私允许人们在不同的社会关系中（如家庭、朋友、医患）建立信任和亲密感，是社会健康运行的情感纽带。</p>
+<p><strong>防范权力与商业滥用</strong>：保护隐私可以限制<strong>公权力的任意扩张</strong>和<strong>商业机构对个人的操纵与歧视</strong>（如大数据“杀熟”、基于个人敏感信息的差别定价）。</p>
+<h1 id="基础知识：密码算法与工程实践"><a href="#基础知识：密码算法与工程实践" class="headerlink" title="基础知识：密码算法与工程实践"></a>基础知识：密码算法与工程实践</h1><h2 id="加密强度与密钥长度的关系：给定安全等级和加密算法，如何选择密钥长度（P31）"><a href="#加密强度与密钥长度的关系：给定安全等级和加密算法，如何选择密钥长度（P31）" class="headerlink" title="加密强度与密钥长度的关系：给定安全等级和加密算法，如何选择密钥长度（P31）"></a>加密强度与密钥长度的关系：给定安全等级和加密算法，如何选择密钥长度（P31）</h2><p><strong>（1）安全强度的选择通常是在128比特安全性和256比特安全性之间进行的，因为大多数标准加密算法和实现对于实现这两个安全强度都是可行的。确实也会有低于128比特的密码方案</strong>，比如是64比特的或80比特的，但这些方案通常都不够安全，不足以满足实际需要。然而，为了确保长期的安全性，您<strong>应该选择256比特的安全性或接近256比特的安全性</strong>。即使在最坏的情况下，256比特的安全方案在可预见的未来也不太可能被攻破。<strong>超过256比特的安全性其实超出了实际需求</strong>，但出于营销策略，也有超过256比特的安全强度。</p>
+<p>（2）<strong>有时候低于128比特的安全强度也是合理的。</strong>例如，当您只需要短时间的安全性，并且是资源受限的场景，比如实现更高安全强度的成本将对系统的成本或可用性产生负面影响时。一个现实例子是付费电视系统，其中加密密钥是48比特或64比特的。这里的安全强度听起来很低，但也足够了，因为付费电视系统的密钥每5秒或10秒就刷新一次。</p>
+<p>（3）在实际暴力攻击方面，<strong>192比特和256比特密钥之间没有有意义的区别</strong>，因为不可能就是不可能。”</p>
+<h2 id="混合加密技术：KEM，DEM（P30）"><a href="#混合加密技术：KEM，DEM（P30）" class="headerlink" title="混合加密技术：KEM，DEM（P30）"></a>混合加密技术：KEM，DEM（P30）</h2><p>对称和非对称加密比较：对称加密的主要运算是位运算，速度快；非对称加密的计算较复杂，涉及难解问题。<strong>针对速度慢的性能问题，提出混合加密的思想。</strong>混合加密具有与非对称加密相同的接口，只是可加密的消息要大得多。有两种机制：</p>
+<p><strong>（1）密钥封装机制（KEM）指用非对称加密算法加密对称密钥。</strong></p>
+<p><strong>（2）数据封装机制（DEM）是指用对称密钥算法加密消息。</strong></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/dad61d93f4f30ec39344d53550316b4.png" alt="dad61d93f4f30ec39344d53550316b4.png"></p>
+<p>数字签名：原始RSA签名方法太慢，签名太大：引入Hash，让RSA数字签名又小又快！</p>
+<p>数字签名包含2种算法：<strong>签名算法、验证算法。</strong>当使用数字签名时，应用程序<strong>要签名的是消息的哈希值</strong>，而不是消息本身。</p>
+<h2 id="几个核心概念：攻击模型（Attack-Model）、安全目标（Security-Goal）、安全概念（security-notion，记为-GOAL-MODEL）"><a href="#几个核心概念：攻击模型（Attack-Model）、安全目标（Security-Goal）、安全概念（security-notion，记为-GOAL-MODEL）" class="headerlink" title="几个核心概念：攻击模型（Attack Model）、安全目标（Security Goal）、安全概念（security notion，记为 GOAL-MODEL）"></a>几个核心概念：攻击模型（Attack Model）、安全目标（Security Goal）、安全概念（security notion，记为 GOAL-MODEL）</h2><h2 id="3类攻击模型：黑盒模型，灰盒模型，白盒模型。（P34）"><a href="#3类攻击模型：黑盒模型，灰盒模型，白盒模型。（P34）" class="headerlink" title="3类攻击模型：黑盒模型，灰盒模型，白盒模型。（P34）"></a>3类攻击模型：黑盒模型，灰盒模型，白盒模型。（P34）</h2><p>黑盒模型：攻击者<strong>可以获取明文和密文（程序输入输出）</strong>，但观测不到算法运行时的内部数据。</p>
+<p>灰盒模型：通过程序运行时泄露的物理信息<strong>可以实质性的部分或完全获取程序运行的内部数据。</strong></p>
+<p>白盒模型：对设备终端<strong>拥有完全的控制能力</strong>，能够<strong>观测和更改程序运行时的内部数据。</strong></p>
+<h2 id="5种黑盒攻击模型（COA，KPA，CPA，CCA，CCA2）（P35）"><a href="#5种黑盒攻击模型（COA，KPA，CPA，CCA，CCA2）（P35）" class="headerlink" title="5种黑盒攻击模型（COA，KPA，CPA，CCA，CCA2）（P35）"></a>5种黑盒攻击模型（COA，KPA，CPA，CCA，CCA2）（P35）</h2><p>关于黑盒模型，有多种模型的攻击者：（从弱到强）</p>
+<p>（1）唯密文攻击（Ciphertext-Only Attackers，COA）</p>
+<p>（2）已知明文攻击（Known-Plaintext Attackers，KPA）</p>
+<p>（3）选择明文攻击（Chosen-Plaintext Attackers，CPA），<strong>可以对其选择的明文执行加密查询</strong>，并观察生成的密文</p>
+<p>（4）选择密文攻击（Chosen-Ciphertext Attackers，CCA）<strong>可以执行加密查询和解密查询</strong></p>
+<p>（5）自适应选择密文攻击CCA2，允许密码分析人员在选择密文攻击中<strong>边分析边询问</strong></p>
+<p>我们考虑三种不同的攻击。按照增加强度的顺序分别是<strong>选择明文攻击(CPA)、非自适应选择密文攻击(CCA1)和自适应选择密文攻击(CCA2)。</strong>在CPA下，对手可以获得她选择的明文的密文。在公钥设置中，向攻击者提供公钥就足以捕获这些攻击。</p>
+<p>CCA1下，<strong>攻击者除了获得公钥外，还可以访问解密功能的oracle。</strong>攻击者只能在获得挑战密文之前的一段时间内使用此解密功能。</p>
+<p>CCA2下，由于Rackoff和Simon的存在，<strong>攻击者再次获得了解密功能的神谕(除了公钥)访问权</strong>，但这一次，<strong>攻击者甚至可以对获得挑战密文后选择的密文使用该解密功能，唯一的限制是攻击者不能要求y本身的解密。</strong>(这种攻击被称为自适应攻击，因为对解密oracle的查询可能依赖于挑战y）。作为CCA1&#x2F;CCA2缩写的助记符，请记住，数字越大，攻击越强。</p>
+<h2 id="2类安全目标（不可区分性，不可塑性）、安全概念（P36）"><a href="#2类安全目标（不可区分性，不可塑性）、安全概念（P36）" class="headerlink" title="2类安全目标（不可区分性，不可塑性）、安全概念（P36）"></a>2类安全目标（不可区分性，不可塑性）、安全概念（P36）</h2><p>（1）安全目标：</p>
+<p><strong>不可区分性（Indistinguishability，IND）</strong>是指<strong>对手无法从密文中获得关于相应明文的任何信息</strong>。密文应该与随机字符串没有区别。</p>
+<p><strong>不可塑性（Non-malleability，NM）</strong>是指<strong>对手在获得挑战密文访问权限后，无法生成</strong>与挑战密文有意义相关的不同密文。</p>
+<p><strong>一次一密系统是可塑的</strong></p>
+<p>（2）安全概念：<strong>攻击模型和安全目标的结合</strong>。</p>
+<p>IND-CPA，等价于<strong>语义安全</strong>。IND-CPA安全性要求，<strong>对同一明文加密两次，则加密系统必须返回不同的密文</strong>。实现IND-CPA安全性的一种方法是<strong>使用随机加密</strong>，随机化是IND-CPA的关键。使用随机加密时，<strong>密文必须比明文略长</strong>，以便每个明文都可以包含多个可能的密文。</p>
+<p>INT-PTXT，<strong>明文完整性。</strong></p>
+<p>（3）安全概念间的关系：</p>
+<p><strong>IND-CCA蕴含着IND-CPA，而NM-CCA蕴含着NM-CPA，因为CPA攻击者可以做的事情，CCA攻击者也可以做。</strong>也就是说，如果无法通过执行选择的密文和选择的明文查询来攻破密码，那么您就不能仅通过执行选择的明文查询来攻破密码。</p>
+<p>一个不太明显的关系是，<strong>IND-CPA并不蕴含NM-CPA。但是相反的关系确实成立：NM-CPA蕴含IND-CPA。IND-CCA和NM-CCA是等同的概念，它们各自蕴含彼此。</strong></p>
+<h2 id="解释语义安全的概念。实现语义安全的基本思路【随机加密或者概率加密】（P37）"><a href="#解释语义安全的概念。实现语义安全的基本思路【随机加密或者概率加密】（P37）" class="headerlink" title="解释语义安全的概念。实现语义安全的基本思路【随机加密或者概率加密】（P37）"></a>解释语义安全的概念。实现语义安全的基本思路【随机加密或者概率加密】（P37）</h2><p>（1）最重要的安全概念是<strong>IND-CPA</strong>，也称为<strong>语义安全</strong>。从直觉上理解，<strong>只要密钥保密，从密文中就不会泄露任何有关明文的信息。</strong>IND-CPA安全性要求，<strong>对同一明文加密两次，则加密系统必须返回不同的密文。</strong>否则，攻击者可能会从密文发现“明文重复”这一事实，这与密文不应泄露任何信息的定义不符。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/b64733a4-1d92-4ef5-a178-a7bc8748fce8.png" alt="image.png"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%202.png" alt="image.png"></p>
+<p>（2）使用随机加密时，<strong>密文必须比明文略长</strong>，以便每个明文都可以包含多个可能的密文。例如，如果每个明文可以对应264个可能的密文，则密文必须比明文至少长64比特。</p>
+<h2 id="4种常见的安全概念（NM-CPA，NM-CCA，IND-CPA和IND-CCA）（P37）"><a href="#4种常见的安全概念（NM-CPA，NM-CCA，IND-CPA和IND-CCA）（P37）" class="headerlink" title="4种常见的安全概念（NM-CPA，NM-CCA，IND-CPA和IND-CCA）（P37）"></a>4种常见的安全概念（NM-CPA，NM-CCA，IND-CPA和IND-CCA）（P37）</h2><ul>
+<li><strong>NM-CPA</strong>：<strong>不可展非适应性选择明文攻击安全</strong>。它保证敌手即使能加密任意明文，也无法构造出与已存在密文相关的“新”密文。安全性较弱，实际应用价值有限。</li>
+<li><strong>IND-CPA</strong>：<strong>不可区分非适应性选择明文攻击安全</strong>。这是<strong>现代加密最基本、最核心的安全目标</strong>。它保证敌手即使能加密任意明文，也无法区分两个任意明文的加密结果。几乎所有实用公钥方案（如ElGamal, RSA-OAEP）都需达到此安全。</li>
+<li><strong>NM-CCA</strong>：<strong>不可展适应性选择密文攻击安全</strong>。是NM-CPA的更强版本，敌手在获得挑战密文后，仍可解密其他密文（但不能解密挑战密文本身）。安全性较强，但不如IND-CCA直观和常用。</li>
+<li><strong>IND-CCA</strong>：<strong>不可区分适应性选择密文攻击安全</strong>。这是<strong>实际应用（如标准TLS, PGP）中要求的黄金标准</strong>。它在IND-CPA基础上，允许敌手在获得挑战密文前后，可解密其他任意密文（除挑战密文本身）。这模拟了敌手可进行“密文操纵”并观察解密结果的真实场景。</li>
+</ul>
+<h2 id="第一个语义安全的密码算法是什么算法？（课件）"><a href="#第一个语义安全的密码算法是什么算法？（课件）" class="headerlink" title="第一个语义安全的密码算法是什么算法？（课件）"></a>第一个语义安全的密码算法是什么算法？（课件）</h2><p>第一个被严格证明在标准模型下达到语义安全（等价于IND-CPA安全）的公钥加密算法是<strong>Goldwasser-Micali加密方案（GM密码算法）</strong>（1982年）。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%203.png" alt="image.png"></p>
+<h2 id="ElGamal-密码算法是语义安全的吗？ECC加密算法是语义安全的吗？（P37）"><a href="#ElGamal-密码算法是语义安全的吗？ECC加密算法是语义安全的吗？（P37）" class="headerlink" title="ElGamal 密码算法是语义安全的吗？ECC加密算法是语义安全的吗？（P37）"></a>ElGamal 密码算法是语义安全的吗？ECC加密算法是语义安全的吗？（P37）</h2><p>非对称加密的攻击模型和安全目标与对称加密大致相同，不同之处在于，由于加密密钥是公共密钥，因此任何攻击者都可以使用公共密钥进行加密查询。<strong>Tip：非对称加密的默认模型是选择明文攻击者(CPA)</strong></p>
+<p>ElGamal（过程使用随机数，计算共享秘密）：语义安全</p>
+<p>ECC：语义安全的密码算法</p>
+<h2 id="RSA算法是语义安全的吗？如何使用编码函数提高RSA算法的安全性？（P38）"><a href="#RSA算法是语义安全的吗？如何使用编码函数提高RSA算法的安全性？（P38）" class="headerlink" title="RSA算法是语义安全的吗？如何使用编码函数提高RSA算法的安全性？（P38）"></a>RSA算法是语义安全的吗？如何使用编码函数提高RSA算法的安全性？（P38）</h2><p>（1）RSA密码算法：<strong>不是语义安全的！没有IND，普通RSA每次加密结果相同！对同样的数据，用同样的key进行RSA加密，每次的输出密文都会不一样；</strong>但是这些加密的结果都能正确的解密。</p>
+<p>（2）RSA-OAEP：<strong>使用编码函数，引入随机性</strong>；加密前<strong>填充数据</strong>，解密时<strong>检验填充是否正确</strong>；RSA-OAEP是不多的IND-CCA2安全的实用密码体制</p>
+<h2 id="AES算法是语义安全的吗？如何构造基于AES算法的语义安全加密方案？（P40）"><a href="#AES算法是语义安全的吗？如何构造基于AES算法的语义安全加密方案？（P40）" class="headerlink" title="AES算法是语义安全的吗？如何构造基于AES算法的语义安全加密方案？（P40）"></a>AES算法是语义安全的吗？如何构造基于AES算法的语义安全加密方案？（P40）</h2><p>分组密码只能加密固定长度的分组，如果需要加密一段并非恰好一个分组长度的数据，就需要使用分组密码工作模式。</p>
+<p>常用的工作模式：<strong>ECB，CBC；CFB，OFB，CTR</strong></p>
+<p>（1）ECB模式不安全：无法掩盖数据结构，无法抵御CPA，<strong>无法实现语义安全。</strong></p>
+<p><strong>⼀个加密算法的明⽂和密⽂⼀样⻓</strong>，请问：该加密算法是语义安全的吗？<strong>否</strong></p>
+<p>（2）CBC模式，引入随机性（随机初始向量IV）</p>
+<p>（3）CTR模式，用nonce实现随机性。</p>
+<p>（4）<strong>OFB、CFB、CBC、CTR都有IND-CPA</strong>，<strong>但是都不是不可塑（NM）的，</strong>无法抵御CCA2。</p>
+<p>方法：这需要<strong>使用消息验证码MAC。</strong>将加密和认证结合，这就是<strong>认证加密（AE）</strong>，同时实现保密性+完整性。</p>
+<p>为了防止对密文进行修改（密文完整性），我们可以使用**消息验证码(mac)**。对于AES-CBC，我们通常使用HMAC(用于基于哈希的MAC)结合SHA-256哈希函数来提供完整性。</p>
+<p><strong>认证加密（AE）的三种方案：</strong></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%204.png" alt="image.png"></p>
+<p>EtM：意味着对CCA的安全性；MtE也可以。其他只有CPA安全性。</p>
+<h2 id="理解认证加密方案对安全性的提升的意义（AI版答案）"><a href="#理解认证加密方案对安全性的提升的意义（AI版答案）" class="headerlink" title="理解认证加密方案对安全性的提升的意义（AI版答案）"></a>理解认证加密方案对安全性的提升的意义（AI版答案）</h2><p>认证加密方案是对称密码学的一次重大进步，它将<strong>保密性</strong>和<strong>认证性</strong>两大安全目标整合到一个高效的操作中。其提升意义体现在：</p>
+<p><strong>从单一保密到双重保护</strong>：传统加密（如AES-CBC）只确保保密性，无法检测密文是否被篡改。攻击者可以修改密文，接收方解密后得到无意义的乱码但无法识别已被攻击。认证加密（如AES-GCM）同时确保<strong>保密性</strong>和<strong>完整性&#x2F;真实性</strong>，任何对密文的修改都会被立即发现。</p>
+<p><strong>抵御更强大的攻击</strong>：在现实网络环境中，攻击者不仅能窃听，还能主动修改、重放、删除或重组密文。认证加密可抵御这类<strong>主动攻击</strong>，包括选择密文攻击、重放攻击等。</p>
+<p><strong>简化安全协议设计</strong>：在传统方案中，开发者需要分别实现加密和消息认证码（MAC），容易因设计不当引发严重漏洞（如MAC-then-Encrypt的顺序问题）。认证加密将二者标准化，减少实现错误。</p>
+<p><strong>提升效率</strong>：如AES-GCM等认证加密模式在硬件支持下可并行化处理，一次处理即完成加密和认证，比”加密+HMAC”的分离方案更高效。</p>
+<p><strong>核心意义</strong>：认证加密代表了从”防窃听”到”防篡改”的安全理念升级，是现代TLS、磁盘加密等实际应用的基础安全保障。</p>
+<h2 id="典型案例分析：在工程实践中使用密码算法设计安全技术方案时需要注意的问题（AI版答案）"><a href="#典型案例分析：在工程实践中使用密码算法设计安全技术方案时需要注意的问题（AI版答案）" class="headerlink" title="典型案例分析：在工程实践中使用密码算法设计安全技术方案时需要注意的问题（AI版答案）"></a>典型案例分析：在工程实践中使用密码算法设计安全技术方案时需要注意的问题（AI版答案）</h2><p>在设计安全技术方案时，<strong>算法本身的安全性只是基础，工程实现和系统设计更为关键</strong>。常见问题包括：</p>
+<p><strong>（1）误用密码原语</strong>：</p>
+<ul>
+<li><strong>典型案例</strong>：使用RSA直接加密大文件（超过其密钥长度）、用AES-ECB模式加密结构化数据（导致模式识别攻击）、用哈希函数（如MD5）存储密码（而非专用密码哈希函数）。</li>
+<li><strong>注意</strong>：必须理解每种算法的设计目的和限制，选择合适的模式和参数。</li>
+</ul>
+<p><strong>（2）密钥管理缺陷</strong>：</p>
+<ul>
+<li><strong>案例</strong>：将密钥硬编码在代码中、密钥生命周期过长、密钥存储不当（如日志文件记录密钥）、密钥派生不使用盐值。</li>
+<li><strong>注意</strong>：安全的密钥生成、存储、分发、轮换和销毁是系统工程的核心。应使用密钥管理服务或硬件安全模块。</li>
+</ul>
+<p><strong>（3）随机数问题</strong>：</p>
+<ul>
+<li><strong>典型案例</strong>：使用可预测的随机源（如系统时间）生成密钥或初始化向量，或在虚拟环境中使用熵不足的随机数发生器。</li>
+<li><strong>注意</strong>：加密操作中的所有随机值必须来自密码学安全的随机数生成器。</li>
+</ul>
+<p><strong>（4）侧信道攻击</strong>：</p>
+<ul>
+<li><strong>案例</strong>：AES实现的时间差异泄露密钥信息、加密错误信息的差异（填充预言攻击）、功耗分析。</li>
+<li><strong>注意</strong>：必须使用常数时间的实现，防范时序攻击、错误注入攻击等物理层攻击。</li>
+</ul>
+<p><strong>（5）协议层漏洞</strong>：</p>
+<ul>
+<li><strong>案例</strong>：在自定义协议中缺少新鲜性验证导致重放攻击、缺乏前向安全性、身份认证与密钥协商分离。</li>
+<li><strong>注意</strong>：应优先使用标准化的、经过安全分析的协议（如TLS 1.3），而非自行设计。</li>
+</ul>
+<p><strong>（6）算法过时与配置错误</strong>：</p>
+<ul>
+<li><strong>案例</strong>：继续使用已被攻破的算法（如RC4、DES、MD5）、TLS配置中支持弱密码套件、使用短密钥。</li>
+<li><strong>注意</strong>：需定期更新密码库，遵循当前的安全最佳实践（如使用AES-256、SHA-256、2048位以上RSA等）。</li>
+</ul>
+<p><strong>核心原则</strong>：不要自行发明密码算法或协议；使用标准、经过充分审查的库（如OpenSSL、libsodium）；保持最小权限原则和纵深防御；进行第三方安全审计。<strong>系统最弱的一环往往不在算法理论，而在工程实现细节。</strong></p>
+<h1 id="数据传输安全"><a href="#数据传输安全" class="headerlink" title="数据传输安全"></a>数据传输安全</h1><h2 id="TLS协议的基本原理：协议架构，报文结构，协议流程（P49）"><a href="#TLS协议的基本原理：协议架构，报文结构，协议流程（P49）" class="headerlink" title="TLS协议的基本原理：协议架构，报文结构，协议流程（P49）"></a>TLS协议的基本原理：协议架构，报文结构，协议流程（P49）</h2><p>TLS（传输层安全）协议工作在OSI模型中的<strong>传输层和应用层</strong>之间，用于在两个通信应用程序之间<strong>提供机密性和数据完整性</strong>。</p>
+<p>（1）TLS协议可分为<strong>握手协议和记录协议</strong>：握手协议负责<strong>密码组件的协商</strong>以及<strong>安全信道的建立；</strong>记录协议则是<strong>在已建立的安全信道中传输秘密信息</strong>。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%205.png" alt="image.png"></p>
+<p>TLS 定义了四个核心子协议<strong>：密钥规格变更协议，警报协议，握手协议，应用数据协议</strong></p>
+<p><strong>握手协议</strong>的任务：<strong>协商密钥规格；利用公钥证书来认证服务器的身份；生成会话密钥。</strong></p>
+<p>（2）报文结构：Header(Type, Version, Length) + Data</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%206.png" alt="image.png"></p>
+<p>（3）协议流程：<strong>握手阶段、安全通信阶段。</strong></p>
+<p><strong>Q：网站已经使用TLS，那为什么没有在整个互联网上使用mTLS（双向TLS，mutual-tls）？</strong></p>
+<p>对于日常用途，单向身份验证提供了足够的保护。公共互联网上TLS的目标是：（1）确保人们不会访问欺骗性网站；（2）确保私有数据在通过包含互联网的各种网络时安全且加密，以及；（3）确保数据在传输过程中没有改变。<strong>客户端仅验证服务器身份的单向TLS足以实现这些目标。</strong></p>
+<p><strong>Q：客户端证书为什么没有被广泛使用？</strong></p>
+<p>（1）增加安全性成本，用户<strong>隐私泄漏</strong>：账号的匿名性；（2）<strong>客户端证书管理</strong>：将TLS证书分发到所有最终用户设备将非常困难。生成、管理和验证为此所需的数十亿证书几乎是不可能的任务。</p>
+<h2 id="TLS握手协议的安全性分析与改进方案：前向安全性，中间人攻击，重放攻击（P53）"><a href="#TLS握手协议的安全性分析与改进方案：前向安全性，中间人攻击，重放攻击（P53）" class="headerlink" title="TLS握手协议的安全性分析与改进方案：前向安全性，中间人攻击，重放攻击（P53）"></a>TLS握手协议的安全性分析与改进方案：前向安全性，中间人攻击，重放攻击（P53）</h2><p>（1）<strong>重放攻击：</strong>在握手时使用Client Random和Server Random，<strong>防止连接重放。</strong>黑客在嗅探了服务器与客户端之间的所有报文后，可以再次冒充客户端向服务器发送相同的报文（虽然黑客不知道内容是什么），因为报文信息都是之前客户端和服务器验证过的，因此服务器会认为是客户端与其通信，导致又一次连接。</p>
+<p>（2）<strong>前向安全性</strong>：是密码学中通信协议的安全属性，<strong>是指长期使用的主密钥泄漏不会导致过去的会话密钥泄漏。</strong>通俗来说，前向安全指的是密钥泄漏也不会让之前加密的数据被泄漏，影响的只有当前，对之前的数据无影响。即使有人记录流量并危及服务器以获得其私钥，他们也无法破译该流量。<strong>可以采用DHE密钥交换协议，支持前向安全性，目前大部分HTTPS流量用的都是ECDHE密钥交换</strong></p>
+<p>（3）<strong>中间人攻击：</strong>DHE无法抵御中间人攻击。攻击者<strong>只需要冒充连接双方并执行两次单独的密钥交换</strong>即可实现攻击。解决方法是服务器发送服务器端DH参数时，需要对服务器端DH参数进行数字签名，证明服务器的身份。</p>
+<h2 id="TLS协议在实际部署中的安全性问题分析：HSTS（P61）证书安全（P65）CDN（P71）"><a href="#TLS协议在实际部署中的安全性问题分析：HSTS（P61）证书安全（P65）CDN（P71）" class="headerlink" title="TLS协议在实际部署中的安全性问题分析：HSTS（P61）证书安全（P65）CDN（P71）"></a>TLS协议在实际部署中的安全性问题分析：HSTS（P61）证书安全（P65）CDN（P71）</h2><p>（1）HSTS：是国际互联网工程组织IETF发布的一种<strong>互联网安全策略机制</strong>。采用HSTS策略的网站将保证浏览器始终连接到该网站的HTTPS加密版本，不需要用户手动在URL地址栏中输入加密地址，以减少会话劫持风险。</p>
+<p>虽然HSTS可以很好的解决HTTPS降级攻击，但是<strong>对于HSTS生效前的首次HTTP请求，依然无法避免被劫持。提出了HSTS Preload List方案</strong>：内置一份可以定期更新的列表，对于列表中的域名，即使用户之前没有访问过，也会使用HTTPS协议。</p>
+<p>（2）证书安全：使用工具Certbot配置SSL安全证书，每60天更新证书。自动证书管理环境（ACME），<strong>一种通信协议，用于自动化证书颁发机构与其用户的web服务器之间的交互，允许以非常低的成本自动部署公钥基础设施；</strong></p>
+<p>（3）CDN：<strong>内容分发网络，是一种分布式基础设施，可以有效地向最终用户提供网站的内容</strong>。一个client和server之间的“中间商”。 </p>
+<h2 id="HSTS的preload-list方案是为了解决什么问题？（P61-课件）"><a href="#HSTS的preload-list方案是为了解决什么问题？（P61-课件）" class="headerlink" title="HSTS的preload list方案是为了解决什么问题？（P61+课件）"></a>HSTS的preload list方案是为了解决什么问题？（P61+课件）</h2><p>采用HSTS策略的网站将保证浏览器始终连接到该网站的HTTPS加密版本，不需要用户手动在URL地址栏中输入加密地址，以减少会话劫持风险。虽然HSTS可以很好的解决HTTPS降级攻击，但是<strong>对于HSTS生效前的首次HTTP请求，依然无法避免被劫持。</strong></p>
+<h2 id="TLS-1-3如何对抗降级攻击？如何对抗流量分析攻击？（P61）"><a href="#TLS-1-3如何对抗降级攻击？如何对抗流量分析攻击？（P61）" class="headerlink" title="TLS 1.3如何对抗降级攻击？如何对抗流量分析攻击？（P61）"></a>TLS 1.3如何对抗降级攻击？如何对抗流量分析攻击？（P61）</h2><p>（1）TLS 1.3的<strong>降级保护特性</strong>被设计为抵御降级攻击，其中<strong>攻击者迫使客户端和服务器使用比1.3更弱版本的TLS</strong>。为了执行降级攻击，攻击者通过<strong>拦截和修改ClientHello消息</strong>以告诉服务器客户端不支持TLS 1.3，<strong>迫使服务器选择较弱版本的TLS，</strong>从而其可以利用较早版本的TLS中的漏洞。</p>
+<p>为了抵御降级攻击，TLS 1.3服务器在ServerHello消息中<strong>发送的32字节随机值中使用三种模式来标识请求的连接类型</strong>。该模式应与客户端对特定类型TLS连接的请求相匹配。如果客户端接收到错误的模式，它就知道某些事情正在发生。</p>
+<p>（2）TLS 1.3记录支持一个很好的特性，称为<strong>零填充，其减轻了流量分析攻击</strong>。流量分析是一种攻击者<strong>使用定时、数据传输量等从流量模式中提取信息的方法。</strong>例如，因为密文与明文的大小大致相同，所以即使使用强加密，攻击者也可以通过查看其密文的长度来确定消息的大致大小。<strong>零填充向明文添加零</strong>，以扩大密文的大小，从而迷惑观察者使其认为加密的消息比实际长度长。</p>
+<h2 id="TLS-1-3对性能做了哪些提高和改进？（P59）"><a href="#TLS-1-3对性能做了哪些提高和改进？（P59）" class="headerlink" title="TLS 1.3对性能做了哪些提高和改进？（P59）"></a>TLS 1.3对性能做了哪些提高和改进？（P59）</h2><p><strong>性能</strong>（单次往返握手和会话恢复）：通过<strong>同时进行协商算法和密钥交换</strong>来优化密钥交换流程。大幅度减少了密钥协商算法套件，淘汰了大量安全性、性能不好的算法，仅支持5种密钥套件。</p>
+<p>会话恢复是指<strong>重新使用旧的会话或连接中的秘密值</strong>。这是一种<strong>利用在前一个会话中客户端和服务器之间交换的预共享密钥</strong>来引导新会话的方法。会话恢复带来了两个主要好处：<strong>客户端可以立即开始加密，并且不需要在后续的会话中使用证书。</strong></p>
+<p><strong>安全（降级保护）；隐私（零填充，对抗流量分析）</strong></p>
+<h2 id="QUIC协议的特点（P78）"><a href="#QUIC协议的特点（P78）" class="headerlink" title="QUIC协议的特点（P78）"></a>QUIC协议的特点（P78）</h2><p>QUIC是谷歌制定的一种基于UDP的低时延的<strong>互联网传输层协议</strong>。UDP往往效率更高（不经常跟服务器端通信查看数据包是否送达或者按序），但是可靠性比不上TCP。QUIC很好地解决了当今传输层和应用层面临的各种需求，<strong>包括处理更多的连接，安全性，和低延迟</strong>。<strong>QUIC融合了包括TCP，TLS，HTTP&#x2F;2等协议的特性，但基于UDP传输。</strong></p>
+<p><strong>（1）QUIC的一个主要目标就是减少连接延迟，</strong>当客户端第一次连接服务器时，QUIC只需要1RTT（Round-Trip Time）的延迟就可以建立可靠安全的连接,相对于TCP+TLS的1-3次RTT要更加快捷。之后客户端可以在本地缓存加密的认证信息，在再次与服务器建立连接时可以实现0-RTT的连接建立延迟。</p>
+<p><strong>（2）QUIC同时复用了HTTP&#x2F;2协议的多路复用功能（Multiplexing），</strong>但由于QUIC基于UDP所以避免了HTTP&#x2F;2的线头阻塞（Head-of-Line Blocking）问题。</p>
+<p><strong>（3）因为QUIC基于UDP，</strong>运行在用户态而不是系统内核，使得QUIC协议可以快速的更新和部署，从而很好地解决了TCP协议部署及更新的困难。</p>
+<h2 id="浏览器如何鉴别所访问网站证书的真伪？攻击者常用的欺骗手段有哪些？（P64-课件）"><a href="#浏览器如何鉴别所访问网站证书的真伪？攻击者常用的欺骗手段有哪些？（P64-课件）" class="headerlink" title="浏览器如何鉴别所访问网站证书的真伪？攻击者常用的欺骗手段有哪些？（P64+课件）"></a>浏览器如何鉴别所访问网站证书的真伪？攻击者常用的欺骗手段有哪些？（P64+课件）</h2><p>（1）HTTPS网站的身份认证是<strong>通过证书信任链完成的</strong>，浏览器<strong>从站点证书开始递归校验父证书</strong>，直至出现信任的根证书（根证书列表一般内置于操作系统，Firefox则自己维护）。</p>
+<p>（2）伪造的方式：<strong>CA错误签发证书。</strong>例如，<strong>CA被欺骗</strong>、<strong>被入侵或者被贿赂</strong>。<strong>破解弱密钥算法。</strong>受信任的CA（证书颁发机构）有好几百个，他们成为整个网站身份认证过程中一个较大的攻击面。现有的证书信任链机制最大的问题是，<strong>任何一家受信任的CA都可以签发任意网站的站点证书，</strong>这些证书在浏览器看来，都是合法的。实际上，目前由于CA失误导致错误签发证书；以及个别CA出于某些目的（如监控加密流量）故意向第三方随意签发证书这两种情况时有发生。</p>
+<h2 id="ACME协议的工作原理（P66）"><a href="#ACME协议的工作原理（P66）" class="headerlink" title="ACME协议的工作原理（P66）"></a>ACME协议的工作原理（P66）</h2><p>自动证书管理环境(ACME)协议是一种通信协议，<strong>用于自动化证书颁发机构与其用户的web服务器之间的交互</strong>，允许<strong>以非常低的成本自动部署公钥基础设施</strong>。有两个关键部分：<strong>ACME客户端，ACME服务端</strong>。</p>
+<p>首先，ACME客户端生成一个密钥对，向CA发送账户注册请求，并在这个请求中提供公钥，使用生成的私钥对其签名。接下来，ACME客户端向CA发送证书请求，提供所申请证书包含的标识符列表（例如域名）。CA生成随机指令，并向ACME客户端发送指令和客户端可以完成的挑战列表来证明标识符的所有权。客户端选择一个HTTP挑战，并创建包含指令的文件，将其托管在“&#x2F;wellknown&#x2F;acme challenge&#x2F;<token>”目录下。ACME客户端通知CA挑战完成后，CA验证该文件是否可访问。当所有的标识符都验证完毕，客户端发送证书签名请求，CA颁发证书。</p>
+<h2 id="证书透明化（伪造证书解决方法之一，P68）"><a href="#证书透明化（伪造证书解决方法之一，P68）" class="headerlink" title="证书透明化（伪造证书解决方法之一，P68）"></a>证书透明化（伪造证书解决方法之一，P68）</h2><p>（1）CT：CA要被监督。证书透明度（CT）目的是通过<strong>保持所有服务器证书的公开透明</strong>来改进互联网PKI。它的基本想法是<strong>CA将每一张证书都提交给一组公开的日志服务器</strong>，反过来，这些CA将收到提交的证明，<strong>称为已签名证书时间戳（SCT）</strong>，并中继给最终用户。</p>
+<p>为了检测欺诈性的TLS服务器证书并提高证书颁发机构（CA）的责任，建议使用<strong>证书透明性（CT）</strong>将证书记录在公开可见的日志中，<strong>监控程序从中获取所有证书并监视可疑证书。</strong></p>
+<p>（2）PKP：网站可以选择可靠的CA；HPKP 技术给予我们主动选择信任CA的权利。</p>
+<h2 id="公钥钉扎（伪造证书解决方法之一，P69）"><a href="#公钥钉扎（伪造证书解决方法之一，P69）" class="headerlink" title="公钥钉扎（伪造证书解决方法之一，P69）"></a>公钥钉扎（伪造证书解决方法之一，P69）</h2><p>（HPKP）：白名单公钥用来防范<strong>由伪造或不正当手段获得网站证书</strong>造成的中间人攻击，但有着与CT不同的思路。</p>
+<p>HPKP技术<strong>给予我们主动选择信任CA的权利</strong>。它的工作原理是<strong>通过响应头或者<meta>标签</strong>告诉浏览器当前网站的证书指纹，以及过期时间等其它信息。未来一段时间内，浏览器<strong>再次访问这个网站必须验证证书链中的证书指纹</strong>，如果跟之前指定的值不匹配，即便证书本身是合法的，也必须断开连接。</p>
+<h2 id="数据传输安全协议设计的重点与常用技巧（AI版答案）"><a href="#数据传输安全协议设计的重点与常用技巧（AI版答案）" class="headerlink" title="数据传输安全协议设计的重点与常用技巧（AI版答案）"></a>数据传输安全协议设计的重点与常用技巧（AI版答案）</h2><p>（1）设计重点</p>
+<p><strong>机密性</strong>：确保传输内容不被窃听，通过加密算法（如 AES、ChaCha20）实现。</p>
+<p><strong>完整性</strong>：防止数据在传输中被篡改，通常通过消息认证码（如 HMAC）或认证加密模式（如 AES-GCM）实现。</p>
+<p><strong>身份认证</strong>：验证通信双方的身份，防止中间人攻击，可通过数字证书、预共享密钥等方式实现。</p>
+<p><strong>前向安全性</strong>：即使长期私钥泄露，过去的会话密钥也不会被破解，通常通过迪菲-赫尔曼密钥交换实现。</p>
+<p><strong>抗重放攻击</strong>：确保同一数据包不被重复使用，通过序列号、时间戳或随机数实现。</p>
+<p><strong>协议版本与算法协商</strong>：支持灵活的算法升级与版本管理，防止降级攻击。</p>
+<p>（2）常用技巧</p>
+<p><strong>分层与模块化设计</strong>：如 TLS 分为记录层和握手层，记录层处理加密传输，握手层管理密钥协商与认证，便于独立升级与维护。</p>
+<p><strong>密钥交换与密钥派生分离</strong>：先通过迪菲-赫尔曼（ECDHE）等交换临时密钥，再通过密钥派生函数（如 HKDF）生成会话密钥，增强前向安全性。</p>
+<p><strong>加密与认证结合</strong>：优先选用认证加密模式（如 AES-GCM、ChaCha20-Poly1305），一次性完成加密和认证，简化实现并提升性能。</p>
+<p><strong>证书链与信任锚</strong>：使用公钥基础设施（PKI）和受信任的根证书颁发机构（CA）验证身份，支持证书吊销列表（CRL）或 OCSP 检查证书状态。</p>
+<p><strong>会话恢复机制</strong>：通过会话票据（Session Ticket）或会话 ID 复用已协商的密钥材料，减少重复握手开销，提升性能。</p>
+<p><strong>防御降级攻击</strong>：在握手阶段记录支持的算法和版本，并在最终消息中用密钥计算验证，防止攻击者强制协商弱算法。</p>
+<p><strong>心跳与连接保活</strong>：通过心跳机制（如 TLS Heartbeat）维持连接活跃，同时防范如 Heartbleed 类的信息泄露漏洞。</p>
+<p><strong>混淆与填充</strong>：在可能的情况下对数据包长度和发送时机进行填充或混淆，防止流量分析攻击。</p>
+<p>（3）典型案例技巧</p>
+<p><strong>TLS 1.3 的简化与强化</strong>：移除弱算法和不安全特性（如静态 RSA 密钥交换），强制前向安全，将握手从 2-RTT 优化为 1-RTT 甚至 0-RTT（有条件的）。</p>
+<p><strong>抗量子计算的准备</strong>：引入混合密钥交换（如 X25519 + Kyber），在经典安全基础上增加抗量子攻击层。</p>
+<p><strong>核心原则</strong>：安全协议设计需在安全、性能和可部署性之间取得平衡，遵循“永不自己发明密码学”原则，优先采用标准化、经过充分分析的协议框架，并通过形式化验证和公开审计确保实现无误。</p>
+<h1 id="数据访问控制：身份认证与身份管理"><a href="#数据访问控制：身份认证与身份管理" class="headerlink" title="数据访问控制：身份认证与身份管理"></a>数据访问控制：身份认证与身份管理</h1><p><strong>Q：TLS客户端证书为什么没有被广泛使用？（P94）</strong></p>
+<p>客户端的证书消息在加密完成之前被发送；因此，客户端证书的内容对被动网络攻击者（网络窃听）是可用的。CA签发给自然人的证书通常至少包含一个人的姓名和个人身份代码。即使证书不包含任何个人数据，被动网络攻击者也可以使用证书中的公钥跟踪客户端。因为私钥和证书管理方面存在困难。</p>
+<p><strong>应用层客户端证书：先建立TLS连接，然后在安全的信道上传输客户端证书</strong>。</p>
+<p><strong>Q：私钥如何安全管理？</strong>安全硬件（例如，智能卡，USBKey）</p>
+<p>实名还是匿名？如何适配多个服务？每个服务一个私钥，还是一个私钥多个服务（eID）</p>
+<h2 id="从用户视角，对身份认证方法的分类（P85）"><a href="#从用户视角，对身份认证方法的分类（P85）" class="headerlink" title="从用户视角，对身份认证方法的分类（P85）"></a>从用户视角，对身份认证方法的分类（P85）</h2><p>（1）知道什么（Something you know）：例如，用户名和口令。</p>
+<p>（2）拥有什么（Something you have）：比如，你在ATM机器上取款时不仅需要知道口令，还需要携带银行卡；再比如，USB Key，一次性口令（OTP） 硬件，一次性口令软件令牌（Token），手机号码（SIM卡）。</p>
+<p>（3）你是谁（Who you are）：<strong>基于生物特征的身份认证</strong>，例如，指纹、掌纹、虹膜、语音、人脸等。</p>
+<h2 id="从技术视角，对身份认证方法的分类（P85）"><a href="#从技术视角，对身份认证方法的分类（P85）" class="headerlink" title="从技术视角，对身份认证方法的分类（P85）"></a>从技术视角，对身份认证方法的分类（P85）</h2><p>按对称性和非对称性分为两类。</p>
+<p><strong>一类是对称密钥认证体系</strong>，客户端和服务器拥有共同的密钥，应用实例包括密码、短信验证码、OTP动态令牌和传统的生物识别认证方案等</p>
+<p><strong>另一类是公私钥对认证体系</strong>，客户端和服务器拥有非对称的密钥，应用实例包括智能卡、USB Key、电子身份证（elD）、FIDO协议和aPAKE协议等。</p>
+<h2 id="了解四种基本的身份认证方法及其面临的安全威胁（P85）"><a href="#了解四种基本的身份认证方法及其面临的安全威胁（P85）" class="headerlink" title="了解四种基本的身份认证方法及其面临的安全威胁（P85）"></a>了解四种基本的身份认证方法及其面临的安全威胁（P85）</h2><p>（1）口令</p>
+<p>（2）安全令牌：一次性密码（OTP，onetimepassword）</p>
+<p>（3）生物信息：<strong>无需记忆；不能改变</strong>【被窃取后，身份仿冒】</p>
+<p>（4）公钥（证书）：<strong>安全性高。</strong>例如，银行的U盾，电子身份证eID。管理复杂：证书分发，取消，更新等。风险：数字证书和私钥设备遗失【被盗取】；CA中心被入侵【仿冒证书】。</p>
+<h2 id="如何评估口令的安全性？掌握量化分析方法。（P85）"><a href="#如何评估口令的安全性？掌握量化分析方法。（P85）" class="headerlink" title="如何评估口令的安全性？掌握量化分析方法。（P85）"></a>如何评估口令的安全性？掌握量化分析方法。（P85）</h2><p>量化分析：使用Key Entropy对口令进行等效的密钥安全强度计算。</p>
+<p><strong>Q：多长的口令才有可能能够达到128位安全强度？</strong>口令长度至少21</p>
+<p><strong>Q：为什么是上限？</strong>攻击者采用字典攻击，能够以较低的投入破解大多数账号。如果是定向攻击，攻击者在获取攻击目标隐私信息的情况下，就可能发起更有效的字典攻击。</p>
+<h2 id="口令如何安全存储？了解主流的口令加密算法。（P87）"><a href="#口令如何安全存储？了解主流的口令加密算法。（P87）" class="headerlink" title="口令如何安全存储？了解主流的口令加密算法。（P87）"></a>口令如何安全存储？了解主流的口令加密算法。（P87）</h2><p>以明文形式将用户名和口令存放在用户数据库中，且攻击者成功获取访问数据库的权限，就可以得到整个用户名和口令表，因此口令一定<strong>不要以明文形式存放，可以将口令加密后再存放在数据库中</strong></p>
+<p>（1）最初的口令存储模式，始于1961年MIT的分时系统；在使用中暴漏出很多安全问题，很多用户互相猜测口令，<strong>而且管理员能够有权限解密用户的口令</strong>。</p>
+<p>（2）60年代，剑桥大学的Roger Needham和Mike Guy<strong>发明利用哈希算法来加密口令的方法</strong>，并将之应用于MULTICS操作系统。通过哈希算法的保护，服务器不再保存用户的原始口令；即使是系统管理员，也只能通过破解哈希算法来获得用户的口令。利用安全哈希算法的单向特性，用户口令的安全性得到很大提升。</p>
+<p>（3）由于计算机的普及，很多攻击者具有更强大的计算能力。1979年，Robert Morris和Ken Thompson<strong>提出了哈希加盐的方法，来抵抗字典攻击和暴力破解，并应用于Unix操作系统。（P90）</strong></p>
+<p>（4）更安全的方法：<strong>KDFs算法中都有个因子，</strong>用于指明计算密码摘要所需要的资源和时间，也就是计算强度。计算强度越大，攻击者建立rainbowtable越困难，以至于不可继续。</p>
+<p>（5）PBKDF2：<strong>将salted hash进行多次重复计算。</strong></p>
+<p>BCRYPT：有一个参数，<strong>可用于调整计算强度</strong>，而且work factor是包括在输出的摘要中的。随着攻击者计算能力的提高，使用者可以逐步增大work factor，而且不会影响已有用户的登陆。</p>
+<p>SCRYPT：<strong>SCRYPT不仅计算所需时间长，而且占用的内存也多，</strong>使得并行计算多个摘要异常困难，因此利用rainbow table进行暴力攻击更加困难。</p>
+<p>总结常用的口令加密算法：<strong>哈希加盐、KDFs、PBKDF2、BCRYPT、SCRYPT、Argon2…</strong></p>
+<h2 id="解释FIDO协议的工作原理（P96-具体看课本）"><a href="#解释FIDO协议的工作原理（P96-具体看课本）" class="headerlink" title="解释FIDO协议的工作原理（P96+具体看课本）"></a>解释FIDO协议的工作原理（P96+具体看课本）</h2><p>（1）一套<strong>在线快速身份认证标准</strong>，主要包含<strong>UAF和U2F两套协议</strong>，以<strong>非对称算法</strong>为基础，支持多种验证方式。</p>
+<p>（2）FIDO协议<strong>最基本的技术特征就是本地身份识别与在线身份认证相结合</strong>，而<strong>在线身份认证技术则采用非对称公私钥对来提供安全保障。</strong></p>
+<p>UAF：<strong>支持指纹、语音、虹膜、脸部识别等生物身份识别方式。</strong>无需用户密码介入，直接进行认证；（比如手机银行——人脸识别！）</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%207.png" alt="image.png"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%208.png" alt="image.png"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%209.png" alt="image.png"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2010.png" alt="image.png"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2011.png" alt="image.png"></p>
+<p>U2F：支持U盾、NFC芯片、TPM等硬件设备，<strong>使用双因子（密码和硬件设备）保护用户账户和隐私。</strong>用户在注册阶段，使用服务器支持的加密设备，将账户和设备绑定。（P100）</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2012.png" alt="image.png"></p>
+<p><strong>Q：口令如何管理？</strong>减少需要记忆的口令的数量：SSO，一次性口令。利用PM：自动化管理，不需要记忆口令。</p>
+<p><strong>Q：认证凭证（秘密）如何管理？</strong></p>
+<p>生物特征的应用：FIDOUAF，是否存在个人生物特征敏感信息的泄漏？</p>
+<p>FIDO U2F：设备遗失问题；用户体验：你愿意每天多带一个设备吗？如果忘记了，就无法登录你的账号</p>
+<p>以风险为基础的模型：分类器<strong>可以利用口令以外的许多信号，与口令不同，这些隐式信息是可用的，</strong>用户无需付出额外的努力。虽然这些信号都不是不可伪造，但在实践中伪造所有信号的难度还是很大的。一些问题：<strong>任何分类器将不可避免地产生错误接受（FalseAccept）和错误拒绝（FalseReject）的错误。</strong></p>
+<p>持续认证：持续认证是指<strong>分类器不只是在入口处检查口令</strong>，而是可以在<strong>允许用户进入后监视用户的行为</strong>，并根据这些附加信号改进其决策，实现动态的访问控制。</p>
+<p>单点登录SSO：是指在多系统应用群中登录一个系统，便可在其他所有系统中得到授权而无需再次登录，用户<strong>只需登陆一次即可访问相互信任的子系统。</strong></p>
+<h2 id="Kerberos协议的工作原理（P107）"><a href="#Kerberos协议的工作原理（P107）" class="headerlink" title="Kerberos协议的工作原理（P107）"></a>Kerberos协议的工作原理（P107）</h2><p>该协议的基础是Needham-Schroeder协议，该协议引入了KDC（密钥分发中心）的概念，通信各方分别与KDC共享一个长期密钥，KDC产生通信中需要的会话密钥，同时解决用户和服务的双向身份认证问题。</p>
+<p>Kerberos协议<strong>基于对称密码体制</strong>，每个用户U和对称密钥分发中心KDC共享一个秘密的DES密钥，记为Ku。KDC作为客户端和服务器共同信任的第三方，维护着管理域中所有安全主体账户信息数据库。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2013.png" alt="image.png"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2014.png" alt="image.png"></p>
+<p>优势：实现了<strong>一次性签放</strong>的机制，并且签放的票据都有一个有效期；支持<strong>双向</strong>的身份认证；支持分布式网络环境下的域间认证。<strong>用户只需登录一次</strong>，即可访问相互信任的子系统。</p>
+<h2 id="OAuth协议的工作原理（P108）"><a href="#OAuth协议的工作原理（P108）" class="headerlink" title="OAuth协议的工作原理（P108）"></a>OAuth协议的工作原理（P108）</h2><p>（1）所谓OAuth（即Open Authorization，开放授权），<strong>第三方无需知道用户的账号及密码，就可获取到用户的授权信息。</strong>允许第三方网站在用户授权的前提下访问用户在服务商那里存储的各种信息。并且这种授权无需用户将认证信息提供给该第三方网站。OAuth允许用户提供一个令牌给第三方网站，<strong>一个令牌对应一个特定的第三方网站</strong>，同时该令牌只能在特定的时间内访问特定的资源。OAuth协议<strong>不仅能够实现单点登录资源开放</strong>，而且能够让资源所有者细粒度地控制对资源的授权，能够知道是谁访问了哪些资源以及访问量。OAuth 2.0 的标准是RFC6749 文件（October2012）。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2015.png" alt="image.png"></p>
+<p>（2）四种角色：<strong>资源所有者；客户端；授权服务器；资源服务器</strong> </p>
+<p>（3）名词解释：</p>
+<p><strong>用户：资源所有者，即用户。</strong>User Agent：用户代理。比如浏览器、手机App。</p>
+<p><strong>RP：依赖方。</strong>Client：客户端（第三方应用Third-party application）。</p>
+<p><strong>IdP ：身份提供方或者服务提供方。</strong>Authorization server：授权（认证）服务器。即服务提供商专门用来处理认证的服务器。Resource server：资源服务器，即服务提供商存放用户生成的资源的服务器。它与认证服务器，可以是同一台服务器，也可以是不同的服务器。</p>
+<p><strong>Access Token：访问令牌。</strong>使用合法的访问令牌获取受保护的资源。</p>
+<p>（4）用户授权有四种模式：<strong>授权码模式，简化模式，密码模式，客户端模式。</strong>（P111）</p>
+<p>授权码模式，指的是<strong>第三方应用先申请一个授权码，然后再用该码获取令牌。</strong>这种方式是<strong>最常用的流程，安全性也最高，</strong>它适用于那些有后端的Web应用。<strong>授权码通过前端传送，令牌则是储存在后端</strong>，而且所有与资源服务器的通信都在后端完成。这样的前后端分离，可以避免令牌泄漏。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2016.png" alt="image.png"></p>
+<p>（账号）<strong>注册阶段</strong>：<strong>包括RP、用户在IdP的注册及与IdP的绑定。</strong>在RP可以与IdP交互之前，RP需要在IdP注册，<strong>实际上，这个过程通常是手工完成的。</strong>随后，用在IdP的账号在RP完成认证。最后，将RP账号和IdP账号进行绑定。<strong>（注册+认证+绑定）</strong></p>
+<p><strong>认证阶段：</strong>获得授权码，换取Access Token。</p>
+<h2 id="OpenID-Connect协议的工作原理（P113）"><a href="#OpenID-Connect协议的工作原理（P113）" class="headerlink" title="OpenID Connect协议的工作原理（P113）"></a>OpenID Connect协议的工作原理（P113）</h2><p>OAuth 2.0协议是一种最广泛部署授权&#x2F;单点登录(SSO)协议，也是新的SSO标准OpenIDConnect的基础。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2017.png" alt="image.png"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2018.png" alt="image.png"></p>
+<p>OpenID Connect协议与OAuth 2.0协议流程基本相同，<strong>主要区别是身份鉴别请求中添加openid参数</strong>，身份服务提供方（IdP）最终会发送<strong>给依赖方一个JWT格式的身份令牌而不是访问令牌。</strong>访问令牌主要区别在于：访问令牌只是一个随机字符串，而<strong>身份令牌则携带了依赖方、服务提供方、用户等信息并进行了签名。</strong>相较于OAuth2.0协议更适合用于用户身份鉴别</p>
+<p><strong>移动端单点登陆系统</strong></p>
+<p>问题：缺少在传统方式中作为可信基的浏览器</p>
+<p>一般采用2种方式在移动端模拟浏览器的重定向：（1）在依赖方应用中使用WebView来完成重定向；（2）使用APP间的消息传递机制来代替重定向。该方法的问题是，应用间消息传递时无法对接收方以及发送方进行身份鉴别</p>
+<h2 id="Cookie的工作原理与安全属性（P116）"><a href="#Cookie的工作原理与安全属性（P116）" class="headerlink" title="Cookie的工作原理与安全属性（P116）"></a>Cookie的工作原理与安全属性（P116）</h2><p>（1）工作原理：当用户访问一个网站时，<strong>web服务器设置cookie属性</strong>(即、名称、值、标志、过期日期和匹配规则)。设置的方式可以是<strong>静态地使用Set-Cookie，也可以使用JavaScript。</strong>当用户发出HTTP或HTTPS请求时，<strong>浏览器将发送cookie</strong>，<strong>其匹配规则对应于请求的URL和协议</strong>。浏览器不会在常规HTTP连接上传输带有HTTPS属性的cookie。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2019.png" alt="image.png"></p>
+<p>（2）安全属性：</p>
+<p>访问控制：｛域名，目录，时间｝，<strong>HTTPOnly，Secure</strong>（HTTPS），SameSite</p>
+<p>Cookie的HttpOnly属性，<strong>指浏览器不要在除HTTP和HTTPS请求之外暴露Cookie</strong>。一个有HttpOnly属性的Cookie，不能通过非HTTP方式来访问，例如通过调用JavaScript(例如，引用document.cookie)，因此，不可能通过跨域脚本（XSS）来偷走这种Cookie。Facebook和Google正在广泛地使用HttpOnly属性。</p>
+<p>Secure Cookie机制指的是<strong>设置了secure标志的cookie</strong>。Secure Cookie<strong>仅在https层面上安全传输</strong>，如果是http请求，就不会带上这个cookie。这样能降低重要的cookie被中间人截获的风险。</p>
+<h2 id="身份认证Cookie（P117）"><a href="#身份认证Cookie（P117）" class="headerlink" title="身份认证Cookie（P117）"></a>身份认证Cookie（P117）</h2><p>（1）除了维护用户的状态外，<strong>网站还使用cookie对用户进行身份验证。Auth-cookies：</strong>当用户最初向web服务器进行身份验证时，web服务器将设置多个authcookie。<strong>Auth-cookies</strong>确保在连接中断的情况下(例如，由于TCP会话终止或用户IP地址的更改)，用户的会话保持连续。许多网站<strong>使用不同的auth-cookies组合来控制对网站不同部分的访问</strong>(例如，填写购物车的用户可能需要一组不同于在购物车中购买商品的cookies)。</p>
+<p>（2）最初使用<strong>用户名和密码登录网站的用户</strong>随后可以简单地提供身份验证cookie(auth-cookies)来访问该网站。因此，一旦用户对web服务器进行了身份验证，auth-cookie就是一个关键的安全节点（linchpin）：在许多情况下，<strong>对这些auth-cookie的访问使攻击者能够完全控制用户的帐户。</strong></p>
+<h2 id="Cookie劫持攻击的工作原理（P118）"><a href="#Cookie劫持攻击的工作原理（P118）" class="headerlink" title="Cookie劫持攻击的工作原理（P118）"></a>Cookie劫持攻击的工作原理（P118）</h2><p>（1）被动攻击：对手监视公共无线网络的流量，例如大学校园或咖啡店的流量。<strong>用户连接到无线网络以浏览网页</strong>。浏览器将用户的HTTP cookie附加到通过未加密连接。<strong>以明文形式发送的请求</strong>。窃听者正在监视流量，窃听者从网络跟踪中提取用户的HTTP cookie，并使用被窃取的cookie连接到易受攻击的服务。这些服务<strong>从cookie中“识别”用户并提供网站的个性化版本</strong>，从而将用户的个人信息和帐户功能暴露给对手。</p>
+<p>（2）主动攻击：拦截未加密的auth cookie的on-path攻击者。</p>
+<p>例如，即使用户没有明确访问那些网站，攻击者也可以注入内容以迫使用户的浏览器向特定的易受攻击的网站发送请求并公开用户的Cookie。</p>
+<p>HSTS如何影响HTTP cookie劫持：部分部署使该机制无效，因为单个未加密的连接可能足以使攻击者获取所需的cookie。</p>
+<h1 id="大数据存储与计算的安全隐私"><a href="#大数据存储与计算的安全隐私" class="headerlink" title="大数据存储与计算的安全隐私"></a>大数据存储与计算的安全隐私</h1><p><strong>（P127）</strong>云计算的定义：云计算是一种模式，能以泛在的、便利的、按需的方式通过网络访问可配置的计算资源（例如网络、服务器、存储器、应用和服务），这些资源可实现快速部署与发布，并且只需要极少的管理成本或服务提供商的干预。</p>
+<p>云计算有五大特征：按需获得的自助服务；广泛的网络接入方式；资源的规模池化；快捷的弹性伸缩；可计量的服务</p>
+<p>云计算的目标：在于把无数个节点<strong>整合</strong>成一个具有强大计算能力的分布式计算系统，通过互联网把强大的计算能力<strong>提供</strong>给终端用户。</p>
+<p><strong>云计算三种主要服务模式：SaaS、PaaS、IaaS</strong></p>
+<p>基于云存储技术的SaaS服务，优点有：1）海量存储资源；2）可靠性高，数据永不丢失；3）催生新的技术，例如，“秒传”功能；4）以较低廉的价格获得海量的存储能力</p>
+<p>安全问题势必要被考虑：<strong>数据完整性、数据隐私保护、数据安全防护</strong></p>
+<h2 id="虚拟化技术：虚拟机，容器的三个核心概念与核心技术（P128）"><a href="#虚拟化技术：虚拟机，容器的三个核心概念与核心技术（P128）" class="headerlink" title="虚拟化技术：虚拟机，容器的三个核心概念与核心技术（P128）"></a>虚拟化技术：虚拟机，容器的三个核心概念与核心技术（P128）</h2><p><strong>虚拟化技术作为云计算的基础技术之一，在云服务系统中发挥了不可替代的作用。</strong></p>
+<p>从服务提供方视角来看，<strong>虚拟化技术有助于提高资源的利用率</strong>。从用户的视角，提供一个共享的资源池，降低用户的总拥有成本、系统部署和维护的时间成本，给用户提供既方便又便宜的（计算、存储、通信）服务。成本更低，用户体验更好，是虚拟化技术得以迅猛发展的根本驱动力。</p>
+<p>（1）虚拟机：（P129）</p>
+<p><strong>虚拟机技术是云计算系统提高计算资源利用率的重要技术手段。</strong>云计算系统通过虚拟化技术，可以构建一个超大规模的资源池；对于每个租用者，可以根据需要动态地为其分配资源和释放资源，不需要按照峰值预留资源。</p>
+<p><strong>计算虚拟化技术的实现形式，是在系统中加入一个虚拟化层，将下层资源抽象成另一种形式的资源，供上层调用。</strong>计算虚拟化软件，需要模拟出来的逻辑功能，主要为高效独立的虚拟计算机系统，我们称之为虚拟机。在虚拟机中运行的操作系统软件，我们称之为，Guest-OS。</p>
+<p>（2）容器：（P131）</p>
+<p>与传统虚拟化等技术相比，容器技术在生产应用中优势明显。相比虚拟化技术，<strong>容器技术具有部署便捷、管理便利、利于微服务架构的实现、弹性伸缩、高可用等特点。</strong></p>
+<p><strong>镜像：文件的层次结构，以及包含如何运行容器的元数据，</strong>Dockerfile中的每条命令都会在文件系统中创建一个新的层次结构，文件系统在这些层次上构建起来，镜像就构建于这些联合的文件系统之上。</p>
+<p><strong>仓库：</strong>仓库是集中存放镜像文件的场所，仓库注册服务器上往往存放着多个仓库，每个仓库中又包含了多个镜像，每个镜像有不同的标签。</p>
+<p><strong>容器：</strong>容器是从镜像创建的运行实例。它可以被启动、开始、停止、删除。每个容器都是相互隔离的、保证安全的平台。<strong>可以把容器看做是一个简易版的Linux环境，Docker利用容器来运行应用。</strong></p>
+<p>容器技术的实现依赖于三个核心技术<strong>：隔离机制，资源配额，虚拟文件系统</strong></p>
+<p>隔离机制：将容器的进程、网络、消息、文件系统隔离开，给每个容器创建一个独立的命名空间。</p>
+<p>资源配额：实现了对资源的配额和度量。</p>
+<p>Linux容器提供了一种操作系统级的虚拟化方法，借助于namespace的隔离机制和Cgroups限额功能来管理container。</p>
+<p><strong>虚拟机的操作系统是运行在宿主机操作系统之上的，而容器是与宿主机共享一个操作系统</strong></p>
+<p><strong>（3）容器与虚拟机的对比：（P133）</strong>一般来讲，虚拟机的操作系统是运行在宿主机操作系统之上的，而容器是与宿主机共享一个操作系统。</p>
+<p>虚拟机镜像庞大；而容器镜像小，<strong>便于存储和传输</strong>。</p>
+<p>虚拟机需要<strong>消耗更多的CPU和内存</strong>，容器几乎没有额外的性能损失。</p>
+<p>虚拟机部署速度慢，启动需要10秒以上；<strong>而容器启动速度快，</strong>以Docker为例，一般是秒级的速度。</p>
+<p><strong>但是容器安全性比虚拟机低。</strong></p>
+<h2 id="三类容器安全问题：容器逃逸，镜像安全，集群入侵。（P136）"><a href="#三类容器安全问题：容器逃逸，镜像安全，集群入侵。（P136）" class="headerlink" title="三类容器安全问题：容器逃逸，镜像安全，集群入侵。（P136）"></a>三类容器安全问题：容器逃逸，镜像安全，集群入侵。（P136）</h2><p>（1）容器逃逸：安全人员最关注的是容器逃逸问题。指的是攻击者通过劫持容器化业务逻辑或直接控制等方式，已经获得容器内某种权限下的命令执行能力的过程和结果。</p>
+<p>（2）镜像安全：研发人员更关注镜像安全问题</p>
+<p>（3）集群入侵：集群入侵是运维人员最关注的容器安全问题</p>
+<h2 id="造成容器逃逸的两类原因（软件漏洞与错误配置）与缓解措施（与主机系统隔离，构建更强的信任边界）（P136）"><a href="#造成容器逃逸的两类原因（软件漏洞与错误配置）与缓解措施（与主机系统隔离，构建更强的信任边界）（P136）" class="headerlink" title="造成容器逃逸的两类原因（软件漏洞与错误配置）与缓解措施（与主机系统隔离，构建更强的信任边界）（P136）"></a>造成容器逃逸的两类原因（软件漏洞与错误配置）与缓解措施（与主机系统隔离，构建更强的信任边界）（P136）</h2><p>docker容器逃逸指的是攻击者<strong>通过劫持容器化业务逻辑或直接控制等方式</strong>，已经获得容器内某种权限下的命令执行能力的过程和结果；因为docker使用的是隔离技术，因此容器内的进程无法看到外面的进程，但外面的进程可以看到里面，<strong>所以如果一个容器可以访问到外面的资源，甚至是获得了宿主主机的权限，这就叫做“Docker逃逸”。</strong></p>
+<p><strong>（1）由于内核漏洞引起的逃逸</strong>。 因为Docker是直接共享的宿主主机内核，所以当宿主主机的内核存在安全漏洞时会一并影响Docker的安全，导致可能会造成Docker逃逸。</p>
+<p><strong>（2）由于Docker软件设计引起的逃逸。</strong>比较典型的例子是Docker的标准化容器执行引擎runc。其漏洞原理是，Docker、Containerd或其他基于runc的容易在运行时存在安全漏洞，攻击者可以通过特定的容器镜像或者exec操作获取到宿主机runc执行文件时的文件句柄并修改掉runc的二进制文件，从而获取到宿主机的root执行权限，造成Docker逃逸。</p>
+<p>（3）除了经<strong>由软件漏洞</strong>进行的攻击之外，<strong>由错误的配置</strong>带来的容器逃逸攻击更为常见。例如部署一个具备过高权限的容器，或者关键挂载点都可能引发容器逃逸。在多租户集群中部署容器、或者把包含有敏感数据的容器和其它不受信容器部署在同一主机上，就要考虑一下发生灾难性后果的可能性。</p>
+<p>具体的解决方式就是<strong>创建一个真正的沙箱容器，尽可能的从主机操作系统中隔离开来。</strong>多数解决方案都是一种混合架构，在虚拟机的强信任边界和容器的高效率之间尝试取得平衡。</p>
+<h2 id="跨虚拟机的攻击与云计算环境下的安全挑战（P139）"><a href="#跨虚拟机的攻击与云计算环境下的安全挑战（P139）" class="headerlink" title="跨虚拟机的攻击与云计算环境下的安全挑战（P139）"></a>跨虚拟机的攻击与云计算环境下的安全挑战（P139）</h2><p><strong>Q：由于多个用户的虚拟机共享一台物理机，那么，是否虚拟用户A有可能获得同一台机器上的虚拟用户B的隐私数据呢？</strong></p>
+<p>在该论文（CCS’12）发表之前，一般认为由于CPU和内存的虚拟化，以及当时云平台普遍采用的多核CPU架构，攻击者很难进行跨虚拟机的微架构侧信道攻击来窃取私钥信息。<strong>该论文的核心贡献是在跨虚拟机场景下首次实现了能够提取数字签名私钥的微架构侧信道攻击。</strong>实验表明，攻击者可以通过几个小时的侧信道信息采集，实现对4096比特安全强度的ElGamal数字签名私钥的窃取过程。</p>
+<p>文章提出了一种<strong>动态规划算法，通过侧信道</strong>对被攻击VM的多次数字签名过程进行攻击，收集足够多的候选代码“序列”，利用动态规划算法将SVM+HMM输出的多个代码路径片段“缝合”在一起，从而构建更完整的代码“序列”。</p>
+<p><strong>Q：由于多个用户的虚拟机共享一台物理机，那么，是否虚拟用户A有可能获得同一台机器上的虚拟用户B的隐私数据呢？</strong></p>
+<p>两种攻击模式：一种被称为<strong>Meltdown（熔断）</strong>，是在用户态攻击内核态，造成内核信息泄露。</p>
+<p>另一种被称为<strong>Spectre（幽灵）</strong>，一个应用可以突破自己的沙盒限制，获取其他应用的信息。</p>
+<p><strong>Q：云计算这种新的计算环境安全可信吗？</strong></p>
+<p>威胁模型：入侵云服务提供商服务器的黑客；云服务提供商的内部攻击者；恶意用户；</p>
+<p><strong>Q：挑战（新需求）：如何在不可信的环境下完成计算？</strong></p>
+<p>解决方案：<strong>SGX；同态加密；安全多方计算</strong></p>
+<p><strong>Q：传统的方式如何提高文件系统的可靠性并实现容错？</strong></p>
+<p>镜像，RAID5，【Scale Up，增强单节点的可靠性】</p>
+<p><strong>Q：云计算与传统的客户服务器架构的区别？（P155）例如，云盘和传统的FTP服务有什么不同？</strong></p>
+<p>相对于传统文件存储服务，云盘具有以下特点：<strong>海量存储资源，</strong>虚拟为一个“云盘”；云盘可以被视为是一个超大容量的免费网络U盘；可靠性高，数据永不丢失；海量数据资源池，催生新的技术，例如，“秒传”功能；这些技术让用户获得了很好的用户体验。云盘，改变了我们存放文件的习惯，提供了更好的用户体验。但是，也带来了一个新的问题，那就是安全！</p>
+<h2 id="大数据存储的数据完整性机制：POR（P156）"><a href="#大数据存储的数据完整性机制：POR（P156）" class="headerlink" title="大数据存储的数据完整性机制：POR（P156）"></a>大数据存储的数据完整性机制：POR（P156）</h2><p>安全威胁模型：外部入侵者<strong>有能力攻击云服务器并且损坏其中的数据，却不被发现</strong>；云服务器在多数情况下是不会破坏数据的，但是为了自身的利益，也可能删除服务器中长时间不用的数据，以此减轻负担和开支，也有可能发现数据被外部入侵者损坏，<strong>却对数据所有者隐瞒实情</strong>，以此来维护自己的名誉。</p>
+<p>POR的验证机制需要解决以下两个问题：<strong>更有效地识别外包文件中出现的损坏。能恢复已损坏的数据文件。</strong></p>
+<p>基本的思路是<strong>通过增加验证信息来提高验证的效率，并运用纠错编码技术来恢复被损坏的数据。</strong></p>
+<p>针对第一个问题，<strong>可以在外包的文件中预先植入一些称之为岗哨位的检验数据块，并在本地存储好这些检验数据块。</strong>对于远程服务器而言，这些岗哨数据块与数据块是无法区分的；倘若服务器损坏了数据文件中部分内容，也会相应地损坏到岗哨文件块。对比存储在本地的检验数据，能判断远程节点上的数据是否是完整的。另外通过岗哨块损坏的数目，可以评估文件中出错的部分在整个文件中所占的比例。</p>
+<p>针对第二个问题，<strong>通常利用RS纠错码对文件进行容错预处理</strong>，使用纠错机制可以恢复一部分损坏的数据。</p>
+<h2 id="大数据存储的数据隐私保护机制（加密数据去重技术）（P157）"><a href="#大数据存储的数据隐私保护机制（加密数据去重技术）（P157）" class="headerlink" title="大数据存储的数据隐私保护机制（加密数据去重技术）（P157）"></a>大数据存储的数据隐私保护机制（加密数据去重技术）（P157）</h2><p>大规模云存储系统往往面临两个矛盾的需求：<strong>一方面系统需要压缩数据以节省存储空间的开销；另一方面，用户出于数据安全和隐私的考虑，希望自己的数据加密存储。</strong></p>
+<p>但是去重却是和数据加密的目标直接相矛盾的。加密之后的密文需要保留原文的冗余，即原文相同的数据块加密后的密文仍相同（这里的相同不一定是密文的全等，系统只要一种识别包含相同内容的密文的手段即可），这样去重才能够起作用。但是，它与加密算法的安全性定义有不可调和的矛盾。Semantic security明确禁止原文相等性的检测，即给定两个密文，不应该能够允许对手断定它们加密的是否是同样的数据，否则对手可以利用这一性质攻破前述IND。可以明确断言的是，满足现代加密算法安全性（如semantic security）的所有加密算法都不支持去重。<br><strong>于是退而求其次，即我们可以适度放宽对安全性的要求，允许密文泄露原文相等性信息，从而使加密后的去重成为可行</strong></p>
+<p><strong>方案一：收敛加密（CE）</strong></p>
+<p>数据块d的加密为：E(hash(d),d)，其中第一个参数为密钥key，方法选用一个对称加密算法如AES。可以认为，h(x)输出的一部分作为key，另外一部分作为算法所需的随机数如IV。这样，同样的数据块一定会被加密成同样的密文，后续可以做去重。</p>
+<p><strong>方案二：消息锁定加密（MLE）</strong>，它使用的key是从待加密的原文算出来的。CE是MLE的一种特例，CE和MLE满足PRV$-CDA，比其他相关的安全性都更强。</p>
+<h2 id="大数据存储的数据安全防护机制：PoW（P158）"><a href="#大数据存储的数据安全防护机制：PoW（P158）" class="headerlink" title="大数据存储的数据安全防护机制：PoW（P158）"></a>大数据存储的数据安全防护机制：PoW（P158）</h2><p>PoW就是在服务器和客户端之间执行一个挑战&#x2F;响应的协议，它能够有效地预防攻击者通过单一哈希值去获取整个文件。在该模型中他们提出了一个<strong>基于文件级的去重方案，</strong>主要使用纠错码对文件进行编码，同时利用Merkle哈希树方法进行文件拥有权证明。</p>
+<p>当数据块很多时，构造的Merkle哈希树高度很大，不利于计算和验证效率。为了进一步提高验证效率，DI等人提出了一个高效的拥有权证明方案，<strong>命名为s-PoW</strong>，该方案通过随机选择一些比特位作为文件拥有权证明证据，这只需要一个常量的计算开销。</p>
+<p><strong>Q：比较云盘和传统服务器：</strong></p>
+<p>（1）访问方式不同。云盘通过网络，网页访问；服务器要客户端软件访问特定IP端口等；</p>
+<p>（2）数据存储位置不同。数据存储在云端，多个物理存储位置；存储在特定的物理服务器上；</p>
+<p>（3）可扩展性。用户可以根据需要随时增加或减少存储容量；受限于物理服务器的硬件配置！</p>
+<h1 id="保护隐私的可信计算"><a href="#保护隐私的可信计算" class="headerlink" title="保护隐私的可信计算"></a>保护隐私的可信计算</h1><h2 id="同态加密的概念；为什么需要同态加密技术？（P163）"><a href="#同态加密的概念；为什么需要同态加密技术？（P163）" class="headerlink" title="同态加密的概念；为什么需要同态加密技术？（P163）"></a>同态加密的概念；为什么需要同态加密技术？（P163）</h2><p><strong>我们可以对输入的加密内容进行某种运算，生成新的加密数据，而当解密的时候，所解密出的明文内容，与我们输入明文内容进行运算后得到的结果是一致的。</strong>利用同态加密算法，云端服务器<strong>不用解密就可以处理敏感数据。</strong>可以解决云计算混乱的数据安全现状，而且不会在云环境中出现任何明文数据。同态加密，有可能彻底解决云计算的数据安全问题！</p>
+<p>记加密操作为E，明文为m，加密得c，即c&#x3D;E(m)，m&#x3D;D(c)。已知针对明文有操作f，针对E可构造F，使得F(c)&#x3D;E(f(m))，这样E就是一个针对f 的同态加密算法。假设f是个很复杂的操作，有了同态加密，我们就可以把加密得到的c交给第三方，第三方进行操作F，我们拿回F(c)后，一解密，就得到了f(m)。第三方替我们干了活，对m却仍一无所知，多么融洽的关系啊。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2020.png" alt="image.png"></p>
+<p>Why？如果数据只是简单地被存储起来，那么传统的加密技术就可以非常完美地工作。而当你真的需要处理和分析被存储起来的数据时，问题就出现了。<strong>数据在加密之后，如果要想对数据进行运算，就必须先解密，这样增加了数据的不安全因素</strong></p>
+<h2 id="乘法同态加密算法：RSA（P163）"><a href="#乘法同态加密算法：RSA（P163）" class="headerlink" title="乘法同态加密算法：RSA（P163）"></a>乘法同态加密算法：RSA（P163）</h2><p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2021.png" alt="image.png"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2022.png" alt="image.png"></p>
+<p>同态性质本来被看做安全性缺陷：RSA公司在90年代初发布了PKCS系列文档，标准PKCS#1 v1.5指定了使用RSA算法加密前对消息进行填充的方法。1998年，研究者发现了针对PKCS#1 v1.5的攻击（Million MessageAttack）。<strong>该攻击就是利用了RSA的同态性质导致密文具有可延展性的缺陷。</strong></p>
+<h2 id="加法同态加密算法：Paillier算法（P164）"><a href="#加法同态加密算法：Paillier算法（P164）" class="headerlink" title="加法同态加密算法：Paillier算法（P164）"></a>加法同态加密算法：Paillier算法（P164）</h2><p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2023.png" alt="image.png"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2024.png" alt="image.png"></p>
+<p>（1）安全性：<strong>合数剩余类问题的困难性</strong>。合数剩余类问题与标准数论问题之间存在着联系。</p>
+<p>（2）安全性：<strong>语义安全。</strong>Paillier密码系统确实提供了针对选择明文攻击(IND-CPA)的语义安全性。然而，由于上述同态特性，该系统是可塑的，因此不能防止自适应选择密文攻击(IND-CCA2)。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2025.png" alt="image.png"></p>
+<p>计算开销：对数据进行同态加解密需要进行一些数学运算。<strong>这些运算的计算复杂度既与所采用的同态加密算法相关，也与选取的密钥长度相关。通常来说，密钥越长，同态加密的安全性越高。</strong>为了保证数据加密有足够好的安全性，目前普遍采用3072或更多比特的密钥长度。</p>
+<p>同态加解密运算本身带来的计算开销。加密后的密文在密态下的计算也会带来很大的计算开销：这些大数在密态下进行加法或乘法运算也不再是简单地将数据相加或相乘，而需要通过复杂的模乘或模幂运算来完成相应的密态下运算。</p>
+<p>存储与通信开销（密文大小）：<strong>以Paillier 同态加密为例，数据经过同态加密后，大小增加了一倍，使得消息的存储和通信的开销也大大增加</strong></p>
+<h2 id="全同态加密算法的基本概念（P167）"><a href="#全同态加密算法的基本概念（P167）" class="headerlink" title="全同态加密算法的基本概念（P167）"></a>全同态加密算法的基本概念（P167）</h2><p><strong>即加密数据的计算和原始数据的计算结果相同！</strong></p>
+<p>全同态加密是指能够<strong>在不知道密钥的情况下，对密文进行任意计算，</strong>即对于任意有效的f及明文m，有性质f(E(m))&#x3D;E(f(m))。</p>
+<p>从理论上讲，所有的函数<strong>都可以由加法和乘法多次复合来实现</strong>，因此全同态加密算法在设计的时候可以首先考虑其对加法和乘法都同态，再将其扩展到任意函数之上。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2026.png" alt="image.png"></p>
+<p>密文计算是核心算法。但是，密文计算会累积噪声，影响密文的解密；并且，在乘法的计算中，密文乘积的噪声是噪声之积，乘法运算中噪音会放大的很快。</p>
+<p><strong>解决思路：对密文解密，密文解密后噪声就没有了</strong>。每次密文运算前只要对密文进行<strong>重加密</strong>（每次运算后，都做一次同态解密）来降低噪音，然后再进行密文运算，那么噪音永远都在可控的范围内。</p>
+<p>同态加密不是一种通用技术，<strong>适用于计算量和数据量都不大的数据集</strong>。有意义的用例是在严格的隐私要求<strong>完全禁止未加密的云计算</strong>的情况下，但<strong>计算本身是相当轻量级</strong>的。由于<strong>同态性与延展性</strong>之间的相互矛盾，全同态加密无法实现<strong>IND-CCA2 安全</strong>。</p>
+<p>同时，<strong>同态加密不能实现协作计算</strong>。同态加密技术可以实现对数值型数据的同态运算，然而对于逻辑运算的处理有些无力。</p>
+<h2 id="CryptDB的洋葱加密模式（P170）"><a href="#CryptDB的洋葱加密模式（P170）" class="headerlink" title="CryptDB的洋葱加密模式（P170）"></a>CryptDB的洋葱加密模式（P170）</h2><p>（1）<strong>CryptDB首次解决了实用性的问题，它将数据嵌套进多个加密层，每个都使用不同的密钥，允许对加密数据进行简单操作。</strong>完全同态加密旨在支持单一加密方案中的所有功能，这使得简单操作变得更为缓慢。就目前而言，设计实用技术方案的关键是要摆脱<strong>“一个加密系统将适用于所有内容”的想法。</strong></p>
+<p>（2）为了支持各种操作，需要使用各种专门的加密机制。每种机制只能做一件事，但是它们加在一起就涵盖了相当多的领域。使用所需的机制来加密数据，并因此存储多组不同的加密数据，从而允许使用加密的数据进行各种不同的计算。需在加密数据集之间进行切换，在每个实例中使用与需要完成的操作相对应的数据集就可以了。这就是CryptDB 的思路。所谓<strong>“洋葱加密”，多层加密</strong>。</p>
+<p>随机加密算法：存储整数类型和字符类型数据；确定性加密算法：完成等价性操作；保序加密算法：完成范围查询操作；同态加密算法：完成加法相关操作；联结加密算法：完成JOIN操作；搜索加密算法：完成LIKE操作（关键字查询）。</p>
+<p>（3）工作原理：在对加密的数据执行SQL查询时，使用的是一个<strong>SQL能够理解的加密方案来进行加密</strong>。CryptDB同样<strong>将加密密钥和用户的密码进行了捆绑，这样的话数据项只有使用相应的用户的密码登陆才可以进行解密。</strong>作为结果，就是数据库管理员也不能接触到加密的数据，即使服务器被攻破，攻击者也无法解密用户的数据，如果该用户没有登录的话。</p>
+<h2 id="安全多方计算的概念（P172）"><a href="#安全多方计算的概念（P172）" class="headerlink" title="安全多方计算的概念（P172）"></a>安全多方计算的概念（P172）</h2><p>（1）安全多方计算由姚期智在 1982 年提出，安全多方计算是<strong>无可信第三方的保护隐私计算协议。</strong>安全多方计算，主要研究在无可信第三方的情况下，多个参与者如何<strong>安全地计算一个约定函数</strong>的问题。</p>
+<p>（2）安全多方计算有多个参与方，<strong>每一个参与方拥有自己的秘密信息，他们希望利用这些秘密信息作为输入，</strong>共同计算一个函数。</p>
+<p>（3）安全多方计算的一般概念：<strong>m个参与方</strong>希望共同计算一个函数𝑓(𝑥1, 𝑥2, … , 𝑥𝑚)，其中𝑥𝑖是第i个参与方所掌握的私有输入，安全多方计算使得函数f可以被正确计算（正确性），同时每个参与方不能得知其他参与者的私有输入<strong>（安全性）</strong>。</p>
+<h2 id="安全多方计算的模型（P174）"><a href="#安全多方计算的模型（P174）" class="headerlink" title="安全多方计算的模型（P174）"></a>安全多方计算的模型（P174）</h2><p>（1）安全多方计算模型有两种：<strong>半诚实模型和恶意模型。</strong></p>
+<p><strong>半诚实模型</strong>：如果<strong>所有参与者都是诚实的或者半诚实的</strong>，称此模型为半诚实模型，其中的攻击者是被动的。</p>
+<p><strong>恶意模型</strong>：<strong>存在恶意参与者的模型</strong>称为恶意模型，其中的攻<strong>击者是主动的。</strong></p>
+<p><strong>隐蔽的攻击模型</strong>：上述的<strong>半诚实对手模型过于脆弱，但恶意对手模型在安全性要求下导致协议效率太低。</strong>为了克服这些困难，提出了一种隐蔽敌手模型。一个隐蔽的对手可能表现出恶意行为，但它有一定的概率被诚实的参与者发现作弊。– 这一模型代表了许多金融或政治环境，在这些环境中，诚实的行为是不可能假设的，但所涉及的公司和机构不能承受与被发现作弊有关的名誉损失。在这个模型中，对手必须权衡被抓住的风险和作弊的好处</p>
+<p>（2）安全多方计算又可以分为<strong>参与者模型和攻击者模型。</strong></p>
+<p>①安全多方计算的参与者模型</p>
+<p><strong>诚实参与者：</strong>在协议执行过程中，诚实参与者完全按照协议的要求完成协议的各个步骤，同时保密自己的所有输入、输出及中间结果。</p>
+<p><strong>半诚实参与者：</strong>在协议执行过程中，半诚实参与者完全按照协议的要求完成协议的各个步骤，<strong>但同时可能将自己的输入、输出及中间结果泄漏给攻击者，也可以根据自己的输入、输出及中间结果推导其他参与者的信息。</strong></p>
+<p><strong>恶意参与者：</strong>在协议执行过程中，恶意参与者完全按照攻击者的意志执行协议的各个步骤，不但将自己的所有输入、输出及中间结果泄露给攻击者，还可以根据攻击者的意图改变输入信息、中间结果信息，甚至终止协议。</p>
+<p>②安全多方计算的攻击者模型</p>
+<p>攻击者是<strong>指企图破坏协议安全性和正确性的人</strong>。对攻击者进行分类时，可以有不同的分类准则，这些分类准则主要有攻击者的计算能力、网络同步状态、对恶意参与者的控制程度和动态性。</p>
+<p>按照<strong>计算能力</strong>分类：按照攻击者的计算能力可以将攻击者分为拥有<strong>无限计算能力的攻击者和拥有有限计算能力的攻击者</strong>。对于拥有无限计算能力的攻击者而言，不存在诸如大素数分解困难等数学难题。在无限计算能力的攻击者模型下的安全的多方计算协议为<strong>信息论安全的多方计算协议</strong>。对于拥有有限计算能力的攻击者而言，破解目前公认的数学难题是不可能的。在有限计算能力的攻击者模型下的安全的多方计算协议为<strong>密码学安全的多方计算协议</strong>。</p>
+<h2 id="百万富翁问题（P173）"><a href="#百万富翁问题（P173）" class="headerlink" title="百万富翁问题（P173）"></a>百万富翁问题（P173）</h2><p>在没有第三方参与的情况下，<strong>两个百万富翁能够在互相不暴露自己的财产数额的情况下，比较谁更富有。</strong></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2027.png" alt="image.png"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2028.png" alt="image.png"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2029.png" alt="image.png"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2030.png" alt="image.png"></p>
+<p>解决方案的局限性：<strong>恶意参与者、效率问题</strong></p>
+<h2 id="混淆电路的工作原理（P175）"><a href="#混淆电路的工作原理（P175）" class="headerlink" title="混淆电路的工作原理（P175）"></a>混淆电路的工作原理（P175）</h2><p>乱码电路（GC）是<strong>半诚实模型下的两方安全计算协议</strong>，针对布尔电路。</p>
+<p>混淆电路（GC）协议是一种加密协议，可实现两方安全计算，其中两个互不信任的参与方可以在没有可信第三方存在的情况下共同评估其私有输入的函数。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2031.png" alt="image.png"></p>
+<p>对每个功能函数f，都存在一个等价的电路C，因此可以将功能函数转化为电路，然后针对电路门进行混乱，最后计算每个混乱门电路。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2032.png" alt="image.png"></p>
+<p><strong>步骤一：电路产生阶段。</strong>参与运算的双方先就需要安全计算的目的依靠专有编程语言(DSL)或相关编程语言扩展等进行编程，然后针对实现计算的程序进行编译，生成布尔电路文件;然后针对双方输入值以及中间输出结果随机产生映射label,再利用这些label做为key对每个对应的电路输出真值表采用分组密码方式进行加密，并对真值表值进行打乱操作，这一步就是混淆电路的概念。</p>
+<p><strong>步骤二：电路执行阶段。</strong>电路执行者针对布尔电路文件进行执行，执行时电路生成者需要将自己的输入所对应的label发给电路执行者；电路执行者依据自己所有信息通过OT方式选择自己对应的label，这样电路生成者与执行者均不到对方的输入数据；电路执行者此时获取双方输入对应的label,作为key的相关信息对真值表进行解密，即可获取真值表的内容，循环往复，直至所有电路执行完毕，输出执行结果。</p>
+<p><strong>姚氏电路是第一个安全两方计算协议，后续大多数安全地计算布尔电路&#x2F;算术电路的安全多方计算协议都是基于姚氏混淆电路进行扩展的。</strong></p>
+<p><strong>Tip：使用GC协议解决百万富翁问题</strong></p>
+<p>（1） 定义上图中的z&#x3D;f(x, y)，如果 x&gt;&#x3D;y，输出 1；否则为 0；</p>
+<p>（2） 随后，Alice将电路中的每个门进行加密，并打乱（即电路混淆处理），Alice对电路中的每个门都创建一个加密的真值表；</p>
+<p>（3） Alice将混淆后的电路发给Bob，Bob可以根据自己的财富 y，借助OT协议，选择对应的加密真值表，并计算结果；</p>
+<p>（4） Bob将该加密结果传给Alice，Alice解密后即得到结果，并告知Bob</p>
+<h2 id="OT的工作原理（P177）"><a href="#OT的工作原理（P177）" class="headerlink" title="OT的工作原理（P177）"></a>OT的工作原理（P177）</h2><p>OT协议：不经意传输（OT）是安全多方计算（MPC）的重要构造模块，属于基础协议。发送方将潜在的许多信息发送给一个接收者，发送方无法知道接收方接收到的是那个信息。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2033.png" alt="image.png"></p>
+<p><strong>2选1OT协议原理</strong></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/9bc07019-362b-435e-9300-3d3a189a842a.png" alt="image.png"></p>
+<p><strong>基于离散对数实现n选1的OT协议</strong></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2034.png" alt="image.png"></p>
+<p><strong>Tip：使用OT解决百万富翁问题？</strong></p>
+<p>（1）Alice准备两种消息：一个表示“我的大于你的”（记为1），另一个表示“我的不大于你的”（记为0）；</p>
+<p>（2）Alice构造n条（比如10条）消息，按序号排列，如果序号&lt;x，放入0；序号&gt;x，放入1；</p>
+<p>（3）Alice生成n个RSA公私钥对（n&#x3D;10），并将公钥发送给Bob，自己保留私钥；</p>
+<p>（4）Bob随机生成一个大整数key，根据自己的财富y选择序号，使用对应序号Alice的公钥加密该整数key，返回给Alice；</p>
+<p>（5）Alice依次用所有RSA私钥解密信息，得到多个key值。根据key值的序号，对应n条消息的序号，分别对称加密（比如使用AES），加密信息回给Bob；</p>
+<p>（6）Bob使用自己的序号对应的消息（即OT），用真正的key解密，得到消息，并告诉Alice结果。</p>
+<p>上面协议的设计特性在于：<strong>对于Alice来说，完全不知道Bob的信息；Bob也不知道除自己序号以外的其他信息</strong>。</p>
+<p><strong>Q：OT协议是所有安全多方计算协议中的最基本工具：</strong></p>
+<p>在基于Yao混乱电路构造的SMPC协议中，参与方每bit输入需要一个OT协议，而在基于GMW范式构造的SMPC协议中，布尔电路的每一个And门需要至少一个OT协议。在恶意敌手模型下的实际的安全多方计算协议所需要执行的OT次数需要数百万次。举例来说，利用TinyOT技术，当计算AES电路时，需要使用219次OT协议，而计算隐私集合求交(PSI)电路时，需要使用230次OT协议。因此，OT协议执行的效率成为了影响安全多方计算协议效率的最重要的因素</p>
+<h2 id="秘密分享的工作原理（P179）"><a href="#秘密分享的工作原理（P179）" class="headerlink" title="秘密分享的工作原理（P179）"></a>秘密分享的工作原理（P179）</h2><p>秘密分享是在一组参与者中分享秘密的技术，它主要用于保护重要信息，防止信息被丢失、被破坏、被篡改。简单来说，<strong>秘密分享就是指分享的秘密在一个用户群体里进行合理分配，以达到由所有成员共同掌管秘密的目的。</strong>可以将秘密分享分为两类：</p>
+<p><strong>（1）严格的秘密分享：需要所有人一起解密。运算分为加法运算和乘法运算。</strong></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2035.png" alt="image.png"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2036.png" alt="image.png"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2037.png" alt="image.png"></p>
+<p><strong>（2）阈值的秘密分享：不需要所有人，只需要满足一定人数，就可以解密。</strong></p>
+<p><strong>Shamir秘密共享机制</strong>：N个人分别持有秘密s的一部分，当且仅当t或以上个人在尝试才可以恢复出秘密s！</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2038.png" alt="image.png"></p>
+<p><strong>Tip：秘密共享机制，解决百万富翁问题？</strong></p>
+<p>法一：如有可信第三方，可以采取：</p>
+<p>（1）将Alice和Bob的财富分解：x &#x3D; x1 + x2，y &#x3D; y1 + y2；</p>
+<p>（2）寻找可信的第三方TP1和TP2，分别计算 z1 &#x3D; x1 – y1，z2 &#x3D; x2 – y2</p>
+<p>（3）TP1和TP2将结果发送给 Alice 和 Bob，即可知道 z &#x3D; z1 + z2 &#x3D; x - y的结果。</p>
+<h2 id="应用中的问题：性能，安全性（恶意参与者）（课件）"><a href="#应用中的问题：性能，安全性（恶意参与者）（课件）" class="headerlink" title="应用中的问题：性能，安全性（恶意参与者）（课件）"></a>应用中的问题：性能，安全性（恶意参与者）（课件）</h2><p>（1）安全性考虑不够：恶意参与者</p>
+<p>许多方案的安全性考量局限于半诚实模型：很多方法忽略了对参与方输入、输出的验证，其正确性都依赖于计算参与方完全诚实遵循协议进行计算。</p>
+<p>解决方案：通用ＧＭＷ编译器<strong>使用零知识证明以及承诺等工具</strong>，迫使参与方必须依照协议来执行，<strong>从而可以将半诚实敌手下安全的协议编译为可抵抗恶意敌手攻击的协议</strong>。考虑恶意敌手的模型会带来更大的开销。</p>
+<p>（2）性能问题：<strong>这些协议通常计算开销都非常大，是其应用于实际系统的主要障碍。</strong></p>
+<p>解决思路：简化混淆电路的规模；对于恶意的敌手，引入cut-and-choose（切分选择）技术；专用型MPC：为解决特定问题所构造出的特殊MPC协议。由于是针对性构造并进行优化，专用算法的效率会比基于混淆电路的通用框架高很多。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2039.png" alt="image.png"></p>
+<p>MPC：根据支持的计算任务MPC可分为<strong>专用场景和通用场景两类。</strong></p>
+<p>（1）<strong>通用型MPC</strong>：算法一般由混淆电路（GC）实现，具有完备性，理论上可支持任何计算任务。具体做法是将计算逻辑编译成电路，然后混淆执行，但对于复杂计算逻辑，混淆电路的效率会有不同程度的降低，与专用算法相比效率会有很大的差距。</p>
+<p>（2）<strong>专用型MPC</strong>：是指为解决特定问题所构造出的特殊MPC协议，由于是针对性构造并进行优化，专用算法的效率会比基于混淆电路的通用框架高很多，当前MPC专用算法包含四则运算，比较运算，矩阵运算，隐私集合求交集，隐私数据查询等。– 虽然专用型MPC与通用型MPC相比效率更高，但同样存在一些缺点，如只能支持单一计算逻辑，场景无法通用；另外专用算法设计需要领域专家针对特定问题精心设计，设计成本高。</p>
+<h1 id="数据匿名化与差分隐私"><a href="#数据匿名化与差分隐私" class="headerlink" title="数据匿名化与差分隐私"></a><strong>数据匿名化与差分隐私</strong></h1><h2 id="隐私的定义、分类（P227）"><a href="#隐私的定义、分类（P227）" class="headerlink" title="隐私的定义、分类（P227）"></a>隐私的定义、分类（P227）</h2><p>隐私就是个人、机构等实体<strong>不愿意被外部世界知晓的敏感信息。</strong>在具体应用中，<strong>隐私即为数据所有者不愿意被披露的敏感信息</strong>，包括敏感数据以及数据所表征的特性。通常我们所说的隐私都指敏感数据，就是不是所有人都能够获得的公开数据。如个人的薪资、病人的患病记录、公司的财务信息等。</p>
+<p>（1）<strong>个人隐私</strong>：任何可以确认特定个人或与可确认的个人相关、但个人不愿被暴露的信息，都叫做个人隐私，如身份证号、就诊记录等。</p>
+<p>（2）<strong>共同隐私</strong>：共同隐私不仅包含个人的隐私，还包含所有个人共同表现出但不愿被暴露的信息。如公司员工的平均薪资、薪资分布等信息，再如两个人之间的关系信息。</p>
+<h2 id="隐私的度量及量化表示（P228）"><a href="#隐私的度量及量化表示（P228）" class="headerlink" title="隐私的度量及量化表示（P228）"></a>隐私的度量及量化表示（P228）</h2><p>（1）数据隐私的保护效果是通过攻击者披露隐私的多寡来侧面反映的。<strong>隐私度量可以统一用“披露风险”</strong>来描述。披<strong>露风险表示攻击者根据所发布的数据和其它背景知识，可能披露隐私的概率。若s表示敏感数据，事件Sk表示“攻击者在背景知识K的帮助下揭露敏感数据s”，则披露风险r(S,K)表示为r(S,K)&#x3D;Pr(Sk)</strong></p>
+<p>（2）对数据集而言，若数据所有者最终发布<strong>数据集D的所有敏感数据的披露风险都小于阀值α，α∈[0,1]，</strong>则称该<strong>数据集的披露风险</strong>为 α。</p>
+<p>不做任何处理所发布数据集的披露风险为1；当所发布数据集的披露风险为0时，这样发布的数据被称为实现了完美隐私！<strong>完美隐私实现了对隐私最大程度的保护，但由于对攻击者背景知识的假设是不确定的，因此实现对隐私的完美保护也只在具体假设、特定场景下成立，真正的完美保护并不存在。</strong></p>
+<h2 id="什么是泛化？什么是抑制？（P234）"><a href="#什么是泛化？什么是抑制？（P234）" class="headerlink" title="什么是泛化？什么是抑制？（P234）"></a>什么是泛化？什么是抑制？（P234）</h2><p><strong>（1）泛化：</strong>为了更好地实现效用和隐私之间的平衡，匿名者可能会泛化而不是抑制标识符。这意味着她将改变而不是删除标识符值以增强隐私，同时保持数据的实用性。</p>
+<p><strong>（2）抑制：</strong>管理员修改识别字段。他可能会抑制这些识别字段，把表中的字段完全删除。</p>
+<p><strong>（3）聚合：</strong>通常，分析师只需要汇总统计数据，而不是原始数据。数十年来，统计人员一直在研究如何发布汇总统计数据，同时保护数据主体免于再识别。</p>
+<h2 id="常见的隐私保护模型：K匿名；L多样化；T相近"><a href="#常见的隐私保护模型：K匿名；L多样化；T相近" class="headerlink" title="常见的隐私保护模型：K匿名；L多样化；T相近"></a>常见的隐私保护模型：<strong>K匿名；L多样化；T相近</strong></h2><p><strong>4.1 K匿名隐私保护模型（P236）</strong></p>
+<p>（1）数据记录的属性分为三类：</p>
+<p><strong>显式标识符：</strong>能唯一标识单一个体的属性，如身份证号码、姓名等；</p>
+<p><strong>准标识符（QID）：</strong>联合起来能唯一标识一个人的多个属性，如邮编、生日、性别等联合起来则可能是准标识符。如果表中的一个记录有某个值qid，那么至少有k-1个其他记录也有该值qid；</p>
+<p><strong>敏感属性：</strong>包含隐私数据的属性，如疾病、薪资等。</p>
+<p>（2）K匿名隐私保护模型的思想：<strong>采用泛化和抑制技术对原始数据进行匿名化处理以便得到满足k-匿名规则的匿名数据，从而使得攻击者不能根据发布的匿名数据准确的识别出目标个体的记录。</strong></p>
+<p><strong>泛化：</strong>通常是将QID的属性用更概括、抽象的值替代具体描述值。– 泛化的核心思想就是一个值被一个不确切的，但是忠于原值的值代替。数据集中的数据和对象通常包含原始概念层的细节信息，数据泛化（概化）是将数据集中与任务相关的数据由较低的概念层次抽象到较高的概念层次的过程。</p>
+<p><strong>抑制：</strong>是指针对标识符做不发布处理。因为标识符和某些属性有很强的查询能力，所以针对这些属性做抑制处理是比较恰当的选择。有时抑制方法可以降低或减小泛化的代价。</p>
+<p>（3）K匿名能抵御<strong>记录链接式攻击，</strong>但仍存在<strong>属性链接攻击</strong>！指的是，如果一些敏感值在群组中占了主导地位的话，即使满足K匿名，一个成功的推断也会变得相对容易，比如一整个群组都是“艾滋病”，那便很好推断了。</p>
+<p><strong>4.2 L多样性隐私保护模型（P238）</strong></p>
+<p>（1）当遭受属性链接攻击时，<strong>攻击者也许不能精确地识别目标受害者的记录，但可能从被公布的数据中基于与受害者所属的团体相联系的一系列敏感值集合推理出他的敏感值。</strong>但是还有问题：比如说“收入”，如果根据其他信息，找到几个最接近的表项，这些数据都很接近 2w，那也能推出这个人的收入是 2w 左右。怎么办？<strong>如果一些敏感值在群组中占了主导地位的话，</strong>即使满足K匿名，一个成功的推断也会变得相对容易。</p>
+<p>（2）为了阻止<strong>属性链接攻击</strong>，<strong>L多样性要求，每个qid组至少包含L个有“较好代表性”的敏感值。“较好代表性”指，每个qid组中的敏感属性都有L个不同的值。</strong>比如，一定有L种的疾病，而不只是一种“艾滋病”。</p>
+<p><strong>4.3 T相近隐私保护模型（P239）</strong></p>
+<p>为了解决上面的问题：<strong>模型需QID上任一群组中的敏感值的分布接近于整体表中的属性分布。</strong>比如，收入那一栏，不能全都接近 2w，要想办法让这些数据更接近整个表的分布，难以推断。</p>
+<p>这些隐私保护模型共同的问题是：<strong>陷入了一个“新隐私保护模型不断被提出，但又不断被攻破”的循环中</strong>！根本原因是，这些模型基于很多攻击者的假设，但是实际情况中，假定并不完全成立！<strong>那转换思路——差分隐私！</strong></p>
+<h2 id="K匿名与记录链接攻击（P236）"><a href="#K匿名与记录链接攻击（P236）" class="headerlink" title="K匿名与记录链接攻击（P236）"></a>K匿名与记录链接攻击（P236）</h2><p><strong>记录链接攻击</strong>：例如攻击者知道他的老板在住院，因此，他就知道他的老板的医疗记录将会出现在医院泄露出的患者数据库中。并且，对于这个攻击者来说，得到他老板的出生日期和性别也不是难事，而这些就可以作为相关攻击时的准标识符。<br>攻击者知道Frank是一个38岁的男律师，并且这个数据集中包含Frank的数据，就能够推断出Frank的疾病是艾滋病。这种攻击方式被称为记录链接式攻击。</p>
+<p><strong>经过匿名化处理的数据集可以抵御前述的记录链接式攻击。</strong></p>
+<h2 id="L多样化与属性链接攻击（P238）"><a href="#L多样化与属性链接攻击（P238）" class="headerlink" title="L多样化与属性链接攻击（P238）"></a>L多样化与属性链接攻击（P238）</h2><p><strong>属性链接攻击：</strong></p>
+<p>通过观察我们很容易发现一个新的问题：如果攻击者知道Lily是一名30岁的女性舞蹈演员，并且该数据集中包含Lily的数据，从公开的数据集中能够推断出Lily的疾病是艾滋病。<strong>这种攻击方式被称为属性链接攻击。</strong></p>
+<p>当遭受属性链接攻击时，攻击者也许不能精确地识别目标受害者的记录，但可能从被公布的数据中基于与受害者所属的团体相联系的一系列敏感值集合推理出他的敏感值。</p>
+<h2 id="数据匿名化方法的局限性（AI）"><a href="#数据匿名化方法的局限性（AI）" class="headerlink" title="数据匿名化方法的局限性（AI）"></a>数据匿名化方法的局限性（AI）</h2><p><strong>（1）难以抵御再识别攻击</strong>：即使删除了显式标识符（如姓名、身份证号），攻击者仍可利用准标识符（如出生日期、性别、邮编等）与外部公开数据进行关联，从而重新识别个体（如斯威尼攻击案例）CH07-大数据共享及其安全隐私-2024(1)。</p>
+<p><strong>（2）依赖攻击者背景知识假设</strong>：K-匿名、L-多样性、T-相近等模型通常对攻击者的背景知识和攻击能力作出简化假设，但在现实中这些假设往往不成立，导致匿名数据仍可能被攻破CH07-大数据共享及其安全隐私-2024(1)。</p>
+<p><strong>（3）隐私与数据可用性难以平衡</strong>：通过抑制、泛化等手段增强隐私保护，往往会显著降低数据精度和分析价值；而保留较高数据可用性又容易造成隐私泄露CH07-大数据共享及其安全隐私-2024(1)。</p>
+<p><strong>（4）存在“军备竞赛”问题</strong>：新的匿名化模型不断被提出（如 K-匿名 → L-多样性 → T-相近），但也不断被新的攻击方法突破，难以从根本上提供稳定、长期的隐私保障</p>
+<h2 id="差分隐私的基本思想：中间件（查询结果）-随机噪声-带噪中间件。（P240）"><a href="#差分隐私的基本思想：中间件（查询结果）-随机噪声-带噪中间件。（P240）" class="headerlink" title="差分隐私的基本思想：中间件（查询结果）+随机噪声&#x3D;带噪中间件。（P240）"></a>差分隐私的基本思想：中间件（查询结果）+随机噪声&#x3D;带噪中间件。（P240）</h2><p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2040.png" alt="image.png"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/62e160aa-e78b-4ab9-a7f2-abd907973d8e.png" alt="7e08fd28-82b2-421c-b6e4-937ef41f9077.png"></p>
+<h2 id="差分隐私的定义（P240）"><a href="#差分隐私的定义（P240）" class="headerlink" title="差分隐私的定义（P240）"></a>差分隐私的定义（P240）</h2><p>差分隐私的通用随机算法有：<strong>拉普拉斯机制、指数机制、高斯机制</strong>（P241）   </p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/80b71963-80db-4d86-a6d4-c338875380e1.png" alt="48c7fa7c-da1f-4d49-9927-493d67d86710.png"></p>
+<h2 id="基本概念：距离，相邻数据集，敏感度（课件）"><a href="#基本概念：距离，相邻数据集，敏感度（课件）" class="headerlink" title="基本概念：距离，相邻数据集，敏感度（课件）"></a><strong>基本概念：距离，相邻数据集，敏感度（课件）</strong></h2><p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2041.png" alt="image.png"></p>
+<h2 id="常见的查询函数及其敏感度（课件）"><a href="#常见的查询函数及其敏感度（课件）" class="headerlink" title="常见的查询函数及其敏感度（课件）"></a>常见的<strong>查询函数及其敏感度（课件）</strong></h2><p>（1）计数查询：计数问询（数据库SQL中的COUNT 算子）计算数据集中满足特定属性的行数。一般来说，<strong>计数问询的敏感度总等于1</strong>。这是因为向数据集中添加一行数据最多会使问询的。输出结果增加1，即当新增行满足特定属性时，计数结果加1。</p>
+<p>（2）求和查询： 一般来说，当待求和的属性值不存在上界和下界时，我们称求和问询具有无界敏感度。当存在上下界时，<strong>求和问询的敏感度等于上下界的差。</strong></p>
+<p>（3）均值查询：应用差分隐私回复均值问询的最简单方法是，将均值问询拆分为两个问询：求和问询除以计数问询。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image%2042.png" alt="image.png"></p>
+<h2 id="拉普拉斯机制（P241）"><a href="#拉普拉斯机制（P241）" class="headerlink" title="拉普拉斯机制（P241）"></a>拉普拉斯机制（P241）</h2><p>（1）拉普拉斯机制的核心思想是：<strong>通过向中间件S加入服从拉普拉斯分布的噪声来满足差分隐私定义中的约束条件，</strong>即对于一个数据查询f，拉普拉斯机制首先生成真实结果f(x)作为中间件，然后通过发布带噪结果f(x)+Y来回答查询，其中噪声Y服从拉普拉斯分布。</p>
+<p><strong>（2）差分隐私的核心</strong>在于其随机算法的设计：设计者<strong>首先需要证明算法输出的带噪中间件满足定义</strong>，然后在满足上述标准的情况下<strong>尽量少地加入噪音</strong>。</p>
+<p><strong>（3）拉普拉斯机制是满足(ε, 0)-差分隐私的。</strong>拉普拉斯机制针对的是数值型回复，只需直接在回复的数值结果上增加噪声即可。如果我们想返回一个准确结果（即不能直接在结果上增加噪声），同时还要保证回复过程满足差分隐私，怎么办？<strong>指数机制</strong></p>
+<h2 id="指数机制（P245）"><a href="#指数机制（P245）" class="headerlink" title="指数机制（P245）"></a>指数机制（P245）</h2><p>（1）此机制可以从<strong>备选回复集合</strong>中选出“最佳”回复的同时，保证回复过程满足差分隐私。分析者需要定义一个备选回复集合。</p>
+<p>（2）同时，分析者需要指定一个评分函数，此评分函数输出备选回复集合中每个回复的分数。<strong>分数最高的回复就是最佳回复</strong>。指数机制通过返回分数近似最大的回复来实现差分隐私保护。</p>
+<p>（3）换言之，为了使回复过程满足差分隐私，指数机制返回结果所对应的分数<strong>可能不是备选回复集合中分数最高的那个结果</strong>！</p>
+<p>该机制与拉普拉斯机制最大的不同在于，后者适用于当<strong>数据查询的返回值为实数值</strong>的场合，而前者则适用于<strong>数据查询的范围值域为离散值域</strong>的场合。</p>
+<h2 id="本地化差分隐私方法（P247）"><a href="#本地化差分隐私方法（P247）" class="headerlink" title="本地化差分隐私方法（P247）"></a>本地化差分隐私方法（P247）</h2><p>中心化差分隐私的问题：传统的差分隐私技术将原始数据集中到一个数据中心，然后发布满足差分隐私的相关统计信息，我们称之为中心化差分隐私技术。因此，中心化差分隐私对于敏感信息的保护始终基于一个前提假设：可信的第三方数据收集者，即保证第三方数据收集者不会窃取或泄露用户的敏感信息。然而，在实际应用中，即使第三方数据收集者宣称不会窃取和泄露用户的敏感信息，用户的隐私依旧得不到保障。</p>
+<p>差分隐私本地模型：<strong>数据主体、数据管理者、数据使用者</strong></p>
+<p>在LDP模型下的一些随机化机制包括<strong>随机响应机制、一元编码机制、哈希编码机制、子集选择机制、Hadamard响应机制以及用于键值数据</strong>的相关算法。</p>
+<p>当数据管理者不可信时，不能将原始数据直接上传，要经过扰动处理。常见的技术是“随机扰动”。随机响应技术主要包括两个步骤：<strong>扰动性统计和校正</strong>。</p>
+<p>我们将定义三个函数，这三个函数共同实现了一元编码机制：<strong>encode，编码应答值；perturb，扰动编码后的应答值；aggregate，根据扰动应答值，重构最终结果。</strong></p>
+<h2 id="差分隐私在机器学习中的应用（P255）"><a href="#差分隐私在机器学习中的应用（P255）" class="headerlink" title="差分隐私在机器学习中的应用（P255）"></a>差分隐私在机器学习中的应用（P255）</h2><p>匿名化方法是较为常用的隐私保护的方法。在对外发布的数据库中，机构主体通常会将姓名等敏感信息做匿名化处理。但是，在大数据时代，由于可以获取到外部数据库，通过比对和关联分析，可以推理出敏感信息，而造成隐私信息泄露。因此匿名化方法往往无法提供良好的个人敏感信息保护。</p>
+<p>在机器学习领域，如果不发布数据，而只发布训练模型，<strong>个人隐私仍然不能得到有效的保障，</strong>例如，模型的逆向攻击或者成员推理攻击，都可以通过对模型的解析推理窃取原始数据。因此，为了保护数据，我们需要寻找有数学保证的隐私保护方法。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://Harrisonls2004.github.io">Harrisonls2004</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://harrisonls2004.github.io/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">https://harrisonls2004.github.io/2025/12/30/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://Harrisonls2004.github.io" target="_blank">lhldudu's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">期末复习</a><a class="post-meta__tags" href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8/">大数据安全</a></div><div class="post-share"><div class="social-share" data-image="/img/bdt.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/12/31/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8CHarmony/" title="软件安全开源贡献OpenHarmony"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/softsec.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">软件安全开源贡献OpenHarmony</div></div><div class="info-2"><div class="info-item-1">软件安全OpenHarmony开源贡献操作步骤环境准备1.下载SSTS套件：https://www.openharmony.cn/systematic?tab=xts 2.安装git，配置相关信息。 镜像获取1.在网址https://gitee.com/openharmony/security/tree/master/zh/security-disclosure/2025选择感兴趣的issue：CVE-2025-37959  2.根据所选取的issue，前往载https://gitee.com/openharmony/docs/blob/master/zh-cn/release-note...</div></div></div></a><a class="pagination-related" href="/2025/12/29/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%BB%88%E6%9E%81%E9%A2%84%E6%B5%8B/" title="网络安全终极预测"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/wlaq.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">网络安全终极预测</div></div><div class="info-2"><div class="info-item-1">网络安全终极预测——LHL授课：郑康锋 填空题、选择题必背（红色历年考过的）1.信息安全保障的PDRR模型的内涵：保护、检测、响应、恢复。 2.攻击类型：阻断、截取、篡改、伪造 3.网络信息安全服务：机密性、完整性、可用性、可审性。 4.被动攻击：传输报文泄露、通信流量分析。 5.SQL注入基本流程：寻找注入点、信息采集、权限判断、攻击系统 6.DNS查询有两种：递归查询（客户机和服务器之间）、迭代查询（服务器之间）。 7.因特网的域名系统被设计成一个联机分布式数据库系统，并且采用分层树状结构的命名方法。 8.网络扫描分为以下三个步骤：发现目标主机或网络、进一步搜集目标信息（端口扫描、服...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/10/29/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C3/" title="大数据安全实验3：CryDB"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/bdt.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-10-29</div><div class="info-item-2">大数据安全实验3：CryDB</div></div><div class="info-2"><div class="info-item-1">加密数据库的安装与使用实验内容（1）基础部分：任选一个加密数据库，参照使用手册安装配置系统，演示系统的核心功能。 a.参考实验指导书，完成加密数据CryptDB的演示实验： http://css.csail.mit.edu/cryptdb/ b.其他加密数据库，例如Blind seer（2014），Arx 2017。 （2）拓展部分：调研分析与改进性实验 a.对CryptDB的安全性进行调研分析。 公开的研究结果，例如 2015_CCS_Inference Attacks on Property-Preserving Encrypted Databases Seny Kamara. At...</div></div></div></a><a class="pagination-related" href="/2026/01/06/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8%E6%AF%94%E8%BE%83%E9%87%8D%E8%A6%81%E7%9A%84%E5%9C%B0%E6%96%B9/" title="软件安全期末复习"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/softsec.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-01-06</div><div class="info-item-2">软件安全期末复习</div></div><div class="info-2"><div class="info-item-1">授课：徐国胜 考试必备：概念题&#x2F;简答题名词解释题1.整数回绕 整数在固定位宽（如32位无符号&#x2F;有符号）表示下进行运算，结果超过可表示范围时会回到起始处继续计数（模2^n）。 常见风险：长度计算、内存分配大小计算出错，导致分配偏小进而引发溢出&#x2F;越界写。 2.缓冲区溢出攻击 计算机向缓冲区内填充数据位数超过了缓冲区本身的容量，溢出的数据覆盖在合法数据上，淹没局部变量、淹没返回地址。 3.恶意软件 以危害系统、窃取信息、控制主机为目的的软件统称，如病毒、蠕虫、木马、勒索软件等。常通过漏洞、钓鱼、驱动&#x2F;浏览器组件等途径植入。 4.有效用户ID 在类Unix...</div></div></div></a><a class="pagination-related" href="/2025/12/29/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%BB%88%E6%9E%81%E9%A2%84%E6%B5%8B/" title="网络安全终极预测"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/wlaq.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-12-29</div><div class="info-item-2">网络安全终极预测</div></div><div class="info-2"><div class="info-item-1">网络安全终极预测——LHL授课：郑康锋 填空题、选择题必背（红色历年考过的）1.信息安全保障的PDRR模型的内涵：保护、检测、响应、恢复。 2.攻击类型：阻断、截取、篡改、伪造 3.网络信息安全服务：机密性、完整性、可用性、可审性。 4.被动攻击：传输报文泄露、通信流量分析。 5.SQL注入基本流程：寻找注入点、信息采集、权限判断、攻击系统 6.DNS查询有两种：递归查询（客户机和服务器之间）、迭代查询（服务器之间）。 7.因特网的域名系统被设计成一个联机分布式数据库系统，并且采用分层树状结构的命名方法。 8.网络扫描分为以下三个步骤：发现目标主机或网络、进一步搜集目标信息（端口扫描、服...</div></div></div></a><a class="pagination-related" href="/2025/06/16/%E6%AF%9B%E4%B8%AD%E7%89%B9%E5%A4%8D%E4%B9%A0%E8%B5%84%E6%96%99/" title="毛中特复习提纲"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/mg.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-06-16</div><div class="info-item-2">毛中特复习提纲</div></div><div class="info-2"><div class="info-item-1">授课：曲伟杰 &amp;的章节为2023级考试范围。 &amp;导论1.一句话知识点： （1）1840年鸦片战争以后，为近代史开端（？中国从农业社会向工业社会发展） （2）1917年十月革命，给中国送来马列主义，给苦苦探寻救亡图存的中国人民指明了前进方向、提供了全新选择。 （3）1921年中国共产党，开天辟地大事，中国革命面貌焕然一新。 （4）1938年毛泽东在党的六届六中全会上作了《论新阶段》的报告，标志着马克思主义中国化这一命题正式提出。 （5）1978年党的十一届三中全会，开创中国特色社会主义。 2.为什么要推荐马克思主义中国化？ （1）是马克思主义本身发展的内在要求。（马克思主义...</div></div></div></a><a class="pagination-related" href="/2025/10/29/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E4%BD%9C%E4%B8%9A3/" title="大数据安全作业3：FIFO协议"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/bdt.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-10-29</div><div class="info-item-2">大数据安全作业3：FIFO协议</div></div><div class="info-2"><div class="info-item-1">FIDO协议：为网站添加用户管理功能，支持FIDO2认证FIDO协议基础FIDO（Fast IDentity Online，快速在线身份认证）协议是一种开放标准，旨在实现更加安全、便捷的无密码身份验证机制，减少传统口令认证带来的风险，如密码泄露、重放攻击及钓鱼攻击等问题。该标准由FIDO联盟（FIDO Alliance） 推动，目前主要包括三种规范：FIDO UAF、FIDO U2F与FIDO2。FIDO UAF（Universal Authentication Framework） （1）FIDO UAF（通用认证框架） FIDO UAF支持用户通过设备上的本地生物识别技术（如指纹、人...</div></div></div></a><a class="pagination-related" href="/2025/06/17/Python%E9%AB%98%E7%BA%A7%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" title="Python期末复习"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/python.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-06-17</div><div class="info-item-2">Python期末复习</div></div><div class="info-2"><div class="info-item-1">授课: 尚煜茗 Python程序实例解析温度转换练习根据华氏和摄氏温度定义，转换公式如下：C &#x3D; ( F – 32 ) &#x2F; 1.8，F &#x3D; C * 1.8 + 32。其中，C表示摄氏温度，F表示华氏温度 123456789temp_str=input(&quot;请输入带符号温度值：&quot;)if temp_str[-1] in [&#x27;F&#x27;,&#x27;f&#x27;]:   C=(eval(temp_str[0:-1])-32)/1.8   print(&quot;转换后的温度是&#123;:.2f&#125;C&quot;.form...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Harrisonls2004</div><div class="author-info-description">尽人事 听天命</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/"><i class="fab fa-github"></i><span>关注我</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Harrisonls2004" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:lhldudu@bupt.edu.cn" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=1030824397" target="_blank" title="QQ"><i class="fab fa-qq" style="color: #12b7f5;"></i></a><a class="social-icon" href="/img/wx.jpg" target="_blank" title="微信"><i class="fab fa-weixin" style="color: #09b83e;"></i></a><a class="social-icon" href="https://www.douyin.com/user/MS4wLjABAAAAn_2JnST2JJZLzTBjHHu28he2MZut6di0JkJcxc0-_uA?from_tab_name=main" target="_blank" title="抖音"><i class="fab fa-tiktok" style="color: #000000;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客！分享技术与生活感悟。有问题可以私信联系我，我会定期更新哒~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%AA%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text">绪论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE%EF%BC%9F%EF%BC%88P1%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">什么是大数据？（P1）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%EF%BC%9F%EF%BC%88P5%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">什么是大数据安全？（P5）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%90%E7%A7%81%E6%9D%83%E6%A6%82%E5%BF%B5%E7%9A%84%E5%8F%91%E5%B1%95%E7%BB%8F%E5%8E%86%E4%BA%86%E5%93%AA%E4%BA%9B%E4%B8%BB%E8%A6%81%E5%8F%98%E5%8C%96%EF%BC%9F%EF%BC%88%E8%AF%BE%E4%BB%B6%EF%BC%8CP6%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">隐私权概念的发展经历了哪些主要变化？（课件，P6）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E8%BF%9B%E6%AD%A5%E4%B8%8E%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%88%E8%AF%BE%E4%BB%B6%EF%BC%8CP7%EF%BC%89"><span class="toc-number">1.4.</span> <span class="toc-text">技术进步与隐私保护的关系（课件，P7）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%B4%E6%96%AF%E8%AF%BA%E7%99%BB%E4%BA%8B%E4%BB%B6%E6%98%AF%E5%85%A8%E7%90%83%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%9A%84%E8%BD%AC%E6%8A%98%E7%82%B9%EF%BC%9F%E6%9C%89%E5%93%AA%E5%87%A0%E7%B1%BB%E5%8F%AF%E8%83%BD%E4%BE%B5%E7%8A%AF%E5%A4%A7%E4%BC%97%E9%9A%90%E7%A7%81%E7%9A%84%E6%95%8C%E6%89%8B%EF%BC%9F%EF%BC%88%E8%AF%BE%E4%BB%B6%EF%BC%89"><span class="toc-number">1.5.</span> <span class="toc-text">为什么说斯诺登事件是全球网络安全的转折点？有哪几类可能侵犯大众隐私的敌手？（课件）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GDPR%E7%9A%84%E8%A6%81%E7%82%B9%EF%BC%88%E6%AC%A7%E7%9B%9F%E3%80%8A%E9%80%9A%E7%94%A8%E6%95%B0%E6%8D%AE%E4%BF%9D%E6%8A%A4%E6%9D%A1%E4%BE%8B%E3%80%8B%EF%BC%89%EF%BC%88P11%EF%BC%89"><span class="toc-number">1.6.</span> <span class="toc-text">GDPR的要点（欧盟《通用数据保护条例》）（P11）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E4%B8%8E%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4%E9%A2%86%E5%9F%9F%EF%BC%8C%E6%88%91%E5%9B%BD%E7%9B%B8%E5%85%B3%E7%9A%84%E6%B3%95%E5%BE%8B%E6%B3%95%E8%A7%84%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F%EF%BC%88%E4%B8%89%E9%A9%BE%E9%A9%AC%E8%BD%A6%EF%BC%8CP15%EF%BC%89"><span class="toc-number">1.7.</span> <span class="toc-text">在数据安全与隐私保护领域，我国相关的法律法规有哪些？（三驾马车，P15）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%91%E5%9B%BD%E7%9A%84%E6%95%B0%E6%8D%AE%E8%B5%84%E6%BA%90%E8%B7%A8%E5%A2%83%E6%B5%81%E9%80%9A%E6%94%BF%E7%AD%96%EF%BC%88%E8%AF%BE%E4%BB%B6%EF%BC%89"><span class="toc-number">1.8.</span> <span class="toc-text">我国的数据资源跨境流通政策（课件）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%90%E7%A7%81%E5%92%8C%E5%AE%89%E5%85%A8%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%88%E4%B9%A0%E9%A2%98%EF%BC%89"><span class="toc-number">1.9.</span> <span class="toc-text">隐私和安全之间的关系（习题）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E4%B8%8E%E4%B8%AA%E4%BA%BA%E9%9A%90%E7%A7%81%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%8C%E4%B8%BE%E4%BE%8B%E8%AF%B4%E6%98%8E%E3%80%82%EF%BC%88%E4%B9%A0%E9%A2%98%EF%BC%89"><span class="toc-number">1.10.</span> <span class="toc-text">个人数据安全与个人隐私之间的关系，举例说明。（习题）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E9%9A%90%E7%A7%81%E4%B8%8E%E5%9B%BD%E5%AE%B6%E5%AE%89%E5%85%A8%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BF%9D%E6%8A%A4%E4%B8%AA%E4%BA%BA%E9%9A%90%E7%A7%81%EF%BC%9F%EF%BC%88AI%E7%89%88%E7%AD%94%E6%A1%88%EF%BC%89"><span class="toc-number">1.11.</span> <span class="toc-text">个人隐私与国家安全之间的关系？为什么要保护个人隐私？（AI版答案）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9A%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95%E4%B8%8E%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5"><span class="toc-number">2.</span> <span class="toc-text">基础知识：密码算法与工程实践</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86%E5%BC%BA%E5%BA%A6%E4%B8%8E%E5%AF%86%E9%92%A5%E9%95%BF%E5%BA%A6%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%9A%E7%BB%99%E5%AE%9A%E5%AE%89%E5%85%A8%E7%AD%89%E7%BA%A7%E5%92%8C%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%EF%BC%8C%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E5%AF%86%E9%92%A5%E9%95%BF%E5%BA%A6%EF%BC%88P31%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">加密强度与密钥长度的关系：给定安全等级和加密算法，如何选择密钥长度（P31）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%B7%E5%90%88%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF%EF%BC%9AKEM%EF%BC%8CDEM%EF%BC%88P30%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">混合加密技术：KEM，DEM（P30）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%A0%E4%B8%AA%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%EF%BC%9A%E6%94%BB%E5%87%BB%E6%A8%A1%E5%9E%8B%EF%BC%88Attack-Model%EF%BC%89%E3%80%81%E5%AE%89%E5%85%A8%E7%9B%AE%E6%A0%87%EF%BC%88Security-Goal%EF%BC%89%E3%80%81%E5%AE%89%E5%85%A8%E6%A6%82%E5%BF%B5%EF%BC%88security-notion%EF%BC%8C%E8%AE%B0%E4%B8%BA-GOAL-MODEL%EF%BC%89"><span class="toc-number">2.3.</span> <span class="toc-text">几个核心概念：攻击模型（Attack Model）、安全目标（Security Goal）、安全概念（security notion，记为 GOAL-MODEL）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E7%B1%BB%E6%94%BB%E5%87%BB%E6%A8%A1%E5%9E%8B%EF%BC%9A%E9%BB%91%E7%9B%92%E6%A8%A1%E5%9E%8B%EF%BC%8C%E7%81%B0%E7%9B%92%E6%A8%A1%E5%9E%8B%EF%BC%8C%E7%99%BD%E7%9B%92%E6%A8%A1%E5%9E%8B%E3%80%82%EF%BC%88P34%EF%BC%89"><span class="toc-number">2.4.</span> <span class="toc-text">3类攻击模型：黑盒模型，灰盒模型，白盒模型。（P34）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E7%A7%8D%E9%BB%91%E7%9B%92%E6%94%BB%E5%87%BB%E6%A8%A1%E5%9E%8B%EF%BC%88COA%EF%BC%8CKPA%EF%BC%8CCPA%EF%BC%8CCCA%EF%BC%8CCCA2%EF%BC%89%EF%BC%88P35%EF%BC%89"><span class="toc-number">2.5.</span> <span class="toc-text">5种黑盒攻击模型（COA，KPA，CPA，CCA，CCA2）（P35）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E7%B1%BB%E5%AE%89%E5%85%A8%E7%9B%AE%E6%A0%87%EF%BC%88%E4%B8%8D%E5%8F%AF%E5%8C%BA%E5%88%86%E6%80%A7%EF%BC%8C%E4%B8%8D%E5%8F%AF%E5%A1%91%E6%80%A7%EF%BC%89%E3%80%81%E5%AE%89%E5%85%A8%E6%A6%82%E5%BF%B5%EF%BC%88P36%EF%BC%89"><span class="toc-number">2.6.</span> <span class="toc-text">2类安全目标（不可区分性，不可塑性）、安全概念（P36）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%E8%AF%AD%E4%B9%89%E5%AE%89%E5%85%A8%E7%9A%84%E6%A6%82%E5%BF%B5%E3%80%82%E5%AE%9E%E7%8E%B0%E8%AF%AD%E4%B9%89%E5%AE%89%E5%85%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF%E3%80%90%E9%9A%8F%E6%9C%BA%E5%8A%A0%E5%AF%86%E6%88%96%E8%80%85%E6%A6%82%E7%8E%87%E5%8A%A0%E5%AF%86%E3%80%91%EF%BC%88P37%EF%BC%89"><span class="toc-number">2.7.</span> <span class="toc-text">解释语义安全的概念。实现语义安全的基本思路【随机加密或者概率加密】（P37）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%9A%84%E5%AE%89%E5%85%A8%E6%A6%82%E5%BF%B5%EF%BC%88NM-CPA%EF%BC%8CNM-CCA%EF%BC%8CIND-CPA%E5%92%8CIND-CCA%EF%BC%89%EF%BC%88P37%EF%BC%89"><span class="toc-number">2.8.</span> <span class="toc-text">4种常见的安全概念（NM-CPA，NM-CCA，IND-CPA和IND-CCA）（P37）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%AF%AD%E4%B9%89%E5%AE%89%E5%85%A8%E7%9A%84%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95%E6%98%AF%E4%BB%80%E4%B9%88%E7%AE%97%E6%B3%95%EF%BC%9F%EF%BC%88%E8%AF%BE%E4%BB%B6%EF%BC%89"><span class="toc-number">2.9.</span> <span class="toc-text">第一个语义安全的密码算法是什么算法？（课件）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ElGamal-%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95%E6%98%AF%E8%AF%AD%E4%B9%89%E5%AE%89%E5%85%A8%E7%9A%84%E5%90%97%EF%BC%9FECC%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E6%98%AF%E8%AF%AD%E4%B9%89%E5%AE%89%E5%85%A8%E7%9A%84%E5%90%97%EF%BC%9F%EF%BC%88P37%EF%BC%89"><span class="toc-number">2.10.</span> <span class="toc-text">ElGamal 密码算法是语义安全的吗？ECC加密算法是语义安全的吗？（P37）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RSA%E7%AE%97%E6%B3%95%E6%98%AF%E8%AF%AD%E4%B9%89%E5%AE%89%E5%85%A8%E7%9A%84%E5%90%97%EF%BC%9F%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E7%BC%96%E7%A0%81%E5%87%BD%E6%95%B0%E6%8F%90%E9%AB%98RSA%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%EF%BC%9F%EF%BC%88P38%EF%BC%89"><span class="toc-number">2.11.</span> <span class="toc-text">RSA算法是语义安全的吗？如何使用编码函数提高RSA算法的安全性？（P38）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AES%E7%AE%97%E6%B3%95%E6%98%AF%E8%AF%AD%E4%B9%89%E5%AE%89%E5%85%A8%E7%9A%84%E5%90%97%EF%BC%9F%E5%A6%82%E4%BD%95%E6%9E%84%E9%80%A0%E5%9F%BA%E4%BA%8EAES%E7%AE%97%E6%B3%95%E7%9A%84%E8%AF%AD%E4%B9%89%E5%AE%89%E5%85%A8%E5%8A%A0%E5%AF%86%E6%96%B9%E6%A1%88%EF%BC%9F%EF%BC%88P40%EF%BC%89"><span class="toc-number">2.12.</span> <span class="toc-text">AES算法是语义安全的吗？如何构造基于AES算法的语义安全加密方案？（P40）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%A7%A3%E8%AE%A4%E8%AF%81%E5%8A%A0%E5%AF%86%E6%96%B9%E6%A1%88%E5%AF%B9%E5%AE%89%E5%85%A8%E6%80%A7%E7%9A%84%E6%8F%90%E5%8D%87%E7%9A%84%E6%84%8F%E4%B9%89%EF%BC%88AI%E7%89%88%E7%AD%94%E6%A1%88%EF%BC%89"><span class="toc-number">2.13.</span> <span class="toc-text">理解认证加密方案对安全性的提升的意义（AI版答案）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B8%E5%9E%8B%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90%EF%BC%9A%E5%9C%A8%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E6%96%B9%E6%A1%88%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%88AI%E7%89%88%E7%AD%94%E6%A1%88%EF%BC%89"><span class="toc-number">2.14.</span> <span class="toc-text">典型案例分析：在工程实践中使用密码算法设计安全技术方案时需要注意的问题（AI版答案）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E5%AE%89%E5%85%A8"><span class="toc-number">3.</span> <span class="toc-text">数据传输安全</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#TLS%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%EF%BC%9A%E5%8D%8F%E8%AE%AE%E6%9E%B6%E6%9E%84%EF%BC%8C%E6%8A%A5%E6%96%87%E7%BB%93%E6%9E%84%EF%BC%8C%E5%8D%8F%E8%AE%AE%E6%B5%81%E7%A8%8B%EF%BC%88P49%EF%BC%89"><span class="toc-number">3.1.</span> <span class="toc-text">TLS协议的基本原理：协议架构，报文结构，协议流程（P49）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TLS%E6%8F%A1%E6%89%8B%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E5%88%86%E6%9E%90%E4%B8%8E%E6%94%B9%E8%BF%9B%E6%96%B9%E6%A1%88%EF%BC%9A%E5%89%8D%E5%90%91%E5%AE%89%E5%85%A8%E6%80%A7%EF%BC%8C%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB%EF%BC%8C%E9%87%8D%E6%94%BE%E6%94%BB%E5%87%BB%EF%BC%88P53%EF%BC%89"><span class="toc-number">3.2.</span> <span class="toc-text">TLS握手协议的安全性分析与改进方案：前向安全性，中间人攻击，重放攻击（P53）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TLS%E5%8D%8F%E8%AE%AE%E5%9C%A8%E5%AE%9E%E9%99%85%E9%83%A8%E7%BD%B2%E4%B8%AD%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%EF%BC%9AHSTS%EF%BC%88P61%EF%BC%89%E8%AF%81%E4%B9%A6%E5%AE%89%E5%85%A8%EF%BC%88P65%EF%BC%89CDN%EF%BC%88P71%EF%BC%89"><span class="toc-number">3.3.</span> <span class="toc-text">TLS协议在实际部署中的安全性问题分析：HSTS（P61）证书安全（P65）CDN（P71）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HSTS%E7%9A%84preload-list%E6%96%B9%E6%A1%88%E6%98%AF%E4%B8%BA%E4%BA%86%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F%EF%BC%88P61-%E8%AF%BE%E4%BB%B6%EF%BC%89"><span class="toc-number">3.4.</span> <span class="toc-text">HSTS的preload list方案是为了解决什么问题？（P61+课件）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TLS-1-3%E5%A6%82%E4%BD%95%E5%AF%B9%E6%8A%97%E9%99%8D%E7%BA%A7%E6%94%BB%E5%87%BB%EF%BC%9F%E5%A6%82%E4%BD%95%E5%AF%B9%E6%8A%97%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90%E6%94%BB%E5%87%BB%EF%BC%9F%EF%BC%88P61%EF%BC%89"><span class="toc-number">3.5.</span> <span class="toc-text">TLS 1.3如何对抗降级攻击？如何对抗流量分析攻击？（P61）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TLS-1-3%E5%AF%B9%E6%80%A7%E8%83%BD%E5%81%9A%E4%BA%86%E5%93%AA%E4%BA%9B%E6%8F%90%E9%AB%98%E5%92%8C%E6%94%B9%E8%BF%9B%EF%BC%9F%EF%BC%88P59%EF%BC%89"><span class="toc-number">3.6.</span> <span class="toc-text">TLS 1.3对性能做了哪些提高和改进？（P59）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#QUIC%E5%8D%8F%E8%AE%AE%E7%9A%84%E7%89%B9%E7%82%B9%EF%BC%88P78%EF%BC%89"><span class="toc-number">3.7.</span> <span class="toc-text">QUIC协议的特点（P78）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%A6%82%E4%BD%95%E9%89%B4%E5%88%AB%E6%89%80%E8%AE%BF%E9%97%AE%E7%BD%91%E7%AB%99%E8%AF%81%E4%B9%A6%E7%9A%84%E7%9C%9F%E4%BC%AA%EF%BC%9F%E6%94%BB%E5%87%BB%E8%80%85%E5%B8%B8%E7%94%A8%E7%9A%84%E6%AC%BA%E9%AA%97%E6%89%8B%E6%AE%B5%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F%EF%BC%88P64-%E8%AF%BE%E4%BB%B6%EF%BC%89"><span class="toc-number">3.8.</span> <span class="toc-text">浏览器如何鉴别所访问网站证书的真伪？攻击者常用的欺骗手段有哪些？（P64+课件）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ACME%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%88P66%EF%BC%89"><span class="toc-number">3.9.</span> <span class="toc-text">ACME协议的工作原理（P66）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%81%E4%B9%A6%E9%80%8F%E6%98%8E%E5%8C%96%EF%BC%88%E4%BC%AA%E9%80%A0%E8%AF%81%E4%B9%A6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E4%B9%8B%E4%B8%80%EF%BC%8CP68%EF%BC%89"><span class="toc-number">3.10.</span> <span class="toc-text">证书透明化（伪造证书解决方法之一，P68）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AC%E9%92%A5%E9%92%89%E6%89%8E%EF%BC%88%E4%BC%AA%E9%80%A0%E8%AF%81%E4%B9%A6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E4%B9%8B%E4%B8%80%EF%BC%8CP69%EF%BC%89"><span class="toc-number">3.11.</span> <span class="toc-text">公钥钉扎（伪造证书解决方法之一，P69）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1%E7%9A%84%E9%87%8D%E7%82%B9%E4%B8%8E%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7%EF%BC%88AI%E7%89%88%E7%AD%94%E6%A1%88%EF%BC%89"><span class="toc-number">3.12.</span> <span class="toc-text">数据传输安全协议设计的重点与常用技巧（AI版答案）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%EF%BC%9A%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E4%B8%8E%E8%BA%AB%E4%BB%BD%E7%AE%A1%E7%90%86"><span class="toc-number">4.</span> <span class="toc-text">数据访问控制：身份认证与身份管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8E%E7%94%A8%E6%88%B7%E8%A7%86%E8%A7%92%EF%BC%8C%E5%AF%B9%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E6%96%B9%E6%B3%95%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%88P85%EF%BC%89"><span class="toc-number">4.1.</span> <span class="toc-text">从用户视角，对身份认证方法的分类（P85）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8E%E6%8A%80%E6%9C%AF%E8%A7%86%E8%A7%92%EF%BC%8C%E5%AF%B9%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E6%96%B9%E6%B3%95%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%88P85%EF%BC%89"><span class="toc-number">4.2.</span> <span class="toc-text">从技术视角，对身份认证方法的分类（P85）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%86%E8%A7%A3%E5%9B%9B%E7%A7%8D%E5%9F%BA%E6%9C%AC%E7%9A%84%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E6%96%B9%E6%B3%95%E5%8F%8A%E5%85%B6%E9%9D%A2%E4%B8%B4%E7%9A%84%E5%AE%89%E5%85%A8%E5%A8%81%E8%83%81%EF%BC%88P85%EF%BC%89"><span class="toc-number">4.3.</span> <span class="toc-text">了解四种基本的身份认证方法及其面临的安全威胁（P85）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%AF%84%E4%BC%B0%E5%8F%A3%E4%BB%A4%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%EF%BC%9F%E6%8E%8C%E6%8F%A1%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95%E3%80%82%EF%BC%88P85%EF%BC%89"><span class="toc-number">4.4.</span> <span class="toc-text">如何评估口令的安全性？掌握量化分析方法。（P85）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%A3%E4%BB%A4%E5%A6%82%E4%BD%95%E5%AE%89%E5%85%A8%E5%AD%98%E5%82%A8%EF%BC%9F%E4%BA%86%E8%A7%A3%E4%B8%BB%E6%B5%81%E7%9A%84%E5%8F%A3%E4%BB%A4%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E3%80%82%EF%BC%88P87%EF%BC%89"><span class="toc-number">4.5.</span> <span class="toc-text">口令如何安全存储？了解主流的口令加密算法。（P87）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E9%87%8AFIDO%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%88P96-%E5%85%B7%E4%BD%93%E7%9C%8B%E8%AF%BE%E6%9C%AC%EF%BC%89"><span class="toc-number">4.6.</span> <span class="toc-text">解释FIDO协议的工作原理（P96+具体看课本）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Kerberos%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%88P107%EF%BC%89"><span class="toc-number">4.7.</span> <span class="toc-text">Kerberos协议的工作原理（P107）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OAuth%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%88P108%EF%BC%89"><span class="toc-number">4.8.</span> <span class="toc-text">OAuth协议的工作原理（P108）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenID-Connect%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%88P113%EF%BC%89"><span class="toc-number">4.9.</span> <span class="toc-text">OpenID Connect协议的工作原理（P113）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cookie%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%89%E5%85%A8%E5%B1%9E%E6%80%A7%EF%BC%88P116%EF%BC%89"><span class="toc-number">4.10.</span> <span class="toc-text">Cookie的工作原理与安全属性（P116）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81Cookie%EF%BC%88P117%EF%BC%89"><span class="toc-number">4.11.</span> <span class="toc-text">身份认证Cookie（P117）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cookie%E5%8A%AB%E6%8C%81%E6%94%BB%E5%87%BB%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%88P118%EF%BC%89"><span class="toc-number">4.12.</span> <span class="toc-text">Cookie劫持攻击的工作原理（P118）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E4%B8%8E%E8%AE%A1%E7%AE%97%E7%9A%84%E5%AE%89%E5%85%A8%E9%9A%90%E7%A7%81"><span class="toc-number">5.</span> <span class="toc-text">大数据存储与计算的安全隐私</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF%EF%BC%9A%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%8C%E5%AE%B9%E5%99%A8%E7%9A%84%E4%B8%89%E4%B8%AA%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%EF%BC%88P128%EF%BC%89"><span class="toc-number">5.1.</span> <span class="toc-text">虚拟化技术：虚拟机，容器的三个核心概念与核心技术（P128）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E7%B1%BB%E5%AE%B9%E5%99%A8%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98%EF%BC%9A%E5%AE%B9%E5%99%A8%E9%80%83%E9%80%B8%EF%BC%8C%E9%95%9C%E5%83%8F%E5%AE%89%E5%85%A8%EF%BC%8C%E9%9B%86%E7%BE%A4%E5%85%A5%E4%BE%B5%E3%80%82%EF%BC%88P136%EF%BC%89"><span class="toc-number">5.2.</span> <span class="toc-text">三类容器安全问题：容器逃逸，镜像安全，集群入侵。（P136）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%A0%E6%88%90%E5%AE%B9%E5%99%A8%E9%80%83%E9%80%B8%E7%9A%84%E4%B8%A4%E7%B1%BB%E5%8E%9F%E5%9B%A0%EF%BC%88%E8%BD%AF%E4%BB%B6%E6%BC%8F%E6%B4%9E%E4%B8%8E%E9%94%99%E8%AF%AF%E9%85%8D%E7%BD%AE%EF%BC%89%E4%B8%8E%E7%BC%93%E8%A7%A3%E6%8E%AA%E6%96%BD%EF%BC%88%E4%B8%8E%E4%B8%BB%E6%9C%BA%E7%B3%BB%E7%BB%9F%E9%9A%94%E7%A6%BB%EF%BC%8C%E6%9E%84%E5%BB%BA%E6%9B%B4%E5%BC%BA%E7%9A%84%E4%BF%A1%E4%BB%BB%E8%BE%B9%E7%95%8C%EF%BC%89%EF%BC%88P136%EF%BC%89"><span class="toc-number">5.3.</span> <span class="toc-text">造成容器逃逸的两类原因（软件漏洞与错误配置）与缓解措施（与主机系统隔离，构建更强的信任边界）（P136）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%A8%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E6%94%BB%E5%87%BB%E4%B8%8E%E4%BA%91%E8%AE%A1%E7%AE%97%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84%E5%AE%89%E5%85%A8%E6%8C%91%E6%88%98%EF%BC%88P139%EF%BC%89"><span class="toc-number">5.4.</span> <span class="toc-text">跨虚拟机的攻击与云计算环境下的安全挑战（P139）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7%E6%9C%BA%E5%88%B6%EF%BC%9APOR%EF%BC%88P156%EF%BC%89"><span class="toc-number">5.5.</span> <span class="toc-text">大数据存储的数据完整性机制：POR（P156）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4%E6%9C%BA%E5%88%B6%EF%BC%88%E5%8A%A0%E5%AF%86%E6%95%B0%E6%8D%AE%E5%8E%BB%E9%87%8D%E6%8A%80%E6%9C%AF%EF%BC%89%EF%BC%88P157%EF%BC%89"><span class="toc-number">5.6.</span> <span class="toc-text">大数据存储的数据隐私保护机制（加密数据去重技术）（P157）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4%E6%9C%BA%E5%88%B6%EF%BC%9APoW%EF%BC%88P158%EF%BC%89"><span class="toc-number">5.7.</span> <span class="toc-text">大数据存储的数据安全防护机制：PoW（P158）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%9D%E6%8A%A4%E9%9A%90%E7%A7%81%E7%9A%84%E5%8F%AF%E4%BF%A1%E8%AE%A1%E7%AE%97"><span class="toc-number">6.</span> <span class="toc-text">保护隐私的可信计算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%86%E7%9A%84%E6%A6%82%E5%BF%B5%EF%BC%9B%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF%EF%BC%9F%EF%BC%88P163%EF%BC%89"><span class="toc-number">6.1.</span> <span class="toc-text">同态加密的概念；为什么需要同态加密技术？（P163）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%98%E6%B3%95%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%EF%BC%9ARSA%EF%BC%88P163%EF%BC%89"><span class="toc-number">6.2.</span> <span class="toc-text">乘法同态加密算法：RSA（P163）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E6%B3%95%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%EF%BC%9APaillier%E7%AE%97%E6%B3%95%EF%BC%88P164%EF%BC%89"><span class="toc-number">6.3.</span> <span class="toc-text">加法同态加密算法：Paillier算法（P164）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A8%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%EF%BC%88P167%EF%BC%89"><span class="toc-number">6.4.</span> <span class="toc-text">全同态加密算法的基本概念（P167）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CryptDB%E7%9A%84%E6%B4%8B%E8%91%B1%E5%8A%A0%E5%AF%86%E6%A8%A1%E5%BC%8F%EF%BC%88P170%EF%BC%89"><span class="toc-number">6.5.</span> <span class="toc-text">CryptDB的洋葱加密模式（P170）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E5%A4%9A%E6%96%B9%E8%AE%A1%E7%AE%97%E7%9A%84%E6%A6%82%E5%BF%B5%EF%BC%88P172%EF%BC%89"><span class="toc-number">6.6.</span> <span class="toc-text">安全多方计算的概念（P172）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E5%A4%9A%E6%96%B9%E8%AE%A1%E7%AE%97%E7%9A%84%E6%A8%A1%E5%9E%8B%EF%BC%88P174%EF%BC%89"><span class="toc-number">6.7.</span> <span class="toc-text">安全多方计算的模型（P174）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%99%BE%E4%B8%87%E5%AF%8C%E7%BF%81%E9%97%AE%E9%A2%98%EF%BC%88P173%EF%BC%89"><span class="toc-number">6.8.</span> <span class="toc-text">百万富翁问题（P173）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%B7%E6%B7%86%E7%94%B5%E8%B7%AF%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%88P175%EF%BC%89"><span class="toc-number">6.9.</span> <span class="toc-text">混淆电路的工作原理（P175）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OT%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%88P177%EF%BC%89"><span class="toc-number">6.10.</span> <span class="toc-text">OT的工作原理（P177）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%98%E5%AF%86%E5%88%86%E4%BA%AB%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%88P179%EF%BC%89"><span class="toc-number">6.11.</span> <span class="toc-text">秘密分享的工作原理（P179）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%9A%E6%80%A7%E8%83%BD%EF%BC%8C%E5%AE%89%E5%85%A8%E6%80%A7%EF%BC%88%E6%81%B6%E6%84%8F%E5%8F%82%E4%B8%8E%E8%80%85%EF%BC%89%EF%BC%88%E8%AF%BE%E4%BB%B6%EF%BC%89"><span class="toc-number">6.12.</span> <span class="toc-text">应用中的问题：性能，安全性（恶意参与者）（课件）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8C%BF%E5%90%8D%E5%8C%96%E4%B8%8E%E5%B7%AE%E5%88%86%E9%9A%90%E7%A7%81"><span class="toc-number">7.</span> <span class="toc-text">数据匿名化与差分隐私</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%90%E7%A7%81%E7%9A%84%E5%AE%9A%E4%B9%89%E3%80%81%E5%88%86%E7%B1%BB%EF%BC%88P227%EF%BC%89"><span class="toc-number">7.1.</span> <span class="toc-text">隐私的定义、分类（P227）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%90%E7%A7%81%E7%9A%84%E5%BA%A6%E9%87%8F%E5%8F%8A%E9%87%8F%E5%8C%96%E8%A1%A8%E7%A4%BA%EF%BC%88P228%EF%BC%89"><span class="toc-number">7.2.</span> <span class="toc-text">隐私的度量及量化表示（P228）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%B3%9B%E5%8C%96%EF%BC%9F%E4%BB%80%E4%B9%88%E6%98%AF%E6%8A%91%E5%88%B6%EF%BC%9F%EF%BC%88P234%EF%BC%89"><span class="toc-number">7.3.</span> <span class="toc-text">什么是泛化？什么是抑制？（P234）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4%E6%A8%A1%E5%9E%8B%EF%BC%9AK%E5%8C%BF%E5%90%8D%EF%BC%9BL%E5%A4%9A%E6%A0%B7%E5%8C%96%EF%BC%9BT%E7%9B%B8%E8%BF%91"><span class="toc-number">7.4.</span> <span class="toc-text">常见的隐私保护模型：K匿名；L多样化；T相近</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#K%E5%8C%BF%E5%90%8D%E4%B8%8E%E8%AE%B0%E5%BD%95%E9%93%BE%E6%8E%A5%E6%94%BB%E5%87%BB%EF%BC%88P236%EF%BC%89"><span class="toc-number">7.5.</span> <span class="toc-text">K匿名与记录链接攻击（P236）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#L%E5%A4%9A%E6%A0%B7%E5%8C%96%E4%B8%8E%E5%B1%9E%E6%80%A7%E9%93%BE%E6%8E%A5%E6%94%BB%E5%87%BB%EF%BC%88P238%EF%BC%89"><span class="toc-number">7.6.</span> <span class="toc-text">L多样化与属性链接攻击（P238）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8C%BF%E5%90%8D%E5%8C%96%E6%96%B9%E6%B3%95%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7%EF%BC%88AI%EF%BC%89"><span class="toc-number">7.7.</span> <span class="toc-text">数据匿名化方法的局限性（AI）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%AE%E5%88%86%E9%9A%90%E7%A7%81%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3%EF%BC%9A%E4%B8%AD%E9%97%B4%E4%BB%B6%EF%BC%88%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%EF%BC%89-%E9%9A%8F%E6%9C%BA%E5%99%AA%E5%A3%B0-%E5%B8%A6%E5%99%AA%E4%B8%AD%E9%97%B4%E4%BB%B6%E3%80%82%EF%BC%88P240%EF%BC%89"><span class="toc-number">7.8.</span> <span class="toc-text">差分隐私的基本思想：中间件（查询结果）+随机噪声&#x3D;带噪中间件。（P240）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%AE%E5%88%86%E9%9A%90%E7%A7%81%E7%9A%84%E5%AE%9A%E4%B9%89%EF%BC%88P240%EF%BC%89"><span class="toc-number">7.9.</span> <span class="toc-text">差分隐私的定义（P240）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%EF%BC%9A%E8%B7%9D%E7%A6%BB%EF%BC%8C%E7%9B%B8%E9%82%BB%E6%95%B0%E6%8D%AE%E9%9B%86%EF%BC%8C%E6%95%8F%E6%84%9F%E5%BA%A6%EF%BC%88%E8%AF%BE%E4%BB%B6%EF%BC%89"><span class="toc-number">7.10.</span> <span class="toc-text">基本概念：距离，相邻数据集，敏感度（课件）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E6%9F%A5%E8%AF%A2%E5%87%BD%E6%95%B0%E5%8F%8A%E5%85%B6%E6%95%8F%E6%84%9F%E5%BA%A6%EF%BC%88%E8%AF%BE%E4%BB%B6%EF%BC%89"><span class="toc-number">7.11.</span> <span class="toc-text">常见的查询函数及其敏感度（课件）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E6%9C%BA%E5%88%B6%EF%BC%88P241%EF%BC%89"><span class="toc-number">7.12.</span> <span class="toc-text">拉普拉斯机制（P241）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E6%95%B0%E6%9C%BA%E5%88%B6%EF%BC%88P245%EF%BC%89"><span class="toc-number">7.13.</span> <span class="toc-text">指数机制（P245）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%B7%AE%E5%88%86%E9%9A%90%E7%A7%81%E6%96%B9%E6%B3%95%EF%BC%88P247%EF%BC%89"><span class="toc-number">7.14.</span> <span class="toc-text">本地化差分隐私方法（P247）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%AE%E5%88%86%E9%9A%90%E7%A7%81%E5%9C%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%88P255%EF%BC%89"><span class="toc-number">7.15.</span> <span class="toc-text">差分隐私在机器学习中的应用（P255）</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/01/27/EvoCorps/" title="EvoCorps"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/logo1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="EvoCorps"/></a><div class="content"><a class="title" href="/2026/01/27/EvoCorps/" title="EvoCorps">EvoCorps</a><time datetime="2026-01-27T05:00:00.000Z" title="发表于 2026-01-27 13:00:00">2026-01-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/25/%E5%8C%97%E9%82%AE%E7%BD%91%E5%AE%89%E5%A4%A7%E7%B1%BB%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/" title="北邮网安课程介绍（23级）"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/buptnew.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="北邮网安课程介绍（23级）"/></a><div class="content"><a class="title" href="/2026/01/25/%E5%8C%97%E9%82%AE%E7%BD%91%E5%AE%89%E5%A4%A7%E7%B1%BB%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/" title="北邮网安课程介绍（23级）">北邮网安课程介绍（23级）</a><time datetime="2026-01-25T11:48:17.000Z" title="发表于 2026-01-25 19:48:17">2026-01-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/06/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8%E6%AF%94%E8%BE%83%E9%87%8D%E8%A6%81%E7%9A%84%E5%9C%B0%E6%96%B9/" title="软件安全期末复习"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/softsec.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件安全期末复习"/></a><div class="content"><a class="title" href="/2026/01/06/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8%E6%AF%94%E8%BE%83%E9%87%8D%E8%A6%81%E7%9A%84%E5%9C%B0%E6%96%B9/" title="软件安全期末复习">软件安全期末复习</a><time datetime="2026-01-06T05:00:00.000Z" title="发表于 2026-01-06 13:00:00">2026-01-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/12/31/2025%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93%E4%B8%8B/" title="2025年度下半年总结"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/2025.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2025年度下半年总结"/></a><div class="content"><a class="title" href="/2025/12/31/2025%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93%E4%B8%8B/" title="2025年度下半年总结">2025年度下半年总结</a><time datetime="2025-12-31T07:00:00.000Z" title="发表于 2025-12-31 15:00:00">2025-12-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/12/31/2025%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93%E4%B8%8A/" title="2025年度上半年总结"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/2025.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2025年度上半年总结"/></a><div class="content"><a class="title" href="/2025/12/31/2025%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93%E4%B8%8A/" title="2025年度上半年总结">2025年度上半年总结</a><time datetime="2025-12-31T05:00:00.000Z" title="发表于 2025-12-31 13:00:00">2025-12-31</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Harrisonls2004</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4-b1</a></span></div><div class="footer_custom_text">尽人事 听天命</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4-b1"></script><script src="/js/main.js?v=5.5.4-b1"></script><script src="/js/tw_cn.js?v=5.5.4-b1"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.7/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"language":"zh-CN","perPage":10,"distractionFreeMode":false,"pagerDirection":"last","createIssueManually":false}
+
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  const initGitalk = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGitalk = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: 'Harrisonls2004.github.io',
+      owner: 'Harrisonls2004',
+      admin: ['Harrisonls2004'],
+      updateCountCallback: commentCount,
+      ...option,
+      id: isShuoshuo ? path : (option && option.id) || 'ee919aa820bab3e9f7c9d0255748942d'
+    })
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async(el, path) => {
+    if (typeof Gitalk === 'function') initGitalk(el, path)
+    else {
+      await btf.getCSS('https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.css')
+      await btf.getScript('https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.js')
+      initGitalk(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Gitalk' === 'Gitalk'
+      ? window.shuoshuoComment = { loadComment: loadGitalk }
+      : window.loadOtherComment = loadGitalk
+    return
+  }
+
+  if ('Gitalk' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><script src="/js/click-heart.js"></script><script src="/js/sakura.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/metingjs/dist/Meting.min.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.4-b1"></script></div></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300,"hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacity":0.7},"log":false});</script></body></html>

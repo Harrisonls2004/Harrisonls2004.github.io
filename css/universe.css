@@ -1,0 +1,26 @@
+/* 全屏背景图片设置 */
+#web_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/img/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -999;
+}
+
+/* 禁用所有其他背景效果 */
+#canvas_ribbon,
+.canvas_ribbon,
+canvas {
+  display: none !important;
+}
+
+/* 背景宇宙星光效果（如果需要的话） */
+#universe{
+    display: none !important;
+}

