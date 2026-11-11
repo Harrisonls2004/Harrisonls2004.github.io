@@ -1,0 +1,42 @@
+/* A translucent entrance to the standalone personal CV. */
+#site-info .home-cv-entry {
+  margin-top: 24px;
+}
+#site-info .home-cv-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 8px 28px;
+  border: 1px solid rgba(255, 255, 255, .65);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .16);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, .12);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: .05em;
+  text-decoration: none;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, .35);
+  transition: background .2s ease, box-shadow .2s ease;
+}
+#site-info .home-cv-button:hover {
+  background: rgba(255, 255, 255, .3);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .2);
+}
+#site-info .home-cv-button:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 5px;
+}
+#site-info .home-cv-button span {
+  margin-left: 12px;
+}
+@media (max-width: 600px) {
+  #site-info .home-cv-entry { margin-top: 20px; }
+  #site-info .home-cv-button { font-size: 16px; padding: 8px 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #site-info .home-cv-button { transition: none; }
+}
