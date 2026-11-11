@@ -1,0 +1,32 @@
+/* Keep the blog navigation visible while the theme scripts initialize. */
+#page-header #nav {
+  opacity: 1;
+}
+
+/* The custom 24px menu could trigger the theme's mobile layout on desktop. */
+@media (min-width: 1024px) {
+  #nav #menus {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  #nav .menus_items,
+  #nav.hide-menu .menus_items {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+  #nav #toggle-menu,
+  #nav.hide-menu #toggle-menu {
+    display: none !important;
+  }
+  #nav .menus_items .menus_item a,
+  #nav #search-button .search,
+  #nav #search-button .search span,
+  #nav #search-button .search i {
+    font-size: clamp(17px, 1.6vw, 24px) !important;
+  }
+  #nav.hide-menu #search-button span:not(.site-page) {
+    display: inline;
+  }
+}
