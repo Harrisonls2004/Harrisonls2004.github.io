@@ -1,6 +1,10 @@
 /* A translucent entrance to the standalone personal CV. */
 #site-info .home-cv-entry {
+  display: flex;
+  justify-content: center;
+  width: 100%;
   margin-top: 24px;
+  text-align: center;
 }
 #site-info .home-cv-button {
   display: inline-flex;
